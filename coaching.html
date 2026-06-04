@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1:1 Elterncoaching – EDULEO | Persönliche Begleitung durchs Vorschuljahr</title>
+  <meta name="description" content="Individuelle Begleitung durchs letzte Kitajahr – mit Hannah & Janine von EDULEO. Jetzt kostenfreies Kennenlerngespräch buchen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .coaching-hero {
+      padding: calc(var(--nav-h) + 72px) 0 80px;
+      background: linear-gradient(135deg, var(--turquoise-light) 0%, var(--yellow-light) 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .coaching-hero::before {
+      content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,196,198,.1) 0%, transparent 70%);
+      top: -200px; left: -100px; pointer-events: none;
+    }
+    .coaching-hero-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+    .coaching-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); margin-bottom: 16px; }
+    .coaching-hero h1 span { color: var(--turquoise); }
+    .coaching-hero .sub { font-size: 1.15rem; color: var(--text); max-width: 600px; margin: 0 auto 32px; }
+
+    .coaches-row {
+      display: flex; justify-content: center; gap: 20px; margin-bottom: 36px; flex-wrap: wrap;
+    }
+    .coach-chip {
+      display: flex; align-items: center; gap: 12px;
+      background: white; border-radius: var(--radius-full);
+      padding: 8px 20px 8px 8px; box-shadow: var(--shadow-sm);
+    }
+    .coach-chip img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+    .coach-chip span { font-size: 0.92rem; font-weight: 700; color: var(--dark); }
+
+    .section-white { padding: 80px 0; background: white; }
+    .section-light { padding: 80px 0; background: var(--off-white); }
+
+    .includes-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;
+    }
+    .include-card {
+      background: var(--off-white); border-radius: var(--radius-lg); padding: 28px 24px;
+      text-align: center; transition: var(--transition);
+    }
+    .include-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); background: white; }
+    .include-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .include-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .include-card p { font-size: 0.88rem; color: var(--text-light); margin: 0; line-height: 1.6; }
+
+    .fuer-wen { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .fuer-wen-item { display: flex; align-items: flex-start; gap: 12px; background: white; border-radius: var(--radius-md); padding: 16px 20px; box-shadow: var(--shadow-sm); }
+    .fuer-wen-item .check { color: var(--turquoise); font-weight: 900; font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .fuer-wen-item p { font-size: 0.92rem; font-weight: 600; color: var(--dark); margin: 0; line-height: 1.5; }
+
+    .calendly-section {
+      background: var(--turquoise-light); padding: 80px 0;
+    }
+    .calendly-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+    .calendly-header h2 { margin-bottom: 12px; }
+    .calendly-header p { font-size: 1.05rem; color: var(--text); }
+    .calendly-free-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; border-radius: var(--radius-full);
+      padding: 8px 20px; font-size: 0.9rem; font-weight: 700;
+      color: var(--turquoise-dark); box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+    .calendly-widget-wrap {
+      background: white; border-radius: var(--radius-xl);
+      overflow: hidden; box-shadow: var(--shadow-lg);
+      max-width: 900px; margin: 0 auto;
+    }
+
+    .cta-section { background: var(--dark); padding: 80px 0; text-align: center; }
+    .cta-section h2 { color: white; margin-bottom: 12px; }
+    .cta-section p { color: rgba(255,255,255,.78); font-size: 1.05rem; max-width: 520px; margin: 0 auto 32px; }
+    .reassurance { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 24px; }
+    .reassurance-item { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: rgba(255,255,255,.65); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .includes-grid { grid-template-columns: 1fr; }
+      .fuer-wen { grid-template-columns: 1fr; }
+      .coaches-row { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="EDULEO"></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#philosophie">Philosophie</a></li>
+        <li><a href="index.html#bausteine">Konzept</a></li>
+        <li><a href="index.html#angebote">Angebot</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="index.html#ueber-uns">Über uns</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta"><a href="#kennenlernen" class="btn btn-primary">Kostenfrei kennenlernen</a></div>
+      <button class="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#philosophie">Philosophie</a>
+  <a href="index.html#angebote">Angebot</a>
+  <a href="freebies.html">Freebies</a>
+  <a href="index.html#ueber-uns">Über uns</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="#kennenlernen" class="btn btn-primary">Kostenfrei kennenlernen</a>
+</div>
+
+<!-- HERO -->
+<section class="coaching-hero">
+  <div class="container">
+    <div class="coaching-hero-inner fade-in">
+      <span class="badge badge-turquoise" style="margin-bottom: 24px; display: inline-flex;">💬 Persönliches 1:1 Coaching</span>
+      <h1>Begleitung, die sich<br><span>wirklich nach dir anfühlt.</span></h1>
+      <p class="sub">Individuelle Unterstützung durchs letzte Kitajahr – abgestimmt auf dein Kind, deinen Alltag und deine Fragen. Mit Hannah & Janine persönlich.</p>
+      <div class="coaches-row">
+        <div class="coach-chip">
+          <img src="assets/images/hannah.png" alt="Hannah Flunkert">
+          <span>Hannah Flunkert</span>
+        </div>
+        <div class="coach-chip">
+          <img src="assets/images/janine.png" alt="Janine Klumper">
+          <span>Janine Klumper</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#kennenlernen" class="btn btn-primary" style="font-size: 1.05rem; padding: 16px 32px;">Kostenfreies Kennenlerngespräch buchen</a>
+        <a href="https://www.eduleo.de/1-1-begleitung-für-eltern/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Direkt buchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAS IST DRIN -->
+<section class="section-white">
+  <div class="container">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;" class="fade-in">
+      <span class="section-label">Was erwartet dich?</span>
+      <h2>Ganz auf dich zugeschnitten.</h2>
+      <p style="margin-top: 14px;">Kein Standardprogramm. Wir schauen gemeinsam auf dein Kind, deinen Familienalltag und deine konkreten Fragen.</p>
+    </div>
+    <div class="includes-grid">
+      <div class="include-card fade-in">
+        <div class="include-icon">🔍</div>
+        <h3>Individuelle Analyse</h3>
+        <p>Wir schauen gemeinsam, wo dein Kind steht und was es in den 5 Entwicklungsbereichen braucht.</p>
+      </div>
+      <div class="include-card fade-in">
+        <div class="include-icon">🗺️</div>
+        <h3>Persönlicher Fahrplan</h3>
+        <p>Du bekommst konkrete, alltagsnahe Ideen – genau abgestimmt auf euren Familienalltag.</p>
+      </div>
+      <div class="include-card fade-in">
+        <div class="include-icon">💬</div>
+        <h3>Direkte Antworten</h3>
+        <p>Alle deine Fragen zum Vorschuljahr – von zwei erfahrenen Pädagoginnen beantwortet.</p>
+      </div>
+      <div class="include-card fade-in">
+        <div class="include-icon">❤️</div>
+        <h3>Emotionale Entlastung</h3>
+        <p>Kein Druck, kein Vergleich – du gehst mit Sicherheit und Zuversicht aus dem Gespräch.</p>
+      </div>
+      <div class="include-card fade-in">
+        <div class="include-icon">📋</div>
+        <h3>Nachbereitung</h3>
+        <p>Du erhältst eine Zusammenfassung der besprochenen Impulse zum Nachschlagen.</p>
+      </div>
+      <div class="include-card fade-in">
+        <div class="include-icon">🔄</div>
+        <h3>Flexibel & online</h3>
+        <p>Bequem von zuhause – per Videocall zu einem Termin der zu euch passt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FÜR WEN -->
+<section class="section-light">
+  <div class="container">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;" class="fade-in">
+      <span class="section-label">Für wen ist das Coaching?</span>
+      <h2>Genau das Richtige, wenn du…</h2>
+    </div>
+    <div class="fuer-wen">
+      <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>individuelle Begleitung statt allgemeine Tipps möchtest</p></div>
+      <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>konkrete Fragen zu deinem Kind hast</p></div>
+      <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>das Vorschuljahr strukturiert und entspannt angehen willst</p></div>
+      <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>dir wünschst, dass jemand wirklich auf euch eingeht</p></div>
+      <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>Sicherheit für dich als Elternteil suchst</p></div>
+      <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>einfach mal alles loswerden und gehört werden möchtest</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDLY -->
+<section class="calendly-section" id="kennenlernen">
+  <div class="container">
+    <div class="calendly-header fade-in">
+      <div class="calendly-free-badge">🎁 100% kostenlos & unverbindlich</div>
+      <h2>Lern uns erstmal kennen.</h2>
+      <p>Buch dir jetzt ein kostenfreies 15-minütiges Kennenlerngespräch – wir schauen gemeinsam ob das Coaching das Richtige für dich ist.</p>
+    </div>
+    <div class="calendly-widget-wrap fade-in">
+      <!-- Calendly inline widget -->
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/vorschule-eduleo/30min"
+           style="min-width:320px;height:700px;">
+      </div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</section>
+
+<!-- KAUF CTA -->
+<section class="cta-section" id="buchen">
+  <div class="container">
+    <span class="section-label" style="color: rgba(255,255,255,.6)">Bereit loszulegen?</span>
+    <h2>Hol dir dein 1:1 Coaching.</h2>
+    <p>Persönliche Begleitung durch das letzte Kitajahr – individuell, entspannt und wirkungsvoll.</p>
+    <a href="https://www.eduleo.de/1-1-begleitung-für-eltern/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.1rem; padding: 18px 40px;">Jetzt buchen →</a>
+    <div class="reassurance">
+      <div class="reassurance-item">💬 Online per Videocall</div>
+      <div class="reassurance-item">👩‍🏫 Mit echten Pädagoginnen</div>
+      <div class="reassurance-item">💛 Ganz auf dich zugeschnitten</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><img src="assets/images/logo.png" alt="EDULEO"></a>
+      <nav class="footer-links">
+        <a href="index.html#angebote">Angebot</a>
+        <a href="freebies.html">Freebies</a>
+        <a href="index.html#ueber-uns">Über uns</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <nav class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="widerruf.html">Widerruf</a>
+        <a href="agb.html">AGB</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2026 EDULEO – Klumper &amp; Flunkert GbR &nbsp;·&nbsp; Vorschule neu gedacht</div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

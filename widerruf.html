@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widerrufsbelehrung – EDULEO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-hero {
+      background: var(--turquoise-light);
+      padding: calc(var(--nav-h) + 56px) 0 56px;
+    }
+    .legal-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 8px; }
+    .legal-hero p  { color: var(--text-light); font-size: 1rem; }
+
+    .legal-content {
+      padding: 64px 0 96px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .legal-content h2 {
+      font-size: 1.2rem; color: var(--dark);
+      margin: 40px 0 12px; padding-bottom: 8px;
+      border-bottom: 2px solid var(--turquoise-light);
+    }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content p {
+      font-size: 0.97rem; color: var(--text);
+      line-height: 1.8; margin-bottom: 14px;
+    }
+    .legal-content a { color: var(--turquoise); font-weight: 600; }
+    .legal-contact {
+      background: var(--off-white); border-radius: var(--radius-lg);
+      padding: 28px 32px; margin: 20px 0 32px;
+      border-left: 4px solid var(--turquoise);
+    }
+    .legal-contact p { margin: 0; line-height: 1.9; }
+
+    .widerruf-form {
+      background: var(--off-white); border-radius: var(--radius-lg);
+      padding: 36px; margin-top: 16px;
+      border: 2px solid var(--border);
+    }
+    .widerruf-form h3 {
+      font-size: 1.1rem; color: var(--dark); margin-bottom: 20px;
+    }
+    .widerruf-form p { margin-bottom: 12px; }
+    .wf-group { margin-bottom: 18px; }
+    .wf-group label {
+      display: block; font-size: 0.88rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 6px;
+    }
+    .wf-group input, .wf-group textarea {
+      width: 100%; padding: 12px 16px; border: 2px solid var(--border);
+      border-radius: var(--radius-md); font-family: var(--font);
+      font-size: 0.95rem; color: var(--dark); background: white;
+      transition: border-color var(--transition); outline: none;
+    }
+    .wf-group input:focus, .wf-group textarea:focus {
+      border-color: var(--turquoise); background: white;
+    }
+    .wf-group textarea { resize: vertical; min-height: 90px; }
+    .wf-success {
+      display: none; text-align: center; padding: 24px 12px;
+    }
+    .wf-success h3 { color: var(--turquoise); margin-bottom: 8px; }
+    .wf-note {
+      font-size: 0.82rem; color: var(--text-light);
+      margin-top: 12px; font-style: italic;
+    }
+    .hinweis-box {
+      background: var(--yellow-light); border-radius: var(--radius-md);
+      padding: 20px 24px; margin-bottom: 32px;
+      border-left: 4px solid var(--yellow);
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .hinweis-box span { font-size: 1.3rem; flex-shrink: 0; }
+    .hinweis-box p { margin: 0; font-size: 0.93rem; color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav scrolled" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="EDULEO – Vorschule neu gedacht">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#philosophie">Philosophie</a></li>
+        <li><a href="index.html#bausteine">Konzept</a></li>
+        <li><a href="index.html#angebote">Angebot</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="index.html#ueber-uns">Über uns</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="index.html#angebote" class="btn btn-primary">Jetzt entdecken</a>
+      </div>
+      <button class="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" role="navigation">
+  <a href="index.html#philosophie">Philosophie</a>
+  <a href="index.html#bausteine">Konzept</a>
+  <a href="index.html#angebote">Angebot</a>
+  <a href="freebies.html">Freebies</a>
+  <a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+  <a href="index.html#ueber-uns">Über uns</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="index.html#angebote" class="btn btn-primary">Jetzt entdecken</a>
+</div>
+
+<!-- ── HEADER ── -->
+<div class="legal-hero">
+  <div class="container">
+    <span class="section-label">Rechtliches</span>
+    <h1>Widerrufsbelehrung</h1>
+    <p>Informationen zu deinem Widerrufsrecht</p>
+  </div>
+</div>
+
+<!-- ── INHALT ── -->
+<div class="container">
+  <div class="legal-content">
+
+    <div class="hinweis-box">
+      <span>💡</span>
+      <p><strong>Wir bieten drei Arten von Leistungen an</strong> – für jede gelten leicht unterschiedliche Widerrufsregeln. Die Details findest du weiter unten.</p>
+    </div>
+
+    <h2>Widerrufsrecht – Allgemein</h2>
+    <p>Du hast das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsabschlusses.</p>
+    <p>Um dein Widerrufsrecht auszuüben, musst du uns mittels einer eindeutigen Erklärung (z.B. per E-Mail) über deinen Entschluss informieren. Das Muster-Widerrufsformular am Ende dieser Seite kannst du dafür verwenden – es ist jedoch nicht vorgeschrieben.</p>
+    <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass du die Mitteilung vor Ablauf der Frist absendest.</p>
+
+    <div class="legal-contact">
+      <p>
+        <strong>Klumper &amp; Flunkert – EDULEO GbR</strong><br>
+        Janine Klumper &amp; Hannah Flunkert<br>
+        Ortlerweg 39, 12207 Berlin<br><br>
+        E-Mail: <a href="mailto:kontakt@eduleo.de">kontakt@eduleo.de</a>
+      </p>
+    </div>
+
+    <h2>1. Digitale PDF-Produkte (Vorschul-Check, Vorschul-Guide, Bundle)</h2>
+    <p>Das Widerrufsrecht erlischt vorzeitig, wenn wir mit der Ausführung des Vertrages begonnen haben, nachdem du beim Kauf ausdrücklich zugestimmt hast, dass wir vor Ablauf der Widerrufsfrist mit der Ausführung beginnen, und du bestätigt hast, dass du dein Widerrufsrecht mit Beginn des Downloads verlierst (§ 356 Abs. 5 BGB).</p>
+    <p>Das bedeutet: Sobald du den Download gestartet hast, erlischt dein Widerrufsrecht. Hast du den Download noch nicht begonnen, steht dir das 14-tägige Widerrufsrecht zu.</p>
+
+    <h2>2. Online-Kurse und aufgezeichnete Elternabende</h2>
+    <p>Auch für aufgezeichnete Online-Kurse gilt: Das Widerrufsrecht erlischt, sobald du nach deiner ausdrücklichen Zustimmung beim Kauf erstmals auf die Kursinhalte zugegriffen hast (§ 356 Abs. 5 BGB).</p>
+    <p>Hast du die Inhalte noch nicht geöffnet, steht dir das 14-tägige Widerrufsrecht zu.</p>
+
+    <h2>3. Coaching und Beratungsleistungen</h2>
+    <p>Für 1:1 Coaching und Beratungsgespräche gilt das 14-tägige Widerrufsrecht ab Vertragsabschluss.</p>
+    <p>Wenn du ausdrücklich wünschst, dass das Coaching noch innerhalb der Widerrufsfrist beginnt, und wir dem zustimmen, so hast du uns im Falle eines Widerrufs einen angemessenen Betrag zu zahlen, der dem Anteil der bereits erbrachten Leistung entspricht (§ 357 Abs. 8 BGB).</p>
+
+    <h2>Folgen des Widerrufs</h2>
+    <p>Wenn du wirksam widerrufst, erstatten wir dir alle Zahlungen unverzüglich und spätestens binnen 14 Tagen ab Eingang deines Widerrufs. Wir verwenden dasselbe Zahlungsmittel wie bei der ursprünglichen Transaktion; es werden keine Entgelte für die Rückzahlung berechnet.</p>
+
+    <h2>Muster-Widerrufsformular</h2>
+    <p>Wenn du den Vertrag widerrufen möchtest, fülle dieses Formular aus – dein E-Mail-Programm öffnet sich dann mit allen Angaben fertig eingetragen:</p>
+
+    <div class="widerruf-form">
+      <h3>Widerrufsformular</h3>
+      <p>Fülle das Formular aus und klicke auf „Widerruf absenden" — dein E-Mail-Programm öffnet sich mit allen Angaben fertig eingetragen.</p>
+
+      <form id="widerruf-form">
+        <div class="wf-group">
+          <label for="wf-art">Art der Leistung *</label>
+          <select id="wf-art" required style="width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:var(--radius-md);font-family:var(--font);font-size:0.95rem;color:var(--dark);background:white;outline:none;">
+            <option value="" disabled selected>Bitte wählen …</option>
+            <option value="PDF-Produkt (Vorschul-Check / Vorschul-Guide / Bundle)">PDF-Produkt (Vorschul-Check / Vorschul-Guide / Bundle)</option>
+            <option value="Online-Kurs / aufgezeichneter Elternabend">Online-Kurs / aufgezeichneter Elternabend</option>
+            <option value="1:1 Coaching / Beratung">1:1 Coaching / Beratung</option>
+          </select>
+        </div>
+        <div class="wf-group">
+          <label for="wf-produkt">Genaue Bezeichnung des Produkts / Termins *</label>
+          <input type="text" id="wf-produkt" placeholder="z.B. Vorschul-Check, Coaching-Session vom …" required>
+        </div>
+        <div class="wf-group">
+          <label for="wf-datum-kauf">Bestellt / gebucht am *</label>
+          <input type="date" id="wf-datum-kauf" required>
+        </div>
+        <div class="wf-group">
+          <label for="wf-name">Dein Name *</label>
+          <input type="text" id="wf-name" placeholder="Vor- und Nachname" required>
+        </div>
+        <div class="wf-group">
+          <label for="wf-email">Deine E-Mail-Adresse *</label>
+          <input type="email" id="wf-email" placeholder="deine@email.de" required>
+        </div>
+        <div class="wf-group">
+          <label for="wf-anschrift">Deine Anschrift *</label>
+          <input type="text" id="wf-anschrift" placeholder="Straße, PLZ Ort" required>
+        </div>
+        <div class="wf-group">
+          <label for="wf-hinweis">Weitere Hinweise (optional)</label>
+          <textarea id="wf-hinweis" placeholder="z.B. Bestellnummer oder sonstige Angaben"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;">
+          Widerruf absenden ✉️
+        </button>
+        <p class="wf-note">Es öffnet sich dein E-Mail-Programm mit dem ausgefüllten Widerruf. Bitte die E-Mail noch absenden.</p>
+      </form>
+
+      <div class="wf-success" id="wf-success">
+        <div style="font-size:2.5rem;margin-bottom:12px">✅</div>
+        <h3>E-Mail-Programm geöffnet!</h3>
+        <p>Bitte sende die vorbereitete E-Mail noch ab. Sollte sich kein Programm geöffnet haben, schreibe direkt an <a href="mailto:kontakt@eduleo.de">kontakt@eduleo.de</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">
+        <img src="assets/images/logo.png" alt="EDULEO">
+      </a>
+      <nav class="footer-links">
+        <a href="index.html#philosophie">Philosophie</a>
+        <a href="index.html#angebote">Angebot</a>
+        <a href="freebies.html">Freebies</a>
+        <a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="index.html#ueber-uns">Über uns</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <nav class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="widerruf.html">Widerruf</a>
+        <a href="agb.html">AGB</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      © 2026 EDULEO – Klumper &amp; Flunkert GbR &nbsp;·&nbsp; Vorschule neu gedacht
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  document.getElementById('widerruf-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const art      = document.getElementById('wf-art').value;
+    const produkt  = document.getElementById('wf-produkt').value;
+    const kaufDatum = document.getElementById('wf-datum-kauf').value;
+    const name     = document.getElementById('wf-name').value;
+    const email    = document.getElementById('wf-email').value;
+    const anschrift = document.getElementById('wf-anschrift').value;
+    const hinweis  = document.getElementById('wf-hinweis').value;
+
+    const betreff = encodeURIComponent('Widerruf – ' + produkt);
+    const body = encodeURIComponent(
+      'Hiermit widerrufe ich den von mir abgeschlossenen Vertrag:\n\n' +
+      'Art der Leistung: ' + art + '\n' +
+      'Produkt / Termin: ' + produkt + '\n' +
+      'Bestellt / gebucht am: ' + kaufDatum + '\n' +
+      'Name: ' + name + '\n' +
+      'E-Mail: ' + email + '\n' +
+      'Anschrift: ' + anschrift + '\n' +
+      (hinweis ? 'Weitere Hinweise: ' + hinweis + '\n' : '') +
+      '\nDatum des Widerrufs: ' + new Date().toLocaleDateString('de-DE')
+    );
+
+    window.location.href = 'mailto:kontakt@eduleo.de?subject=' + betreff + '&body=' + body;
+
+    document.getElementById('widerruf-form').style.display = 'none';
+    document.getElementById('wf-success').style.display = 'block';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDULEO – Vorschule neu gedacht | Schulstart ohne Druck</title>
+  <meta name="description" content="EDULEO begleitet Eltern von Vorschulkindern durch das letzte Kitajahr – entspannt, alltagsnah und ohne Druck. Jetzt Vorschul-Check und Vorschul-Guide entdecken.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .team-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+    .credential-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--turquoise-light);
+      color: var(--turquoise-dark);
+      border-radius: 100px;
+      padding: 4px 12px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="EDULEO – Startseite">
+        <img src="assets/images/logo.png" alt="EDULEO – Vorschule neu gedacht">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#philosophie">Philosophie</a></li>
+        <li><a href="#bausteine">Konzept</a></li>
+        <li><a href="#angebote">Angebot</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#angebote" class="btn btn-primary">Jetzt entdecken</a>
+      </div>
+      <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ───────────────────────────────── -->
+<div class="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+  <a href="#philosophie">Philosophie</a>
+  <a href="#bausteine">Konzept</a>
+  <a href="#angebote">Angebot</a>
+  <a href="freebies.html">Freebies</a>
+  <a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+  <a href="#ueber-uns">Über uns</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#angebote" class="btn btn-primary">Jetzt entdecken</a>
+</div>
+
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge badge-turquoise">✦ Für Eltern im letzten Kitajahr</span>
+        </div>
+        <h1 class="hero-title">
+          Schulstart<br>
+          <span>ohne Druck.</span>
+        </h1>
+        <p class="hero-subtitle">Was dein Kind wirklich braucht.</p>
+        <p class="hero-text">
+          Wir begleiten Eltern von Vorschulkindern durch das letzte Kitajahr –
+          entspannt, fundiert und ganz alltagsnah. Damit du deinem Kind den besten
+          Start schenken kannst, ohne Stress und ohne schlechtes Gewissen.
+        </p>
+        <div class="hero-actions">
+          <a href="#angebote" class="btn btn-primary">Unser Angebot entdecken</a>
+          <a href="#philosophie" class="btn btn-secondary">Mehr erfahren</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span class="hero-trust-dot"></span>
+            <span>Entwicklung ist kein Wettlauf</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-dot"></span>
+            <span>Du machst schon viel richtig</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-deco-bg"></div>
+        <img src="assets/images/leo-hero.png" alt="Leo, das EDULEO-Maskottchen mit Schultüte" class="hero-leo">
+        <span class="leo-dot leo-dot-1"></span>
+        <span class="leo-dot leo-dot-2"></span>
+        <span class="leo-dot leo-dot-3"></span>
+        <span class="leo-dot leo-dot-4"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PAIN POINTS ───────────────────────────────── -->
+<section class="pain" id="pain" aria-label="Typische Elternsorgen">
+  <div class="container">
+    <div class="pain-header fade-in">
+      <span class="section-label">Du bist nicht allein</span>
+      <h2>Kennst du diese Gedanken?</h2>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card fade-in">
+        <div class="pain-card-icon">😰</div>
+        <p>„Ist mein Kind eigentlich bereit für die Schule?"</p>
+      </div>
+      <div class="pain-card fade-in">
+        <div class="pain-card-icon">🥺</div>
+        <p>„Reicht das aus, was wir zu Hause machen?"</p>
+      </div>
+      <div class="pain-card fade-in">
+        <div class="pain-card-icon">😬</div>
+        <p>„Muss mein Kind schon lesen oder schreiben können?"</p>
+      </div>
+      <div class="pain-card fade-in">
+        <div class="pain-card-icon">😣</div>
+        <p>„Wie fördere ich mein Kind, ohne Druck aufzubauen?"</p>
+      </div>
+      <div class="pain-card fade-in">
+        <div class="pain-card-icon">😔</div>
+        <p>„Die anderen Kinder scheinen so viel weiter zu sein."</p>
+      </div>
+      <div class="pain-card fade-in">
+        <div class="pain-card-icon">😩</div>
+        <p>„Ich will nicht, dass der Schulstart zur Belastung wird."</p>
+      </div>
+    </div>
+
+    <div class="pain-cta-wrap fade-in">
+      <div class="pain-arrows" aria-hidden="true">
+        <span class="pain-arrow">↓</span>
+        <span class="pain-arrow">↓</span>
+        <span class="pain-arrow">↓</span>
+      </div>
+      <div class="pain-cta">
+        <h3>Das muss nicht so sein.</h3>
+        <p>
+          Du machst schon viel richtig. Wir zeigen dir, worauf es wirklich ankommt
+          und wie du dein Kind sicher und entspannt in die Schule begleiten kannst.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ZAHLEN ────────────────────────────────────── -->
+<section class="zahlen" aria-label="EDULEO in Zahlen">
+  <div class="container">
+    <div class="zahlen-grid">
+      <div class="zahl-item fade-in">
+        <div class="zahl-number" id="count-familien">0+</div>
+        <div class="zahl-label">Familien &amp; Kinder<br>bereits begleitet</div>
+      </div>
+      <div class="zahl-item fade-in">
+        <div class="zahl-number">5</div>
+        <div class="zahl-label">Bausteine der<br>echten Schulreife</div>
+      </div>
+      <div class="zahl-item fade-in">
+        <div class="zahl-number">1</div>
+        <div class="zahl-label">Jahr, das alles<br>verändern kann</div>
+      </div>
+      <div class="zahl-item fade-in">
+        <div class="zahl-number">0</div>
+        <div class="zahl-label">Arbeitsblätter<br>nötig</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHILOSOPHIE ───────────────────────────────── -->
+<section class="philosophie" id="philosophie" aria-label="Unsere Philosophie">
+  <div class="container">
+    <div class="philosophie-inner">
+
+      <div class="philosophie-content slide-left">
+        <span class="section-label">Unsere Philosophie</span>
+        <h2>Lernen passiert überall.</h2>
+        <p>
+          Vorschule findet nicht nur am Tisch statt. Kinder lernen am meisten
+          dort, wo sie sich wohlfühlen – im Alltag, in Bewegung, im Spiel.
+          Echte Schulreife entsteht nicht durch Arbeitsblätter, sondern durch
+          Sicherheit, Vertrauen und gelebte Erfahrungen.
+        </p>
+        <p>
+          Unsere Philosophie ist einfach: Kinder brauchen nicht mehr Druck,
+          nicht mehr Vergleiche, nicht mehr Lernhefte.
+          Sie brauchen Eltern, die entspannt und sicher begleiten.
+          Genau dabei helfen wir dir.
+        </p>
+        <div class="philosophie-quote">
+          <p>„Schulreife entsteht von innen.<br>Durch Sicherheit, durch Beziehung, durch Vertrauen."</p>
+        </div>
+      </div>
+
+      <div class="philosophie-visual slide-right">
+        <div class="moments-grid">
+          <div class="moment-card">
+            <span class="moment-icon">🛒</span>
+            <span>Beim Einkaufen</span>
+          </div>
+          <div class="moment-card">
+            <span class="moment-icon">🧁</span>
+            <span>Beim Backen</span>
+          </div>
+          <div class="moment-card">
+            <span class="moment-icon">🎮</span>
+            <span>Beim Spielen</span>
+          </div>
+          <div class="moment-card">
+            <span class="moment-icon">📖</span>
+            <span>Beim Erzählen</span>
+          </div>
+          <div class="moment-card">
+            <span class="moment-icon">🏃</span>
+            <span>Beim Bewegen</span>
+          </div>
+          <div class="moment-card">
+            <span class="moment-icon">🏠</span>
+            <span>Im Familienalltag</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── BAUSTEINE ─────────────────────────────────── -->
+<section class="bausteine" id="bausteine" aria-label="Die 5 Bausteine der Schulreife">
+  <div class="container">
+    <div class="bausteine-header fade-in">
+      <span class="section-label">Das EDULEO-Konzept</span>
+      <h2>Was Kinder wirklich für die Schule brauchen.</h2>
+      <p>Nicht mehr Arbeitsblätter – sondern diese 5 Grundlagen.</p>
+    </div>
+    <div class="bausteine-grid">
+
+      <div class="baustein-card fade-in">
+        <div class="baustein-num">1</div>
+        <div class="baustein-icon">❤️</div>
+        <h3>Emotionale Stabilität</h3>
+        <p>Gefühle wahrnehmen, benennen und regulieren können – die Basis für alles.</p>
+      </div>
+
+      <div class="baustein-card fade-in">
+        <div class="baustein-num">2</div>
+        <div class="baustein-icon">🤝</div>
+        <h3>Soziale Kompetenz</h3>
+        <p>In der Gruppe ankommen, Konflikte lösen, Freundschaften schließen.</p>
+      </div>
+
+      <div class="baustein-card fade-in">
+        <div class="baustein-num">3</div>
+        <div class="baustein-icon">🎯</div>
+        <h3>Konzentration</h3>
+        <p>Sich auf eine Sache einlassen und dranbleiben können.</p>
+      </div>
+
+      <div class="baustein-card fade-in">
+        <div class="baustein-num">4</div>
+        <div class="baustein-icon">⭐</div>
+        <h3>Selbstständigkeit</h3>
+        <p>Alltagsaufgaben selbst meistern und Verantwortung übernehmen.</p>
+      </div>
+
+      <div class="baustein-card fade-in">
+        <div class="baustein-num">5</div>
+        <div class="baustein-icon">✏️</div>
+        <h3>(Fein-)motorische Grundlagen</h3>
+        <p>Grundlegende motorische Fähigkeiten für Schreiben und den Schulalltag.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ANGEBOTE ──────────────────────────────────── -->
+<section class="angebote" id="angebote" aria-label="Unser Angebot">
+  <div class="container">
+    <div class="angebote-header fade-in">
+      <span class="section-label">Unser Angebot</span>
+      <h2>Konkrete Unterstützung<br><span class="fuer-dich">FÜR DICH.</span></h2>
+      <p>Praxisnah, alltagstauglich und entwicklungspsychologisch fundiert.</p>
+    </div>
+
+    <div class="angebote-grid">
+
+      <div class="angebot-card fade-in">
+        <div class="angebot-icon">🔍</div>
+        <div class="pdf-badge">📄 PDF-Download</div>
+        <h3>Vorschul-Check</h3>
+        <p>Dein digitales Orientierungstool – damit du weißt, wo dein Kind gerade steht und was es braucht.</p>
+        <ul class="angebot-features">
+          <li>Einschätzung aller 5 Entwicklungsbereiche</li>
+          <li>Klare Orientierung statt Sorgen</li>
+          <li>Sofort digital verfügbar</li>
+        </ul>
+        <a href="vorschul-check.html" class="btn btn-secondary">Mehr erfahren →</a>
+      </div>
+
+      <div class="angebot-card fade-in">
+        <div class="angebot-icon">📖</div>
+        <div class="pdf-badge">📄 PDF-Download</div>
+        <h3>Vorschul-Guide</h3>
+        <p>Dein praxisorientierter Begleiter mit spielerischen Alltagsideen – einfach in deinen Familienalltag integrierbar.</p>
+        <ul class="angebot-features">
+          <li>Ideen für alle 5 Bausteine</li>
+          <li>Spielerisch und alltagstauglich</li>
+          <li>Keine Vorbereitung nötig</li>
+          <li>Entwicklungspsychologisch fundiert</li>
+        </ul>
+        <a href="vorschul-guide.html" class="btn btn-secondary">Mehr erfahren →</a>
+      </div>
+
+      <div class="angebot-card featured fade-in">
+        <div class="featured-label">⭐ Meistgewählt</div>
+        <div class="angebot-icon">🎁</div>
+        <div class="pdf-badge">📄 PDF-Download</div>
+        <h3>Bundle</h3>
+        <p>Vorschul-Check & Vorschul-Guide zusammen – dein komplettes Begleitpaket fürs Vorschuljahr.</p>
+        <ul class="angebot-features">
+          <li>Vorschul-Check inklusive</li>
+          <li>Vorschul-Guide inklusive</li>
+          <li>Günstiger als Einzelkauf</li>
+        </ul>
+        <a href="bundle.html" class="btn btn-primary">Mehr erfahren →</a>
+      </div>
+
+    </div>
+
+    <!-- 1:1 Coaching Highlight -->
+    <div class="coaching-highlight fade-in">
+      <div class="coaching-highlight-left">
+        <span class="badge badge-turquoise" style="margin-bottom: 16px;">⭐ Unser stärkstes Angebot</span>
+        <h3>1:1 Elterncoaching</h3>
+        <p>Individuelle Begleitung durchs letzte Kitajahr – persönlich, ganz auf dich und dein Kind abgestimmt. Mit Hannah &amp; Janine direkt.</p>
+        <ul class="coaching-highlights-list">
+          <li>Individuelle Analyse deines Kindes</li>
+          <li>Persönlicher Fahrplan für euren Alltag</li>
+          <li>Direkte Antworten auf deine Fragen</li>
+          <li>Kostenfreies Kennenlerngespräch (30 Min.)</li>
+        </ul>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+          <a href="coaching.html#kennenlernen" class="btn btn-primary">Kostenfrei kennenlernen →</a>
+          <a href="coaching.html" class="btn btn-secondary">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="coaching-highlight-right">
+        <div class="coaches-duo">
+          <div class="coach-duo-item">
+            <img src="assets/images/hannah.png" alt="Hannah Flunkert">
+            <span>Hannah</span>
+          </div>
+          <div class="coach-duo-item">
+            <img src="assets/images/janine.png" alt="Janine Klumper">
+            <span>Janine</span>
+          </div>
+        </div>
+        <p class="coaches-tagline">Mamas. Pädagoginnen. Begleiterinnen.</p>
+      </div>
+    </div>
+
+    <div class="angebote-coming">
+      <div class="coming-card fade-in">
+        <div class="coming-icon">🎥</div>
+        <div>
+          <h4>Aufgezeichnete Elternabende</h4>
+          <p>Fundiertes Wissen on demand – flexibel, wann es dir passt.</p>
+          <span class="badge badge-coral">Bald verfügbar</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── ÜBER UNS ──────────────────────────────────── -->
+<section class="ueber-uns" id="ueber-uns" aria-label="Über uns">
+  <div class="container">
+    <div class="ueber-uns-header fade-in">
+      <span class="section-label">Hinter EDULEO</span>
+      <h2>Wir sind Hannah &amp; Janine.</h2>
+      <p>Mamas. Pädagoginnen. Begleiterinnen.</p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card slide-left">
+        <img src="assets/images/hannah.png" alt="Hannah Flunkert, Gründerin von EDULEO" class="team-photo">
+        <div class="team-info">
+          <h3>Hannah Flunkert</h3>
+          <span class="team-role">Psychologische Beraterin &amp; Gründerin</span>
+          <div class="team-credentials">
+            <span class="credential-tag">B.Sc. Psychologie</span>
+            <span class="credential-tag">Kinderyogalehrerin</span>
+            <span class="credential-tag">Lernbegleiterin</span>
+          </div>
+          <p>
+            Als psychologische Beraterin mit Schwerpunkt auf kindlicher Entwicklung und Gesundheit
+            kenne ich beide Seiten: die Sorgen, das stille Vergleichen – und die Erleichterung,
+            wenn man weiß, dass das eigene Kind auf dem richtigen Weg ist. Mein Psychologiestudium,
+            meine Erfahrung in Kitas, in einer therapeutischen Einrichtung und als Lernbegleiterin
+            für Vorschul- und Grundschulkinder fließen in jedes EDULEO-Angebot ein.
+            Fundiert, ehrlich und ganz nah am Familienalltag.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-card slide-right">
+        <img src="assets/images/janine.png" alt="Janine Klumper, Gründerin von EDULEO" class="team-photo">
+        <div class="team-info">
+          <h3>Janine Klumper</h3>
+          <span class="team-role">Bildungswissenschaftlerin &amp; Gründerin</span>
+          <div class="team-credentials">
+            <span class="credential-tag">B.A. Bildungs- &amp; Erziehungswissenschaften</span>
+            <span class="credential-tag">Kinderyogalehrerin</span>
+            <span class="credential-tag">Frühförderfachkraft</span>
+          </div>
+          <p>
+            Mit zwei pädagogischen Abschlüssen, einer Ausbildung zur Kinderyogalehrerin und
+            über zwei Jahren Erfahrung in der transdisziplinären Frühförderung – ich habe Kinder
+            von 0 bis 6 Jahren begleitet, Einrichtungen beraten und Fachkräfte weitergebildet.
+            Ich weiß genau, was Kinder in dieser sensiblen Phase wirklich brauchen, und genau das
+            fließt in jedes EDULEO-Produkt ein: ganzheitlich, praxisnah und mit echtem Gespür
+            für das, was zählt.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ueber-uns-statement fade-in">
+      <h3>Unser Versprechen an dich.</h3>
+      <p>
+        Wir verkaufen keine Angst. Wir geben dir Orientierung, Sicherheit und
+        konkrete Unterstützung – damit das letzte Kitajahr für dich und dein Kind
+        leicht, schön und unvergesslich wird.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── KONTAKT ───────────────────────────────────── -->
+<section class="kontakt" id="kontakt" aria-label="Kontakt">
+  <div class="container">
+    <div class="kontakt-inner">
+
+      <div class="kontakt-info fade-in">
+        <span class="section-label" style="color: rgba(255,255,255,0.7)">Meld dich bei uns</span>
+        <h2>Wir sind für dich da.</h2>
+        <p>
+          Du hast Fragen, möchtest mehr über unser Angebot erfahren oder einfach
+          wissen, ob EDULEO das Richtige für dich ist? Schreib uns einfach.
+        </p>
+        <div class="kontakt-links">
+          <a href="mailto:kontakt@eduleo.de" class="kontakt-link">
+            <div class="kontakt-link-icon">✉️</div>
+            <span>kontakt@eduleo.de</span>
+          </a>
+          <a href="https://www.instagram.com/eduleo.vorschule" target="_blank" rel="noopener noreferrer" class="kontakt-link">
+            <div class="kontakt-link-icon leo-icon">
+              <img src="assets/images/leo-instagram.jpg" alt="Leo">
+            </div>
+            <span>@eduleo.vorschule</span>
+          </a>
+          <a href="https://de.pinterest.com/EduleoBerlin/" target="_blank" rel="noopener noreferrer" class="kontakt-link">
+            <div class="kontakt-link-icon" style="background:#E60023;display:flex;align-items:center;justify-content:center;border-radius:50%;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="white" xmlns="http://www.w3.org/2000/svg" aria-label="Pinterest">
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+              </svg>
+            </div>
+            <span>EDULEO auf Pinterest</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="kontakt-form-wrap fade-in">
+        <div class="kontakt-form">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Dein Name</label>
+              <input type="text" id="name" name="name" placeholder="Wie heißt du?" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Deine E-Mail-Adresse</label>
+              <input type="email" id="email" name="email" placeholder="deine@email.de" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="message">Deine Nachricht</label>
+              <textarea id="message" name="message" placeholder="Wie können wir dir helfen?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Nachricht senden ✉️</button>
+          </form>
+          <div id="form-success" class="form-success">
+            <div class="success-icon">🦁</div>
+            <h3>Danke für deine Nachricht!</h3>
+            <p>Wir melden uns so schnell wie möglich bei dir. Bis dahin – du machst das großartig! 💛</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ────────────────────────────────────── -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo" aria-label="EDULEO – nach oben scrollen">
+        <img src="assets/images/logo.png" alt="EDULEO">
+      </a>
+      <nav class="footer-links" aria-label="Footer Navigation">
+        <a href="#philosophie">Philosophie</a>
+        <a href="#angebote">Angebot</a>
+        <a href="freebies.html">Freebies</a>
+        <a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <nav class="footer-links" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="widerruf.html">Widerruf</a>
+        <a href="agb.html">AGB</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      © 2026 EDULEO – Klumper &amp; Flunkert GbR &nbsp;·&nbsp; Vorschule neu gedacht
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

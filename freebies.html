@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freebies – EDULEO | Kostenlose Downloads für Vorschuleltern</title>
+  <meta name="description" content="Kostenlose Downloads von EDULEO – für Eltern von Vorschulkindern. Jetzt gratis herunterladen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .freebies-hero {
+      background: var(--turquoise-light);
+      padding: calc(var(--nav-h) + 56px) 0 64px;
+      text-align: center;
+    }
+    .freebies-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px; }
+    .freebies-hero p { font-size: 1.1rem; color: var(--text); max-width: 560px; margin: 0 auto; }
+
+    .freebies-section { padding: 80px 0; }
+
+    .freebie-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 40px; margin-top: 56px;
+    }
+    .freebie-card {
+      background: white; border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md); overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .freebie-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .freebie-img {
+      width: 100%; aspect-ratio: 1; object-fit: cover; display: block;
+    }
+    .freebie-body { padding: 32px; }
+    .freebie-body h2 { font-size: 1.4rem; margin-bottom: 10px; }
+    .freebie-body p { font-size: 0.97rem; color: var(--text); margin-bottom: 24px; line-height: 1.7; }
+    .freebie-meta {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+
+    .cta-banner {
+      background: var(--dark); border-radius: var(--radius-xl);
+      padding: 56px 48px; text-align: center; margin-top: 64px;
+    }
+    .cta-banner h2 { color: white; margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,.75); font-size: 1.02rem; max-width: 520px; margin: 0 auto 28px; }
+    .cta-banner .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      .freebie-grid { grid-template-columns: 1fr; }
+      .cta-banner { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="EDULEO"></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#philosophie">Philosophie</a></li>
+        <li><a href="index.html#bausteine">Konzept</a></li>
+        <li><a href="index.html#angebote">Angebot</a></li>
+        <li><a href="freebies.html" style="color: var(--turquoise);">Freebies</a></li>
+        <li><a href="https://www.eduleo.de/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="index.html#ueber-uns">Über uns</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta"><a href="index.html#angebote" class="btn btn-primary">Zum Angebot</a></div>
+      <button class="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#philosophie">Philosophie</a>
+  <a href="index.html#angebote">Angebot</a>
+  <a href="freebies.html">Freebies</a>
+  <a href="index.html#ueber-uns">Über uns</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="index.html#angebote" class="btn btn-primary">Zum Angebot</a>
+</div>
+
+<!-- HERO -->
+<div class="freebies-hero">
+  <div class="container">
+    <span class="section-label">100% kostenlos</span>
+    <h1>Freebies für dich.</h1>
+    <p>Kleine Geschenke von uns an dich – einfach herunterladen und direkt nutzen.</p>
+  </div>
+</div>
+
+<!-- FREEBIES -->
+<section class="freebies-section">
+  <div class="container">
+
+    <div class="freebie-grid">
+
+      <!-- Freebie 1: Motivationsplakat -->
+      <div class="freebie-card fade-in">
+        <img src="assets/images/freebie-poster.png" alt="Motivationsplakat für Kinder – EDULEO Freebie" class="freebie-img">
+        <div class="freebie-body">
+          <div class="freebie-meta">
+            <span class="badge badge-turquoise">🎁 Kostenlos</span>
+            <span class="badge" style="background: var(--off-white); color: var(--text-light);">📄 PDF</span>
+          </div>
+          <h2>Motivationsplakat für dein Kind</h2>
+          <p>Ein buntes Poster zum Ausdrucken mit Stärkungs-Sätzen für dein Vorschulkind: „Ich bin mutig. Ich bin stark. Ich schaffe alles was ich mag!" – ideal fürs Kinderzimmer.</p>
+          <a href="assets/freebie-affirmationsposter.pdf" download="EDULEO-Affirmationsposter.pdf" class="btn btn-primary" style="width: 100%;">Jetzt kostenlos herunterladen →</a>
+        </div>
+      </div>
+
+      <!-- Freebie 2: Gesprächs-PDF -->
+      <div class="freebie-card fade-in">
+        <img src="assets/images/freebie-tablet.png" alt="So kommt dein Vorschulkind ins Erzählen – EDULEO Freebie" class="freebie-img">
+        <div class="freebie-body">
+          <div class="freebie-meta">
+            <span class="badge badge-turquoise">🎁 Kostenlos</span>
+            <span class="badge" style="background: var(--off-white); color: var(--text-light);">📄 PDF</span>
+          </div>
+          <h2>So kommt dein Vorschulkind wirklich ins Erzählen</h2>
+          <p>Du weißt nie was dein Kind in der Kita erlebt? Dieses PDF zeigt dir, welche Fragen wirklich funktionieren – und wie du echte Gespräche mit deinem Kind führst.</p>
+          <a href="assets/freebie-gespraeche.pdf" download="EDULEO-So-kommt-dein-Kind-ins-Erzählen.pdf" class="btn btn-primary" style="width: 100%;">Jetzt kostenlos herunterladen →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA zu den Produkten -->
+    <div class="cta-banner fade-in">
+      <h2>Bereit für mehr?</h2>
+      <p>Wenn dir die Freebies gefallen, wirst du unsere bezahlten Produkte lieben. Konkret, alltagsnah und entwicklungspsychologisch fundiert.</p>
+      <div class="btn-row">
+        <a href="vorschul-check.html" class="btn btn-secondary" style="color: white; border-color: rgba(255,255,255,.3);">Vorschul-Check – 19 €</a>
+        <a href="vorschul-guide.html" class="btn btn-secondary" style="color: white; border-color: rgba(255,255,255,.3);">Vorschul-Guide – 39 €</a>
+        <a href="bundle.html" class="btn btn-primary">Bundle – 49 € ⭐</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><img src="assets/images/logo.png" alt="EDULEO"></a>
+      <nav class="footer-links">
+        <a href="index.html#angebote">Angebot</a>
+        <a href="freebies.html">Freebies</a>
+        <a href="index.html#ueber-uns">Über uns</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <nav class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="widerruf.html">Widerruf</a>
+        <a href="agb.html">AGB</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2026 EDULEO – Klumper &amp; Flunkert GbR · Vorschule neu gedacht</div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

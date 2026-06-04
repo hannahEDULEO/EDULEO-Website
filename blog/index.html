@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – EDULEO | Wissen rund um die Vorschulzeit</title>
+  <meta name="description" content="Entwicklungspsychologisch fundierte Artikel rund um Schulreife, Vorschulzeit und entspannten Schulstart – von Hannah & Janine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .blog-hero {
+      background: var(--turquoise-light);
+      padding: calc(var(--nav-h) + 56px) 0 56px;
+    }
+    .blog-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 8px; }
+    .blog-hero p { color: var(--text-light); font-size: 1rem; }
+
+    .blog-grid-section { padding: 72px 0 96px; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .blog-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition), transform var(--transition);
+      border: 1.5px solid var(--border);
+    }
+    .blog-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .blog-card-color {
+      height: 8px;
+    }
+    .blog-card:nth-child(1) .blog-card-color { background: var(--turquoise); }
+    .blog-card:nth-child(2) .blog-card-color { background: var(--yellow); }
+    .blog-card:nth-child(3) .blog-card-color { background: var(--coral); }
+    .blog-card:nth-child(4) .blog-card-color { background: var(--turquoise); }
+    .blog-card:nth-child(5) .blog-card-color { background: var(--yellow); }
+
+    .blog-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-date {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .blog-card h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .blog-card p {
+      font-size: 0.93rem;
+      color: var(--text);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .blog-card .btn {
+      align-self: flex-start;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="EDULEO – Startseite">
+        <img src="../assets/images/logo.png" alt="EDULEO – Vorschule neu gedacht">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html#philosophie">Philosophie</a></li>
+        <li><a href="../index.html#bausteine">Konzept</a></li>
+        <li><a href="../index.html#angebote">Angebot</a></li>
+        <li><a href="../freebies.html">Freebies</a></li>
+        <li><a href="../blog/" aria-current="page">Blog</a></li>
+        <li><a href="../index.html#ueber-uns">Über uns</a></li>
+        <li><a href="../index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#angebote" class="btn btn-primary">Jetzt entdecken</a>
+      </div>
+      <button class="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" role="navigation">
+  <a href="../index.html#philosophie">Philosophie</a>
+  <a href="../index.html#bausteine">Konzept</a>
+  <a href="../index.html#angebote">Angebot</a>
+  <a href="../freebies.html">Freebies</a>
+  <a href="../blog/">Blog</a>
+  <a href="../index.html#ueber-uns">Über uns</a>
+  <a href="../index.html#kontakt">Kontakt</a>
+  <a href="../index.html#angebote" class="btn btn-primary">Jetzt entdecken</a>
+</div>
+
+<div class="blog-hero">
+  <div class="container">
+    <span class="section-label">Von Hannah &amp; Janine</span>
+    <h1>Unser Blog</h1>
+    <p>Wissen rund um Schulreife, Vorschulzeit und entspannten Schulstart.</p>
+  </div>
+</div>
+
+<section class="blog-grid-section">
+  <div class="container">
+    <div class="blog-grid">
+
+      <div class="blog-card fade-in">
+        <div class="blog-card-color"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">26. März 2026</div>
+          <h2>Was „bereit für die Schule" wirklich bedeutet (und was nicht)</h2>
+          <p>Ist dein Kind bereit für die Schule? Die Antwort überrascht viele Eltern – denn echte Schulreife hat wenig mit Zahlen und Buchstaben zu tun.</p>
+          <a href="../bereit-fuer-die-schule/" class="btn btn-secondary">Weiterlesen →</a>
+        </div>
+      </div>
+
+      <div class="blog-card fade-in">
+        <div class="blog-card-color"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">6. April 2026</div>
+          <h2>Was habe ich eigentlich schon gelernt?</h2>
+          <p>Eine einfache Übung, die deinem Kind zeigt, wie viel es schon kann – und dir als Elternteil die Gewissheit gibt, dass ihr auf dem richtigen Weg seid.</p>
+          <a href="../was-habe-ich-schon-gelernt/" class="btn btn-secondary">Weiterlesen →</a>
+        </div>
+      </div>
+
+      <div class="blog-card fade-in">
+        <div class="blog-card-color"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">20. April 2026</div>
+          <h2>Schulstart ist kein Wettbewerb – und dein Kind liegt nicht zurück</h2>
+          <p>Dein Kind entwickelt sich in seinem ganz eigenen Tempo. Warum der Vergleich mit anderen Kindern mehr schadet als hilft – und was wirklich zählt.</p>
+          <a href="../schulstart-ist-kein-wettbewerb/" class="btn btn-secondary">Weiterlesen →</a>
+        </div>
+      </div>
+
+      <div class="blog-card fade-in">
+        <div class="blog-card-color"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">4. Mai 2026</div>
+          <h2>Ich will die Vorschulzeit genießen und nicht durcharbeiten</h2>
+          <p>Du musst dein Kind nicht pushen. Du darfst es begleiten. Warum entspannte Eltern ihren Kindern den besten Start schenken – ganz ohne Druck.</p>
+          <a href="../vorschulzeit-geniessen/" class="btn btn-secondary">Weiterlesen →</a>
+        </div>
+      </div>
+
+      <div class="blog-card fade-in">
+        <div class="blog-card-color"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">18. Mai 2026</div>
+          <h2>Allein arbeiten oder im Team? So bereitest du dein Kind auf beides vor</h2>
+          <p>In der Schule braucht dein Kind beides: die Fähigkeit, alleine zu arbeiten und sich in eine Gruppe einzufinden. So förderst du beides spielerisch im Alltag.</p>
+          <a href="../allein-arbeiten-oder-im-team/" class="btn btn-secondary">Weiterlesen →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo"><img src="../assets/images/logo.png" alt="EDULEO"></a>
+      <nav class="footer-links">
+        <a href="../index.html#philosophie">Philosophie</a>
+        <a href="../index.html#angebote">Angebot</a>
+        <a href="../freebies.html">Freebies</a>
+        <a href="../blog/">Blog</a>
+        <a href="../index.html#ueber-uns">Über uns</a>
+        <a href="../index.html#kontakt">Kontakt</a>
+      </nav>
+      <nav class="footer-links">
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="../widerruf.html">Widerruf</a>
+        <a href="../agb.html">AGB</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2026 EDULEO – Klumper &amp; Flunkert GbR &nbsp;·&nbsp; Vorschule neu gedacht</div>
+  </div>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>
