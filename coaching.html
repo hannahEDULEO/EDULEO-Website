@@ -87,6 +87,14 @@
     .reassurance { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 24px; }
     .reassurance-item { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: rgba(255,255,255,.65); font-weight: 600; }
 
+    .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-question { font-size: 1rem; font-weight: 700; color: var(--dark); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--turquoise); flex-shrink: 0; transition: transform .2s ease; }
+    details[open] .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { padding-top: 12px; font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+
     @media (max-width: 768px) {
       .includes-grid { grid-template-columns: 1fr; }
       .fuer-wen { grid-template-columns: 1fr; }
@@ -225,6 +233,38 @@
       <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>dir wünschst, dass jemand wirklich auf euch eingeht</p></div>
       <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>Sicherheit für dich als Elternteil suchst</p></div>
       <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>einfach mal alles loswerden und gehört werden möchtest</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-light">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;" class="fade-in">
+      <span class="section-label">FAQ</span>
+      <h2>Häufige Fragen.</h2>
+      <div style="margin-top:32px;">
+        <details class="faq-item">
+          <summary class="faq-question">Wie läuft das Kennenlerngespräch ab?</summary>
+          <div class="faq-answer">Das kostenlose 15-minütige Kennenlerngespräch findet per Videocall statt. Wir lernen euch kennen, hören euch zu und schauen gemeinsam ob das Coaching passt.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Wann finden die Sitzungen statt?</summary>
+          <div class="faq-answer">Die 5 Sitzungen à 45 Minuten terminieren wir flexibel mit dir — bequem von zuhause per Videocall.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Für welches Alter ist das Coaching geeignet?</summary>
+          <div class="faq-answer">Das Coaching richtet sich an Eltern von Kindern im letzten Kitajahr.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Was bekomme ich konkret für die 650 €?</summary>
+          <div class="faq-answer">Du bekommst 5 persönliche Online-Sitzungen à 45 Minuten, nach jedem Termin ein liebevoll gestaltetes PDF-Paket mit konkreten Impulsen, dazu regelmäßige WhatsApp-Sprachmemos zwischen den Terminen — und das alles komplett auf euch und euer Kind zugeschnitten. Kein Standardprogramm, sondern echte individuelle Begleitung.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Was wenn ich unsicher bin ob sich das lohnt?</summary>
+          <div class="faq-answer">Genau dafür gibt es unser kostenloses Kennenlerngespräch. 15 Minuten, kein Druck, keine Verpflichtung — wir schauen gemeinsam ob das Coaching zu euch passt. Erst wenn du das Gefühl hast, dass es stimmt, buchen wir.</div>
+        </details>
+      </div>
     </div>
   </div>
 </section>

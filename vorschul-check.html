@@ -78,6 +78,14 @@
     .fuer-wen-item .check { color: var(--turquoise); font-weight: 900; font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
     .fuer-wen-item p { font-size: 0.92rem; font-weight: 600; color: var(--dark); margin: 0; line-height: 1.5; }
 
+    .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-question { font-size: 1rem; font-weight: 700; color: var(--dark); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--turquoise); flex-shrink: 0; transition: transform .2s ease; }
+    details[open] .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { padding-top: 12px; font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+
     .cta-section {
       background: var(--dark); padding: 80px 0; text-align: center;
     }
@@ -220,6 +228,34 @@
       <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>das letzte Kitajahr entspannt angehen willst</p></div>
       <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>einen ruhigen, ehrlichen Blick auf dein Kind suchst</p></div>
       <div class="fuer-wen-item fade-in"><span class="check">✓</span><p>Sicherheit statt Sorgen willst</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-white">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;" class="fade-in">
+      <span class="section-label">FAQ</span>
+      <h2>Häufige Fragen.</h2>
+      <div style="margin-top:32px;">
+        <details class="faq-item">
+          <summary class="faq-question">Für welches Alter ist der Check geeignet?</summary>
+          <div class="faq-answer">Der Vorschul-Check ist ideal für Kinder im letzten Kitajahr, also ca. 5–6 Jahre.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Brauche ich pädagogisches Vorwissen?</summary>
+          <div class="faq-answer">Nein — der Check ist bewusst so gestaltet, dass ihn alle Eltern ohne Vorkenntnisse verstehen und nutzen können.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Was bekomme ich nach dem Kauf?</summary>
+          <div class="faq-answer">Du erhältst sofort einen Download-Link per E-Mail. Das PDF kannst du direkt öffnen, ausdrucken oder auf dem Handy nutzen.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Was wenn mein Kind in einem Bereich Schwächen hat?</summary>
+          <div class="faq-answer">Zu jedem der 5 Bereiche gibt es konkrete Impulse, die du direkt im Alltag umsetzen kannst — ohne Druck, ohne extra Lernzeit.</div>
+        </details>
+      </div>
     </div>
   </div>
 </section>
