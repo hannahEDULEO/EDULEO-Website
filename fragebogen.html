@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welches Angebot passt zu dir? – EDULEO</title>
+  <meta name="description" content="Finde in 4 Fragen heraus, welches EDULEO-Angebot am besten zu dir und deinem Kind passt.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .quiz-hero {
+      min-height: 100vh;
+      padding: calc(var(--nav-h) + 48px) 0 80px;
+      background: linear-gradient(135deg, var(--turquoise-light) 0%, var(--yellow-light) 100%);
+      display: flex;
+      align-items: center;
+    }
+    .quiz-wrap { max-width: 680px; margin: 0 auto; }
+
+    /* Intro */
+    .quiz-intro { text-align: center; }
+
+    /* Progress */
+    .quiz-progress {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .quiz-progress-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.15);
+      transition: all .3s ease;
+    }
+    .quiz-progress-dot.active {
+      background: var(--turquoise);
+      transform: scale(1.4);
+    }
+    .quiz-progress-dot.done { background: var(--turquoise); }
+
+    /* Card */
+    .quiz-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      display: none;
+      animation: slideIn .3s ease;
+    }
+    .quiz-card.visible { display: block; }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .quiz-q-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--turquoise);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+    }
+    .quiz-q-text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    /* Options */
+    .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      background: white;
+      text-align: left;
+      width: 100%;
+      font-family: inherit;
+      transition: all .2s ease;
+    }
+    .quiz-option:hover {
+      border-color: var(--turquoise);
+      background: var(--turquoise-light);
+      transform: translateX(4px);
+    }
+    .quiz-option-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--off-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+    .quiz-option-text {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.4;
+    }
+
+    /* Result */
+    .quiz-result-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      display: none;
+      animation: slideIn .4s ease;
+    }
+    .quiz-result-card.visible { display: block; }
+
+    .quiz-result-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--turquoise);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 6px;
+    }
+    .quiz-result-headline {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+    .quiz-result-img {
+      width: 160px;
+      height: auto;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      margin: 0 auto 24px;
+      display: block;
+    }
+    .quiz-result-coaches {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .quiz-result-coach-img {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: var(--shadow-sm);
+    }
+    .quiz-result-product {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .quiz-result-desc {
+      font-size: 0.95rem;
+      color: var(--text);
+      max-width: 460px;
+      margin: 0 auto 20px;
+      line-height: 1.7;
+    }
+    .quiz-result-price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 24px;
+      line-height: 1;
+    }
+    .quiz-result-price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-light);
+      display: block;
+      margin-top: 4px;
+    }
+    .quiz-restart {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      cursor: pointer;
+      text-decoration: underline;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+    .quiz-restart:hover { color: var(--turquoise); }
+
+    @media (max-width: 600px) {
+      .quiz-card, .quiz-result-card { padding: 28px 20px; }
+      .quiz-q-text { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="EDULEO"></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#philosophie">Philosophie</a></li>
+        <li><a href="index.html#bausteine">Konzept</a></li>
+        <li><a href="index.html#angebote">Angebot</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="index.html#ueber-uns">Über uns</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta"><a href="index.html#angebote" class="btn btn-primary">Angebote</a></div>
+      <button class="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#philosophie">Philosophie</a>
+  <a href="index.html#angebote">Angebot</a>
+  <a href="freebies.html">Freebies</a>
+  <a href="index.html#ueber-uns">Über uns</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="index.html#angebote" class="btn btn-primary">Angebote</a>
+</div>
+
+<section class="quiz-hero">
+  <div class="container">
+    <div class="quiz-wrap">
+
+      <!-- Intro -->
+      <div id="quiz-intro" class="quiz-intro fade-in">
+        <span class="badge badge-turquoise" style="margin-bottom:20px;display:inline-flex;">✨ Dein persönlicher Produkt-Finder</span>
+        <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:16px;">Welches Angebot<br>passt zu dir?</h1>
+        <p style="font-size:1.1rem;color:var(--text);max-width:480px;margin:0 auto 32px;line-height:1.6;">Beantworte 4 kurze Fragen – wir zeigen dir, welches EDULEO-Angebot am besten zu dir und deinem Kind passt.</p>
+        <button class="btn btn-primary" style="font-size:1.05rem;padding:16px 36px;" onclick="startQuiz()">Jetzt starten →</button>
+      </div>
+
+      <!-- Quiz -->
+      <div id="quiz-main" style="display:none;">
+
+        <div class="quiz-progress" id="quiz-progress">
+          <div class="quiz-progress-dot active" id="dot-1"></div>
+          <div class="quiz-progress-dot" id="dot-2"></div>
+          <div class="quiz-progress-dot" id="dot-3"></div>
+          <div class="quiz-progress-dot" id="dot-4"></div>
+        </div>
+
+        <!-- Frage 1 -->
+        <div class="quiz-card visible" id="q1">
+          <div class="quiz-q-label">Frage 1 von 4</div>
+          <div class="quiz-q-text">Wie gut weißt du, wo dein Kind gerade entwicklungsmäßig steht?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="answer(1,'a')">
+              <div class="quiz-option-icon">🤔</div>
+              <div class="quiz-option-text">Ich bin ehrlich gesagt unsicher</div>
+            </button>
+            <button class="quiz-option" onclick="answer(1,'b')">
+              <div class="quiz-option-icon">💡</div>
+              <div class="quiz-option-text">Ich habe so eine grobe Ahnung</div>
+            </button>
+            <button class="quiz-option" onclick="answer(1,'c')">
+              <div class="quiz-option-icon">✅</div>
+              <div class="quiz-option-text">Ich kenne den Stand gut</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Frage 2 -->
+        <div class="quiz-card" id="q2">
+          <div class="quiz-q-label">Frage 2 von 4</div>
+          <div class="quiz-q-text">Was beschäftigt dich gerade am meisten?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="answer(2,'a')">
+              <div class="quiz-option-icon">💬</div>
+              <div class="quiz-option-text">Ich mache mir Sorgen und hätte gerne persönliche Antworten</div>
+            </button>
+            <button class="quiz-option" onclick="answer(2,'b')">
+              <div class="quiz-option-icon">🔍</div>
+              <div class="quiz-option-text">Ich will wissen ob mein Kind „schon weit genug" ist</div>
+            </button>
+            <button class="quiz-option" onclick="answer(2,'c')">
+              <div class="quiz-option-icon">🌱</div>
+              <div class="quiz-option-text">Ich suche konkrete Ideen für den Alltag</div>
+            </button>
+            <button class="quiz-option" onclick="answer(2,'d')">
+              <div class="quiz-option-icon">🗺️</div>
+              <div class="quiz-option-text">Ich will das Vorschuljahr von A bis Z gut begleiten</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Frage 3 -->
+        <div class="quiz-card" id="q3">
+          <div class="quiz-q-label">Frage 3 von 4</div>
+          <div class="quiz-q-text">Wie möchtest du am liebsten unterstützt werden?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="answer(3,'a')">
+              <div class="quiz-option-icon">📖</div>
+              <div class="quiz-option-text">Ich erarbeite mir Dinge lieber selbst</div>
+            </button>
+            <button class="quiz-option" onclick="answer(3,'b')">
+              <div class="quiz-option-icon">🤝</div>
+              <div class="quiz-option-text">Ich brauche persönlichen Austausch mit jemandem, der wirklich auf uns eingeht</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Frage 4 -->
+        <div class="quiz-card" id="q4">
+          <div class="quiz-q-label">Frage 4 von 4</div>
+          <div class="quiz-q-text">Wie viel Zeit willst du investieren?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="answer(4,'a')">
+              <div class="quiz-option-icon">⚡</div>
+              <div class="quiz-option-text">Ich will schnell einen Überblick — dann selbst umsetzen</div>
+            </button>
+            <button class="quiz-option" onclick="answer(4,'b')">
+              <div class="quiz-option-icon">📅</div>
+              <div class="quiz-option-text">Ich will das ganze Vorschuljahr aktiv begleiten</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ergebnis -->
+        <div class="quiz-result-card" id="quiz-result">
+          <div class="quiz-result-label">Unser Tipp für dich</div>
+          <div class="quiz-result-headline" id="result-headline"></div>
+          <div id="result-visual"></div>
+          <div class="quiz-result-product" id="result-product"></div>
+          <div class="quiz-result-desc" id="result-desc"></div>
+          <div class="quiz-result-price" id="result-price"></div>
+          <a id="result-cta" href="#" class="btn btn-primary" style="font-size:1.05rem;padding:16px 36px;"></a>
+          <br>
+          <button class="quiz-restart" onclick="restartQuiz()">↩ Nochmal von vorne</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><img src="assets/images/logo.png" alt="EDULEO"></a>
+      <nav class="footer-links">
+        <a href="index.html#angebote">Angebot</a>
+        <a href="freebies.html">Freebies</a>
+        <a href="index.html#ueber-uns">Über uns</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <nav class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="widerruf.html">Widerruf</a>
+        <a href="agb.html">AGB</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2026 EDULEO – Klumper &amp; Flunkert GbR · Vorschule neu gedacht</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  const answers = {};
+
+  const results = {
+    coaching: {
+      headline: 'Du brauchst persönliche Begleitung.',
+      visual: 'coaches',
+      product: '1:1 Elterncoaching',
+      desc: 'Individuelle Begleitung durchs letzte Kitajahr – 5 persönliche Online-Sitzungen, begleitende PDFs nach jedem Termin und WhatsApp-Sprachmemos. Ganz auf dich und dein Kind zugeschnitten.',
+      price: '650 €',
+      priceInfo: 'inkl. MwSt. · Komplettpaket · Kennenlerngespräch kostenlos',
+      ctaText: 'Kostenlos kennenlernen →',
+      ctaLink: 'coaching.html#kennenlernen',
+    },
+    check: {
+      headline: 'Starte mit einem klaren Überblick.',
+      visual: 'assets/images/vorschul-check.png',
+      product: 'Vorschul-Check',
+      desc: 'Erfahre, wo dein Kind in allen 5 Entwicklungsbereichen steht – ohne Druck, ohne Vergleiche. Mit konkreten Impulsen für jeden Bereich, die du sofort im Alltag umsetzen kannst.',
+      price: '19 €',
+      priceInfo: 'inkl. MwSt. · einmalig · sofort als PDF',
+      ctaText: 'Jetzt kaufen →',
+      ctaLink: 'vorschul-check.html',
+    },
+    guide: {
+      headline: 'Du weißt wo es steht – jetzt loslegen!',
+      visual: 'assets/images/vorschul-guide.png',
+      product: 'Vorschul-Guide',
+      desc: 'Konkrete, spielerische Alltagsideen für alle 5 Entwicklungsbereiche – die ihr einfach nebenbei umsetzt, ohne extra Lernzeit einplanen zu müssen.',
+      price: '39 €',
+      priceInfo: 'inkl. MwSt. · einmalig · sofort als PDF',
+      ctaText: 'Jetzt kaufen →',
+      ctaLink: 'vorschul-guide.html',
+    },
+    bundle: {
+      headline: 'Das komplette Paket ist genau dein Ding.',
+      visual: 'assets/images/bundle.png',
+      product: 'Bundle: Check + Guide',
+      desc: 'Erst verstehen wo dein Kind steht – dann das ganze Vorschuljahr aktiv begleiten. Beide PDFs zusammen, 9 € günstiger als der Einzelkauf.',
+      price: '49 €',
+      priceInfo: 'inkl. MwSt. · einmalig · 2× sofort als PDF · statt 58 €',
+      ctaText: 'Jetzt kaufen →',
+      ctaLink: 'bundle.html',
+    },
+  };
+
+  function startQuiz() {
+    document.getElementById('quiz-intro').style.display = 'none';
+    document.getElementById('quiz-main').style.display = 'block';
+  }
+
+  function answer(question, value) {
+    answers['q' + question] = value;
+
+    document.getElementById('q' + question).classList.remove('visible');
+    document.getElementById('dot-' + question).classList.remove('active');
+    document.getElementById('dot-' + question).classList.add('done');
+
+    // Coaching: Q3=b → direkt zum Ergebnis, Q4 überspringen
+    if (question === 3 && value === 'b') {
+      document.getElementById('quiz-progress').style.display = 'none';
+      showResult();
+      return;
+    }
+
+    if (question < 4) {
+      const next = question + 1;
+      document.getElementById('q' + next).classList.add('visible');
+      document.getElementById('dot-' + next).classList.add('active');
+    } else {
+      document.getElementById('quiz-progress').style.display = 'none';
+      showResult();
+    }
+  }
+
+  function calcResult() {
+    if (answers.q3 === 'b') return 'coaching';
+    if (answers.q4 === 'b') return 'bundle';
+    if (answers.q1 === 'a' || answers.q1 === 'b') return 'check';
+    return 'guide';
+  }
+
+  function showResult() {
+    const key = calcResult();
+    const r = results[key];
+
+    document.getElementById('result-headline').textContent = r.headline;
+    document.getElementById('result-product').textContent = r.product;
+    document.getElementById('result-desc').textContent = r.desc;
+    document.getElementById('result-price').innerHTML = r.price + '<span>' + r.priceInfo + '</span>';
+    document.getElementById('result-cta').textContent = r.ctaText;
+    document.getElementById('result-cta').href = r.ctaLink;
+
+    const visual = document.getElementById('result-visual');
+    if (r.visual === 'coaches') {
+      visual.innerHTML = '<div class="quiz-result-coaches"><img class="quiz-result-coach-img" src="assets/images/hannah.png" alt="Hannah"><img class="quiz-result-coach-img" src="assets/images/janine.png" alt="Janine"></div>';
+    } else {
+      visual.innerHTML = '<img class="quiz-result-img" src="' + r.visual + '" alt="' + r.product + '">';
+    }
+
+    document.getElementById('quiz-result').classList.add('visible');
+  }
+
+  function restartQuiz() {
+    Object.keys(answers).forEach(k => delete answers[k]);
+
+    document.getElementById('quiz-result').classList.remove('visible');
+    document.getElementById('quiz-progress').style.display = 'flex';
+
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById('q' + i).classList.remove('visible');
+      document.getElementById('dot-' + i).classList.remove('active', 'done');
+    }
+
+    document.getElementById('q1').classList.add('visible');
+    document.getElementById('dot-1').classList.add('active');
+  }
+</script>
+</body>
+</html>
