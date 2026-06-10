@@ -642,6 +642,11 @@ p { font-size: 1.05rem; line-height: 1.7; }
   .philosophie-inner { grid-template-columns: 1fr; gap: 44px; }
 
   .bausteine-grid { grid-template-columns: repeat(2, 1fr); }
+  .bausteine-grid .baustein-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: calc(50% - 9px);
+  }
 
   .angebote-grid { grid-template-columns: 1fr; max-width: 100%; }
   .coaching-highlight { grid-template-columns: 1fr; }
