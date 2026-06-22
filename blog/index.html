@@ -47,10 +47,18 @@
       flex-direction: column;
       transition: box-shadow var(--transition), transform var(--transition);
       border: 1.5px solid var(--border);
+      position: relative;
+      cursor: pointer;
     }
     .blog-card:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-4px);
+    }
+    .blog-card .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
     }
     .blog-card-color {
       height: 8px;
@@ -62,13 +70,28 @@
     .blog-card:nth-child(5) .blog-card-color { background: var(--yellow); }
 
     .blog-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
     .blog-card-date {
       font-size: 0.8rem;
       font-weight: 700;
       color: var(--text-light);
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+    }
+    .blog-card-read {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      background: var(--turquoise-light);
+      border-radius: 50px;
+      padding: 2px 10px;
+      font-weight: 600;
+      white-space: nowrap;
     }
     .blog-card h2 {
       font-size: 1.15rem;
@@ -146,7 +169,10 @@
         <div class="blog-card-color"></div>
         <img src="../assets/images/blog/blog-bereit-fuer-schule.png" alt="Was bereit für die Schule wirklich bedeutet" style="width:100%;display:block;">
         <div class="blog-card-body">
-          <div class="blog-card-date">26. März 2026</div>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">26. März 2026</span>
+            <span class="blog-card-read">6 Min. Lesezeit</span>
+          </div>
           <h2>Was „bereit für die Schule" wirklich bedeutet (und was nicht)</h2>
           <p>Ist dein Kind bereit für die Schule? Die Antwort überrascht viele Eltern – denn echte Schulreife hat wenig mit Zahlen und Buchstaben zu tun.</p>
           <a href="../bereit-fuer-die-schule/" class="btn btn-secondary">Weiterlesen →</a>
@@ -157,7 +183,10 @@
         <div class="blog-card-color"></div>
         <img src="../assets/images/blog/blog-was-habe-ich-gelernt.png" alt="Was habe ich eigentlich schon gelernt?" style="width:100%;display:block;">
         <div class="blog-card-body">
-          <div class="blog-card-date">6. April 2026</div>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">6. April 2026</span>
+            <span class="blog-card-read">4 Min. Lesezeit</span>
+          </div>
           <h2>Was habe ich eigentlich schon gelernt?</h2>
           <p>Eine einfache Übung, die deinem Kind zeigt, wie viel es schon kann – und dir als Elternteil die Gewissheit gibt, dass ihr auf dem richtigen Weg seid.</p>
           <a href="../was-habe-ich-schon-gelernt/" class="btn btn-secondary">Weiterlesen →</a>
@@ -168,7 +197,10 @@
         <div class="blog-card-color"></div>
         <img src="../assets/images/blog/blog-schulstart-wettbewerb.png" alt="Schulstart ist kein Wettbewerb" style="width:100%;display:block;">
         <div class="blog-card-body">
-          <div class="blog-card-date">20. April 2026</div>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">20. April 2026</span>
+            <span class="blog-card-read">5 Min. Lesezeit</span>
+          </div>
           <h2>Schulstart ist kein Wettbewerb – und dein Kind liegt nicht zurück</h2>
           <p>Dein Kind entwickelt sich in seinem ganz eigenen Tempo. Warum der Vergleich mit anderen Kindern mehr schadet als hilft – und was wirklich zählt.</p>
           <a href="../schulstart-ist-kein-wettbewerb/" class="btn btn-secondary">Weiterlesen →</a>
@@ -179,7 +211,10 @@
         <div class="blog-card-color"></div>
         <img src="../assets/images/blog/blog-vorschulzeit-geniessen.png" alt="Ich will die Vorschulzeit genießen" style="width:100%;display:block;">
         <div class="blog-card-body">
-          <div class="blog-card-date">4. Mai 2026</div>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">4. Mai 2026</span>
+            <span class="blog-card-read">4 Min. Lesezeit</span>
+          </div>
           <h2>Ich will die Vorschulzeit genießen und nicht durcharbeiten</h2>
           <p>Du musst dein Kind nicht pushen. Du darfst es begleiten. Warum entspannte Eltern ihren Kindern den besten Start schenken – ganz ohne Druck.</p>
           <a href="../vorschulzeit-geniessen/" class="btn btn-secondary">Weiterlesen →</a>
@@ -190,7 +225,10 @@
         <div class="blog-card-color"></div>
         <img src="../assets/images/blog/blog-allein-im-team.png" alt="Allein oder im Team?" style="width:100%;display:block;">
         <div class="blog-card-body">
-          <div class="blog-card-date">18. Mai 2026</div>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">18. Mai 2026</span>
+            <span class="blog-card-read">5 Min. Lesezeit</span>
+          </div>
           <h2>Allein arbeiten oder im Team? So bereitest du dein Kind auf beides vor</h2>
           <p>In der Schule braucht dein Kind beides: die Fähigkeit, alleine zu arbeiten und sich in eine Gruppe einzufinden. So förderst du beides spielerisch im Alltag.</p>
           <a href="../allein-arbeiten-oder-im-team/" class="btn btn-secondary">Weiterlesen →</a>
