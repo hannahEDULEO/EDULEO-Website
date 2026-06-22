@@ -48,6 +48,26 @@
     .article-authors-text strong { display: block; color: var(--dark); margin-bottom: 2px; }
     .article-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; flex-wrap: wrap; gap: 16px; }
     .article-featured-img { width: 100%; max-width: 560px; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
+
+    /* === Erweiterte Blogelemente === */
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
+    .stat-card { background: white; border: 2px solid var(--yellow); border-radius: var(--radius-lg); padding: 22px 16px; text-align: center; box-shadow: var(--shadow-sm); }
+    .stat-number { display: block; font-size: 2rem; font-weight: 900; color: var(--dark); line-height: 1.1; }
+    .stat-label { display: block; font-size: 0.78rem; color: var(--text-light); margin-top: 8px; line-height: 1.45; }
+    .kompetenz-table { width: 100%; border-collapse: collapse; margin: 32px 0; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: var(--radius-lg); }
+    .kompetenz-table th { padding: 14px 20px; font-weight: 800; font-size: 0.9rem; text-align: left; background: var(--yellow); color: var(--dark); }
+    .kompetenz-table td { padding: 12px 20px; border-bottom: 1px solid var(--border); font-size: 0.93rem; color: var(--text); line-height: 1.6; vertical-align: top; }
+    .kompetenz-table td:first-child { font-weight: 700; color: var(--dark); background: var(--yellow-light); white-space: nowrap; }
+    .kompetenz-table tr:last-child td { border-bottom: none; }
+    .info-box { background: var(--yellow-light); border-left: 4px solid var(--yellow); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 28px; margin: 32px 0; }
+    .info-box h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+    .info-box p { margin: 0; font-size: 0.95rem; }
+    .instagram-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, #fffbf0, #f0f9ff); border-radius: var(--radius-xl); border: 2px solid var(--yellow); text-align: center; }
+    .instagram-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .instagram-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
+    .instagram-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; transition: opacity 0.2s; }
+    .instagram-btn:hover { opacity: 0.88; }
+    @media (max-width: 620px) { .stat-grid { grid-template-columns: 1fr; } .kompetenz-table { display: block; overflow-x: auto; } }
   </style>
 </head>
 <body>
@@ -101,6 +121,21 @@
     <p>Atme einmal tief durch. Du bist hier richtig. Es geht nicht um frühes Lesen. Es geht um innere Stärke. Es geht nicht um möglichst viele Übungen. Es geht um Sicherheit. Schulreife entsteht von innen. Sie wächst durch Beziehung, durch Vertrauen, durch das Gefühl, getragen zu sein.</p>
     <p>Vielleicht spürst du dennoch diese innere Unruhe. Andere Kinder schreiben schon ihren Namen. Manche zählen scheinbar mühelos bis hundert. Und du fragst dich, ob du mehr tun solltest. Doch dein Kind braucht nicht mehr Druck. Es braucht dich als ruhigen Wegweiser. Als Stütze. Als sicheren Hafen in einer Zeit, in der sich vieles verändert. Schulstart ist kein Test. Er ist ein Entwicklungsschritt. Und Entwicklung ist kein Wettlauf.</p>
 
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-number">1,33</span>
+        <span class="stat-label">Effect Size von Selbstwirksamkeit auf Schulerfolg – einer der stärksten gemessenen Faktoren überhaupt (Hattie-Studie, 800+ Studien)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5 Min.</span>
+        <span class="stat-label">reicht diese Reflexionsübung pro Woche – und sie hat messbare positive Wirkung auf das Selbstbild deines Kindes</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">200+</span>
+        <span class="stat-label">Kompetenzen entwickelt ein Kind bis zum Schulstart – die meisten bleiben unbemerkt, weil sie selbstverständlich wirken</span>
+      </div>
+    </div>
+
     <h2>Die einfache Übung für mehr Stolz im letzten Kita Jahr</h2>
     <p>Inmitten all der Fragen gibt es eine kleine Übung, die so unscheinbar wirkt und doch eine große Kraft in sich trägt. Setz dich mit deinem Kind auf den Boden oder aufs Sofa. Ohne Ziel. Ohne Plan. Nur ihr zwei. Und dann frag ganz ruhig: Was hast du eigentlich schon alles gelernt?</p>
     <p>Vielleicht schaut dein Kind dich erst überrascht an. Vielleicht kommt ein schüchternes Weiß nicht. Und genau hier beginnt eure gemeinsame Entdeckungsreise.</p>
@@ -118,22 +153,69 @@
     <p>Während du das aussprichst, passiert etwas Wunderschönes. Dein Kind beginnt sich selbst mit anderen Augen zu sehen. Nicht als jemand, der noch etwas können muss, sondern als jemand, der schon unglaublich viel kann. Dieser ruhige, tiefe Stolz ist die Basis für Selbstbewusstsein. Und genau dieses Selbstbewusstsein trägt dein Kind durch den Übergang in die Grundschule.</p>
     <div class="article-quote">„Kompetenzen sind wichtiger als Arbeitsblätter. Du machst schon viel richtig. Vielleicht darf dieser Gedanke heute ein kleines Stück schwerer wiegen als all die Zweifel."</div>
 
+    <h2>Was dein Kind bis zum Schulstart schon alles kann</h2>
+    <p>Kinder im letzten Kita-Jahr bringen eine beeindruckende Fülle an Kompetenzen mit. Die meisten davon fallen kaum auf, weil sie so alltäglich geworden sind. Diese Tabelle macht sichtbar, was dein Kind in 5–6 Jahren entwickelt hat:</p>
+
+    <table class="kompetenz-table">
+      <thead>
+        <tr>
+          <th>Kompetenzbereich</th>
+          <th>Was dein Kind schon kann</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Emotional</td>
+          <td>Wut regulieren, Freude teilen, Enttäuschung aushalten, Empathie für andere zeigen</td>
+        </tr>
+        <tr>
+          <td>Sozial</td>
+          <td>Streit lösen, neue Kinder ansprechen, Gruppenregeln einhalten, um Hilfe bitten</td>
+        </tr>
+        <tr>
+          <td>Kognitiv</td>
+          <td>Geschichten nacherzählen, Muster erkennen, einfache Pläne machen, konzentriert spielen</td>
+        </tr>
+        <tr>
+          <td>Motorisch</td>
+          <td>Schuhe anziehen, Schere nutzen, klettern, Stift halten, kleine Gegenstände greifen</td>
+        </tr>
+        <tr>
+          <td>Sprachlich</td>
+          <td>Gefühle benennen, Wünsche formulieren, Fragen stellen, Witze verstehen</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h2>Orientierung statt Instagram Überforderung</h2>
     <p>Wir leben in einer Zeit, in der Vergleich nur einen Wisch entfernt ist. Vielleicht kennst du dieses Gefühl, wenn du durch Social Media scrollst und plötzlich denkst, dass andere Eltern scheinbar strukturierter, kreativer oder weiter sind. Vorschulboxen, Lernspiele, Wochenpläne. Alles wirkt so durchdacht und perfekt. Und dein ganz normaler Alltag fühlt sich im Vergleich plötzlich zu wenig an.</p>
     <p>Doch dein Kind braucht keine perfekt kuratierte Vorschulwelt. Es braucht Orientierung. Orientierung bedeutet, dass dein Kind weiß, woran es ist. Dass es Rituale gibt. Verlässliche Abläufe. Klare Worte. Es bedeutet, dass du Unsicherheiten ernst nimmst und Fragen nicht wegwischst, sondern begleitest.</p>
+
+    <div class="info-box">
+      <h3>Gut zu wissen: Was Forschung zur Selbstwirksamkeit sagt</h3>
+      <p>Kinder, denen regelmäßig gespiegelt wird, was sie schon können, zeigen laut Studien mehr Risikobereitschaft beim Lernen, mehr Ausdauer bei schwierigen Aufgaben und weniger Schulangst beim Übergang. Nicht die Leistung entscheidet – sondern das Vertrauen in die eigene Fähigkeit.</p>
+    </div>
+
     <p>In der Kita kann Orientierung ganz konkret gelingen, wenn Übergänge bewusst gestaltet werden. Sprecht zu Hause immer wieder ruhig über die Schule. Nicht dramatisch, sondern neugierig. Was stellst du dir vor? Worauf freust du dich? Gibt es etwas, das dich unsicher macht? Wenn dein Kind spürt, dass seine Gedanken Platz haben, entsteht Sicherheit.</p>
     <p>Auch Selbstständigkeit ist ein wichtiger Baustein für Schulreife. Und sie wächst nicht durch Druck, sondern durch Vertrauen. Lass dein Kind im Alltag Verantwortung übernehmen. Vielleicht darf es die Brotdose selbst packen oder kleine Entscheidungen treffen. Vielleicht darf es auch Fehler machen und erleben, dass die Welt trotzdem nicht untergeht. Du musst dein Kind nicht pushen. Du darfst es begleiten. Schritt für Schritt.</p>
-    <p>Ein weiterer wertvoller Impuls liegt im bewussten Blick auf Stärken. Wenn du mit den Erzieherinnen sprichst, frag nicht nur danach, ob dein Kind schon genug kann. Frag, wo es besonders stark ist. Wo es anderen hilft. Wo es Verantwortung übernimmt. Dieser Perspektivwechsel verändert nicht nur dein Gefühl, sondern auch die innere Haltung deines Kindes. Sicherheit statt Vergleich. Vertrauen statt Druck.</p>
 
     <h2>Schulreife entsteht von innen</h2>
     <p>Vielleicht darf dieser Satz heute in deinem Herzen nachklingen: Schulreife entsteht von innen. Sie ist kein Zustand, den man von außen herstellen kann, sondern ein Prozess, der durch Beziehung und Ermutigung wächst.</p>
     <p>Dein Kind braucht nicht das Gefühl, noch nicht genug zu sein. Es braucht die Erfahrung, jetzt schon wertvoll und kompetent zu sein. Wenn es spürt, dass es gesehen wird, wächst Lernfreude ganz natürlich. Und Lernfreude ist der stärkste Motor für alles, was in der Schule kommt.</p>
     <p>Die Übung „Was habe ich eigentlich schon gelernt?" kannst du immer wieder in euren Alltag einfließen lassen. Vor dem Schlafengehen. Beim Spaziergang. Kurz vor dem ersten Schultag. Sie wird euch daran erinnern, dass Entwicklung nicht durch Tempo entsteht, sondern durch Vertrauen.</p>
-    <p>Du darfst dich zurücklehnen. Nicht, weil nichts wichtig ist, sondern weil das Wesentliche längst da ist. Dein Kind bringt Neugier mit. Es bringt die Fähigkeit mit, Beziehungen zu gestalten. Es bringt Mut mit, auch wenn dieser manchmal leise ist. Und du bringst die wichtigste Ressource mit: deine Begleitung.</p>
 
     <h2>Gemeinsam sicher in den Übergang</h2>
     <p>Wenn du dir für diese besondere Zeit mehr Orientierung wünschst, mehr fundiertes Wissen und gleichzeitig mehr Leichtigkeit, dann lass uns diesen Weg gemeinsam gehen. Wir teilen regelmäßig stärkende Impulse rund um Schulreife, Übergang und ganzheitliche Entwicklung im letzten Kita Jahr.</p>
     <p>Nicht alarmistisch. Nicht leistungsorientiert. Sondern ruhig, klar und entwicklungspsychologisch fundiert. Wir möchten dir Sicherheit geben, damit du dein Kind mit gutem Gefühl begleiten kannst. 💛</p>
+
+    <div class="instagram-cta">
+      <h3>Täglich neue Impulse auf Instagram</h3>
+      <p>Folge uns für stärkende Impulse, Übungen und Wissen rund um die Vorschulzeit – entwicklungspsychologisch fundiert und völlig druckfrei.</p>
+      <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @eduleo.vorschule folgen
+      </a>
+    </div>
 
     <div class="article-authors">
       <img src="../assets/images/hannah.png" alt="Hannah Flunkert">

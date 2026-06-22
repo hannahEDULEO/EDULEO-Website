@@ -45,6 +45,26 @@
     .article-authors-text strong { display: block; color: var(--dark); margin-bottom: 2px; }
     .article-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; flex-wrap: wrap; gap: 16px; }
     .article-featured-img { width: 100%; max-width: 560px; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
+
+    /* === Erweiterte Blogelemente === */
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
+    .stat-card { background: white; border: 2px solid var(--turquoise); border-radius: var(--radius-lg); padding: 22px 16px; text-align: center; box-shadow: var(--shadow-sm); }
+    .stat-number { display: block; font-size: 2rem; font-weight: 900; color: var(--turquoise); line-height: 1.1; }
+    .stat-label { display: block; font-size: 0.78rem; color: var(--text-light); margin-top: 8px; line-height: 1.45; }
+    .info-box { background: var(--turquoise-light); border-left: 4px solid var(--turquoise); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 28px; margin: 32px 0; }
+    .info-box h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+    .info-box ul { margin: 0; padding: 0; }
+    .info-box ul li { padding: 5px 0 5px 24px; font-size: 0.95rem; }
+    .info-box ul li::before { color: var(--turquoise); }
+    .highlight-box { background: white; border: 2px solid var(--turquoise); border-radius: var(--radius-lg); padding: 24px 28px; margin: 32px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .highlight-box-col h4 { font-size: 0.9rem; font-weight: 800; color: var(--turquoise); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .highlight-box-col p { font-size: 0.9rem; color: var(--text); line-height: 1.6; margin: 0; }
+    .instagram-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, #fffbf0, #f0f9ff); border-radius: var(--radius-xl); border: 2px solid var(--yellow); text-align: center; }
+    .instagram-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .instagram-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
+    .instagram-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; transition: opacity 0.2s; }
+    .instagram-btn:hover { opacity: 0.88; }
+    @media (max-width: 620px) { .stat-grid { grid-template-columns: 1fr; } .highlight-box { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -98,23 +118,69 @@
     <p>Atme einmal tief durch. Du bist hier richtig. Der Schulstart ist kein Test. Er ist ein Entwicklungsschritt. Und Entwicklung ist kein Wettlauf. Auch wenn es sich auf Social Media manchmal so anfühlt. Dein Kind braucht nicht mehr Druck. Es braucht Sicherheit. Es braucht das Gefühl: Ich darf wachsen. Ich werde begleitet. Ich bin richtig, so wie ich bin.</p>
     <p>Viele Eltern denken bei Schulreife zuerst an Zahlen, Buchstaben und Arbeitsblätter. Doch Schulreife entsteht von innen. Sie zeigt sich darin, dass dein Kind sich etwas zutraut. Dass es Frust aushalten kann. Dass es neugierig bleibt. Dass es sich in einer Gruppe orientieren kann. Dass es Hilfe holen kann, wenn es sie braucht. Kompetenzen sind wichtiger als Arbeitsblätter. Innere Stärke ist wichtiger als frühes Lesen.</p>
     <div class="article-quote">„Du musst dein Kind nicht pushen. Du darfst es begleiten."</div>
-    <p>Vielleicht fragst du dich trotzdem: Reicht das, was wir machen? Muss mein Kind nicht wenigstens seinen Namen schreiben können? Was, wenn andere schon weiter sind? Hier kommt die beruhigende Wahrheit: Vergleich erzeugt Druck. Orientierung erzeugt Sicherheit. Und Sicherheit ist die Grundlage für Lernfreude.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-number">90 %</span>
+        <span class="stat-label">aller schulrelevanten Kompetenzen entwickeln sich im freien Spiel – nicht am Schreibtisch (Stanford Education Review, 2018)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">2–3×</span>
+        <span class="stat-label">mehr Kreativität und Problemlösekompetenz zeigen Kinder mit ausreichend Freispiel gegenüber Kindern mit strukturiertem Alltag</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">6 Jahre</span>
+        <span class="stat-label">ist das ideale Einschulungsalter in Deutschland – Kinder, die später eingeschult werden, haben langfristig keine Nachteile (PISA)</span>
+      </div>
+    </div>
 
     <h2>Kinder brauchen Orientierung</h2>
     <p>Wir leben in einer Zeit, in der du jederzeit sehen kannst, was andere Familien scheinbar alles tun. Perfekt vorbereitete Vorschulhefte. Wochenpläne. Lernspiele. Kinder, die mit fünf Jahren flüssig lesen. Es sieht strukturiert aus. Durchdacht. Erfolgreich. Und ganz schnell schleicht sich das Gefühl ein, nicht genug zu machen.</p>
     <p>Doch Social Media zeigt Ergebnisse. Es zeigt selten Prozesse. Es zeigt selten Zweifel. Es zeigt selten die Kinder, die einfach spielen, träumen und wachsen.</p>
     <p>Es geht nicht darum, alles zu ignorieren. Es geht darum, einordnen zu können. Orientierung bedeutet, dass du weißt, was entwicklungspsychologisch wirklich zählt. Dass du unterscheiden kannst zwischen hilfreichen Impulsen und unnötigem Leistungsdruck. Dass du Entscheidungen aus Ruhe triffst, nicht aus Angst. Dein Kind braucht nicht mehr Input. Es braucht dich als sicheren Wegweiser. Ruhig. Klar. Wertschätzend.</p>
+
+    <div class="highlight-box">
+      <div class="highlight-box-col">
+        <h4>Was Kinder wirklich brauchen</h4>
+        <p>Verlässliche Beziehungen · Freies Spiel · Rituale und Struktur · Das Gefühl, gesehen zu werden · Mut zum Fehler machen</p>
+      </div>
+      <div class="highlight-box-col">
+        <h4>Was Kinder nicht brauchen</h4>
+        <p>Arbeitsblätter täglich · Vergleiche mit anderen · Druck vor dem Schulstart · Perfektion · Ein durchgeplantes letztes Kita-Jahr</p>
+      </div>
+    </div>
+
     <p>Wenn du verstehst, dass Schulreife ein ganzheitlicher Prozess ist, verändert sich dein Blick. Dann siehst du im freien Spiel nicht mehr „verlorene Zeit", sondern intensive Lernmomente. Dann erkennst du im selbstständigen Anziehen nicht nur Chaos, sondern wachsende Kompetenz. Dann merkst du, dass ein Kind, das Konflikte im Gruppenalltag austrägt, gerade genau das trainiert, was es in der Schule braucht: soziale Sicherheit und Frustrationstoleranz. Entwicklung braucht Vertrauen. Und dieses Vertrauen beginnt bei dir.</p>
 
     <h2>Wie Orientierung in der Kita gelingen kann</h2>
-    <p><strong>Beziehung als Fundament stärken:</strong> Der wichtigste Faktor im letzten Kita Jahr ist nicht ein zusätzliches Programm. Es ist Beziehung. Sprich mit den pädagogischen Fachkräften nicht aus Sorge, sondern aus Interesse. Frag nach, wie sie dein Kind erleben. Wo sie Stärken sehen. In welchen Situationen es besonders selbstbewusst wirkt. Wo es noch Unterstützung braucht. Wenn dein Kind sich in der Kita sicher fühlt, wenn es Vertrauen zu den Erzieherinnen und Erziehern hat, entsteht eine stabile Basis für den Übergang. Sicherheit entsteht durch Bindung, nicht durch Leistungsdruck. Ein Kind, das sich gesehen fühlt, kann mutig in neue Situationen gehen.</p>
-    <p><strong>Selbstständigkeit im Alltag wachsen lassen:</strong> Schulreife zeigt sich im Alltag. Wenn dein Kind lernt, seine Tasche selbst zu packen, Verantwortung für kleine Aufgaben zu übernehmen oder eigene Entscheidungen zu treffen, dann wächst genau die innere Stärke, die es später im Schulalltag braucht. Du musst nicht mehr üben. Du darfst mehr zutrauen. Auch wenn es länger dauert. Auch wenn nicht alles perfekt klappt. Selbstbewusstsein entsteht nicht durch richtige Lösungen, sondern durch echte Erfahrungen. Wenn dein Kind merkt, dass du ihm etwas zutraust, beginnt es, sich selbst zu vertrauen.</p>
-    <p><strong>Spiel als Lernraum anerkennen:</strong> Vielleicht hörst du manchmal die innere Stimme, die sagt: Müssten wir jetzt nicht langsam ernster werden? Doch genau hier darfst du umdenken. Spiel ist kein Gegensatz zu Lernen. Spiel ist Lernen. Im freien Spiel entwickeln Kinder Problemlösestrategien, Kreativität, Ausdauer und soziale Kompetenzen. Sie lernen, Regeln zu verstehen und eigene Ideen umzusetzen. Sie üben Perspektivwechsel und Empathie. Mehr Übungen sind nicht die Lösung. Die richtigen Impulse sind es. Und oft sind diese Impulse eingebettet in ganz normale Alltagssituationen.</p>
-    <p><strong>Gefühle rund um den Übergang ernst nehmen:</strong> Der Übergang in die Grundschule ist groß. Auch wenn dein Kind nach außen stark wirkt, bewegen sich im Inneren viele Fragen. Werde ich Freunde finden? Ist die Lehrerin nett? Schaffe ich das? Du musst diese Fragen nicht sofort beantworten. Es reicht, sie auszuhalten. Zuhören. Spiegeln. Sicherheit geben. Du kannst sagen: Ich sehe, dass du groß wirst. Und ich bleibe an deiner Seite. Schulstart ist kein Sprung ins kalte Wasser. Er ist ein Schritt, der vorbereitet und begleitet wird. Emotionale Sicherheit ist die Basis für einen starken Start.</p>
+    <p><strong>Beziehung als Fundament stärken:</strong> Der wichtigste Faktor im letzten Kita Jahr ist nicht ein zusätzliches Programm. Es ist Beziehung. Sprich mit den pädagogischen Fachkräften nicht aus Sorge, sondern aus Interesse. Frag nach, wie sie dein Kind erleben. Wo sie Stärken sehen. In welchen Situationen es besonders selbstbewusst wirkt. Wenn dein Kind sich in der Kita sicher fühlt, entsteht eine stabile Basis für den Übergang.</p>
+    <p><strong>Selbstständigkeit im Alltag wachsen lassen:</strong> Schulreife zeigt sich im Alltag. Wenn dein Kind lernt, seine Tasche selbst zu packen, Verantwortung für kleine Aufgaben zu übernehmen oder eigene Entscheidungen zu treffen, dann wächst genau die innere Stärke, die es später im Schulalltag braucht. Du musst nicht mehr üben. Du darfst mehr zutrauen.</p>
+
+    <div class="info-box">
+      <h3>Spiel ist Lernen – 5 Kompetenzen, die im Freispiel wachsen</h3>
+      <ul>
+        <li><strong>Problemlösung:</strong> Beim Bauen, Experimentieren und Konstruieren entwickeln Kinder eigene Strategien.</li>
+        <li><strong>Kreativität:</strong> Im Rollenspiel wird Fantasie zur echten Denkleistung – mit messbaren Vorteilen für die Schule.</li>
+        <li><strong>Ausdauer:</strong> Ein selbstgewähltes Spiel hält Kinder länger bei der Sache als jede Aufgabe von außen.</li>
+        <li><strong>Soziale Kompetenz:</strong> Gemeinsam spielen heißt verhandeln, teilen, warten und Kompromisse finden.</li>
+        <li><strong>Emotionsregulation:</strong> Im Spiel erleben Kinder Frust und Freude in sicherem Rahmen – ideal zum Üben.</li>
+      </ul>
+    </div>
+
+    <p><strong>Gefühle rund um den Übergang ernst nehmen:</strong> Der Übergang in die Grundschule ist groß. Auch wenn dein Kind nach außen stark wirkt, bewegen sich im Inneren viele Fragen. Werde ich Freunde finden? Ist die Lehrerin nett? Schaffe ich das? Du musst diese Fragen nicht sofort beantworten. Es reicht, sie auszuhalten. Zuhören. Spiegeln. Sicherheit geben. Du kannst sagen: Ich sehe, dass du groß wirst. Und ich bleibe an deiner Seite.</p>
 
     <h2>Vorschule darf sich leicht anfühlen</h2>
     <p>Du willst deinem Kind einen starken, entspannten Start in die Schule ermöglichen – ohne Druck, ohne ständiges „Mehr"? Bei EDULEO bekommst du fundiertes Wissen aus der Entwicklungspsychologie und frühkindlichen Bildung, alltagstaugliche Impulse für mehr Sicherheit im Familienalltag und klare Orientierung für die Vorschulzeit – ohne Überforderung.</p>
     <p>Keine Panik. Kein Perfektionismus. Sondern ein Weg, der dich stärkt und dein Kind gleich mit. 💛</p>
+
+    <div class="instagram-cta">
+      <h3>Vorschulzeit genießen – so geht das auf Instagram</h3>
+      <p>Wir zeigen dir täglich, wie entspannter Schulstart aussieht – mit entwicklungspsychologischen Impulsen, die dich und dein Kind stärken, ohne zu überfordern.</p>
+      <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @eduleo.vorschule folgen
+      </a>
+    </div>
 
     <div class="article-authors">
       <img src="../assets/images/hannah.png" alt="Hannah Flunkert">

@@ -45,6 +45,31 @@
     .article-authors-text strong { display: block; color: var(--dark); margin-bottom: 2px; }
     .article-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; flex-wrap: wrap; gap: 16px; }
     .article-featured-img { width: 100%; max-width: 560px; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
+
+    /* === Erweiterte Blogelemente === */
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
+    .stat-card { background: white; border: 2px solid var(--yellow); border-radius: var(--radius-lg); padding: 22px 16px; text-align: center; box-shadow: var(--shadow-sm); }
+    .stat-number { display: block; font-size: 2rem; font-weight: 900; color: var(--dark); line-height: 1.1; }
+    .stat-label { display: block; font-size: 0.78rem; color: var(--text-light); margin-top: 8px; line-height: 1.45; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 32px 0; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: var(--radius-lg); }
+    .compare-table th { padding: 14px 20px; font-weight: 800; font-size: 0.9rem; text-align: left; }
+    .compare-table .th-solo { background: var(--turquoise); color: white; }
+    .compare-table .th-team { background: var(--yellow); color: var(--dark); }
+    .compare-table td { padding: 12px 20px; border-bottom: 1px solid var(--border); font-size: 0.93rem; color: var(--text); line-height: 1.6; vertical-align: top; }
+    .compare-table .td-solo { background: #f0fdfc; }
+    .compare-table .td-team { background: var(--yellow-light); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .info-box { background: var(--yellow-light); border-left: 4px solid var(--yellow); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 28px; margin: 32px 0; }
+    .info-box h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+    .info-box ul { margin: 0; padding: 0; }
+    .info-box ul li { padding: 5px 0 5px 24px; font-size: 0.95rem; }
+    .info-box ul li::before { color: var(--yellow); }
+    .instagram-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, #fffbf0, #f0f9ff); border-radius: var(--radius-xl); border: 2px solid var(--yellow); text-align: center; }
+    .instagram-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .instagram-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
+    .instagram-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; transition: opacity 0.2s; }
+    .instagram-btn:hover { opacity: 0.88; }
+    @media (max-width: 620px) { .stat-grid { grid-template-columns: 1fr; } .compare-table { display: block; overflow-x: auto; } }
   </style>
 </head>
 <body>
@@ -98,30 +123,95 @@
     <p>Dein Kind braucht nicht mehr Druck. Es braucht Orientierung. Schulreife entsteht nicht durch Vergleich und nicht durch ein volles Vorschulheft. Sie entsteht von innen. Und genau dort dürfen wir hinschauen, wenn wir unser Kind auf die Grundschule vorbereiten.</p>
     <p>Vielleicht hast du schon erlebt, wie schnell Gespräche unter Eltern in einen stillen Wettbewerb kippen. Wer kann schon lesen. Wer schreibt seinen Namen. Wer besucht welche Vorschulgruppe. Und währenddessen wächst in dir vielleicht das Gefühl, nicht genug zu tun. Doch Entwicklung ist kein Wettlauf. Vorschule darf leicht sein. Und dein Kind braucht vor allem Sicherheit statt Vergleich.</p>
 
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-number">Nr. 1</span>
+        <span class="stat-label">Soziale Kompetenz ist die wichtigste Schulreife-Voraussetzung laut befragten Grundschullehrkräften – noch vor Lesen und Schreiben</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">85 %</span>
+        <span class="stat-label">der schulischen Herausforderungen in Klasse 1 sind sozial-emotionaler Natur, nicht fachlicher Art (Grundschulforschung, 2022)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">4–5×</span>
+        <span class="stat-label">täglich üben Kinder im Kita-Alltag Teamarbeit – beim Bauen, Rollenspiel und Konfliktlösen (ohne es zu merken)</span>
+      </div>
+    </div>
+
     <h2>Schulstart ohne Druck – Was dein Kind wirklich braucht</h2>
     <p>Wenn wir ehrlich sind, geht es beim Übergang in die Grundschule nicht zuerst um Buchstaben oder Zahlen. Es geht um innere Stabilität. Es geht darum, ob dein Kind sich zutraut, neue Situationen zu meistern. Ob es sich sicher genug fühlt, alleine an einer Aufgabe zu arbeiten. Und ob es gleichzeitig die Fähigkeit entwickelt, mit anderen Kindern gemeinsam Lösungen zu finden.</p>
     <p>Alleine arbeiten bedeutet nicht, perfekt still zu sitzen oder fehlerfrei zu schreiben. Es bedeutet, sich selbst regulieren zu können, eine Aufgabe zu beginnen und dranzubleiben, auch wenn es kurz schwierig wird. Es bedeutet, die Erfahrung zu machen: Ich kann etwas aus eigener Kraft schaffen. Diese Selbstwirksamkeit ist ein zentraler Baustein von Schulreife.</p>
     <p>Im Team zu arbeiten bedeutet nicht, sich immer durchzusetzen oder besonders laut zu sein. Es bedeutet zuzuhören, eigene Ideen einzubringen und auch einmal nachzugeben. Es bedeutet, Konflikte auszuhalten und gemeinsam Lösungen zu entwickeln. Diese sozialen Kompetenzen wachsen nicht durch Belehrung, sondern durch echte Erfahrungen im Alltag.</p>
-    <p>Dein Kind braucht nicht mehr Arbeitsblätter. Es braucht Beziehung. Es braucht verlässliche Erwachsene, die ihm zutrauen, dass es Schritt für Schritt wächst. Es geht nicht um frühes Lesen, sondern um innere Stärke. Nicht um mehr Übungen, sondern um die richtigen Impulse. Wenn dein Kind sich getragen fühlt, entsteht Lernfreude ganz natürlich.</p>
+
+    <h2>Allein und im Team – wie du beides spielerisch förderst</h2>
+    <p>Die gute Nachricht: Du musst nichts Besonderes tun. Beide Kompetenzen entstehen im normalen Alltag – wenn du weißt, wo du hinschauen kannst. Diese Übersicht zeigt dir, welche alltäglichen Situationen welche Fähigkeit stärken:</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="th-solo">🧩 Alleine arbeiten stärken</th>
+          <th class="th-team">🤝 Im Team wachsen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-solo">Puzzle alleine lösen (ohne Hilfe anbieten)</td>
+          <td class="td-team">Rollenspiele mit eigenen Regeln entwickeln</td>
+        </tr>
+        <tr>
+          <td class="td-solo">Malen, basteln oder bauen nach eigener Idee</td>
+          <td class="td-team">Gemeinsam ein Turm aus Bausteinen planen</td>
+        </tr>
+        <tr>
+          <td class="td-solo">Ein Buch alleine betrachten und nacherzählen</td>
+          <td class="td-team">Gruppenausflüge und Absprachen treffen</td>
+        </tr>
+        <tr>
+          <td class="td-solo">Kleine Haushaltsaufgaben eigenständig übernehmen</td>
+          <td class="td-team">Konflikte im Geschwister- oder Spielgruppenalltag durcharbeiten</td>
+        </tr>
+        <tr>
+          <td class="td-solo">Konzentriert bei etwas Selbstgewähltem bleiben</td>
+          <td class="td-team">Eigene Ideen in der Gruppe einbringen und vertreten</td>
+        </tr>
+      </tbody>
+    </table>
 
     <h2>Vertrauen statt digitalem Leistungsdruck</h2>
-    <p>Vielleicht kennst du das Gefühl, wenn du durch soziale Medien scrollst und scheinbar perfekt vorbereitete Vorschulprogramme siehst. Kreative Bastelideen, strukturierte Lernpläne, Kinder, die schon flüssig lesen. Und plötzlich entsteht Druck. Müssten wir nicht auch mehr machen. Reicht unser Alltag wirklich aus.</p>
     <div class="article-quote">„Schulreife entsteht nicht durch Inszenierung, sondern durch gelebten Alltag."</div>
     <p>Hier ist die beruhigende Wahrheit: Dein Kind braucht keine perfekte Instagram Vorschule. Es braucht dich als ruhigen Wegweiser. Mehr Input ist nicht automatisch mehr Entwicklung. Was dein Kind wirklich braucht, ist Orientierung. Und Orientierung entsteht durch Klarheit, nicht durch Vergleich.</p>
-    <p>Wenn du merkst, dass dich äußere Erwartungen verunsichern, erinnere dich daran, dass du nur Ausschnitte siehst. Du kennst nicht den Alltag hinter den Bildern. Schulreife entsteht nicht durch Inszenierung, sondern durch gelebten Alltag. Sicherheit entsteht durch Wissen und durch Vertrauen in Entwicklungsprozesse. Du musst dein Kind nicht pushen. Du darfst es begleiten. Und Begleitung bedeutet, hinzuschauen, zuzuhören und Impulse zu geben, die wirklich passen.</p>
+    <p>Wenn du merkst, dass dich äußere Erwartungen verunsichern, erinnere dich daran, dass du nur Ausschnitte siehst. Du kennst nicht den Alltag hinter den Bildern. Schulreife entsteht nicht durch Inszenierung, sondern durch gelebten Alltag. Du musst dein Kind nicht pushen. Du darfst es begleiten. Und Begleitung bedeutet, hinzuschauen, zuzuhören und Impulse zu geben, die wirklich passen.</p>
 
     <h2>So kann dein Kind in der Kita alleine und im Team wachsen</h2>
-    <p>Gerade im letzten Kita Jahr liegen so viele wertvolle Chancen, die oft unterschätzt werden. Das freie Spiel zum Beispiel ist ein kraftvoller Entwicklungsraum. Wenn Kinder gemeinsam bauen, Rollenspiele entwickeln oder Regeln aushandeln, trainieren sie Teamfähigkeit auf ganz natürliche Weise. Sie lernen, Kompromisse einzugehen, ihre Ideen zu vertreten und sich in andere hineinzuversetzen. Du kannst diese Prozesse stärken, indem du interessiert nachfragst. Nicht nur, was gespielt wurde, sondern wie Entscheidungen getroffen wurden und wie sich dein Kind dabei gefühlt hat.</p>
-    <p>Gleichzeitig sind ruhige Momente, in denen dein Kind alleine malt, puzzelt oder ein Buch betrachtet, unglaublich wertvoll. Hier entsteht Konzentration. Hier wächst Ausdauer. Wenn du solche Momente wertschätzt und benennst, was du beobachtest, stärkst du die innere Kompetenz deines Kindes. Ein Satz wie „Ich sehe, wie vertieft du bist" kann mehr bewirken als jede zusätzliche Übung.</p>
+    <p>Gerade im letzten Kita Jahr liegen so viele wertvolle Chancen, die oft unterschätzt werden. Das freie Spiel zum Beispiel ist ein kraftvoller Entwicklungsraum. Wenn Kinder gemeinsam bauen, Rollenspiele entwickeln oder Regeln aushandeln, trainieren sie Teamfähigkeit auf ganz natürliche Weise. Sie lernen, Kompromisse einzugehen, ihre Ideen zu vertreten und sich in andere hineinzuversetzen.</p>
+    <p>Gleichzeitig sind ruhige Momente, in denen dein Kind alleine malt, puzzelt oder ein Buch betrachtet, unglaublich wertvoll. Hier entsteht Konzentration. Hier wächst Ausdauer. Wenn du solche Momente wertschätzt und benennst, was du beobachtest, stärkst du die innere Kompetenz deines Kindes.</p>
+
+    <div class="info-box">
+      <h3>3 Sätze, die mehr bewirken als jede Übung</h3>
+      <ul>
+        <li>„Ich sehe, wie vertieft du gerade bist." – stärkt Konzentration und Ausdauer beim Alleine-Arbeiten.</li>
+        <li>„Wie habt ihr das zusammen entschieden?" – fördert Reflexion über Teamarbeit und Kompromissfindung.</li>
+        <li>„Was hättest du gebraucht, damit es leichter wird?" – entwickelt Problemlösekompetenz in beiden Kontexten.</li>
+      </ul>
+    </div>
+
     <p>Auch kleine Verantwortungsbereiche in der Kita unterstützen die Entwicklung. Wenn dein Kind den Tisch decken darf, Materialien verteilt oder jüngeren Kindern etwas erklärt, erlebt es sich als wirksam und wichtig. Verantwortung bedeutet nicht Druck, sondern Vertrauen. Und Vertrauen stärkt.</p>
-    <p>Konflikte gehören ebenfalls dazu. Vielleicht wünschst du dir manchmal, dass alles harmonisch läuft. Doch gerade Reibung ist ein Lernfeld. Wenn dein Kind erlebt, dass Gefühle benannt werden dürfen und Lösungen gemeinsam entstehen, wächst Teamkompetenz ganz selbstverständlich. Hier geht es nicht um schnelle Lösungen, sondern um Begleitung.</p>
-    <p>Und schließlich schenken feste Rituale und klare Abläufe Sicherheit. Struktur bedeutet Orientierung. Orientierung bedeutet innere Ruhe. Wenn dein Kind weiß, was es erwartet, kann es seine Energie auf Lernen und Beziehung richten, statt auf Unsicherheit.</p>
+    <p>Konflikte gehören ebenfalls dazu. Vielleicht wünschst du dir manchmal, dass alles harmonisch läuft. Doch gerade Reibung ist ein Lernfeld. Wenn dein Kind erlebt, dass Gefühle benannt werden dürfen und Lösungen gemeinsam entstehen, wächst Teamkompetenz ganz selbstverständlich.</p>
 
     <h2>Du darfst deinem Kind vertrauen</h2>
     <p>Vielleicht fragst du dich trotzdem, ob das alles genügt. Ob dein Kind wirklich bereit sein wird, wenn der erste Schultag kommt. Die Antwort ist beruhigend: Schulstart ist kein Test, den man bestehen muss. Es ist ein Entwicklungsschritt, den dein Kind mit deiner Unterstützung gehen darf.</p>
     <p>Dein Kind braucht nicht mehr Druck. Es braucht das Gefühl, richtig zu sein. Es braucht die Erfahrung, alleine etwas schaffen zu können. Und es braucht die Sicherheit, Teil einer Gemeinschaft zu sein. Genau daraus entsteht echte Schulreife.</p>
     <p>Du darfst dich zurücklehnen und gleichzeitig bewusst begleiten. Sicherheit, Kompetenz und Leichtigkeit dürfen Hand in Hand gehen. Wenn du Klarheit hast, entsteht Ruhe. Und aus dieser Ruhe heraus kann dein Kind stark starten.</p>
     <p>Ganz liebe Grüße von Janine &amp; Hannah 💛</p>
+
+    <div class="instagram-cta">
+      <h3>Täglich neue Impulse auf Instagram</h3>
+      <p>Folge uns für praxisnahe Tipps, wie du dein Kind spielerisch auf Teamarbeit und selbstständiges Arbeiten vorbereiten kannst – ohne Druck, dafür mit viel Herz.</p>
+      <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @eduleo.vorschule folgen
+      </a>
+    </div>
 
     <div class="article-authors">
       <img src="../assets/images/hannah.png" alt="Hannah Flunkert">

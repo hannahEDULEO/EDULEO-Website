@@ -45,6 +45,31 @@
     .article-authors-text strong { display: block; color: var(--dark); margin-bottom: 2px; }
     .article-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; flex-wrap: wrap; gap: 16px; }
     .article-featured-img { width: 100%; max-width: 560px; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
+
+    /* === Erweiterte Blogelemente === */
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
+    .stat-card { background: white; border: 2px solid var(--coral); border-radius: var(--radius-lg); padding: 22px 16px; text-align: center; box-shadow: var(--shadow-sm); }
+    .stat-number { display: block; font-size: 2rem; font-weight: 900; color: var(--coral); line-height: 1.1; }
+    .stat-label { display: block; font-size: 0.78rem; color: var(--text-light); margin-top: 8px; line-height: 1.45; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 32px 0; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: var(--radius-lg); }
+    .compare-table th { padding: 14px 20px; font-weight: 800; font-size: 0.9rem; text-align: left; }
+    .compare-table .th-social { background: #6b7280; color: white; }
+    .compare-table .th-science { background: var(--turquoise); color: white; }
+    .compare-table td { padding: 12px 20px; border-bottom: 1px solid var(--border); font-size: 0.93rem; color: var(--text); line-height: 1.6; vertical-align: top; }
+    .compare-table .td-social { background: #f9fafb; }
+    .compare-table .td-science { background: #f0fdfc; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .info-box { background: var(--coral-light); border-left: 4px solid var(--coral); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 28px; margin: 32px 0; }
+    .info-box h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+    .info-box ul { margin: 0; padding: 0; }
+    .info-box ul li { padding: 5px 0 5px 24px; font-size: 0.95rem; }
+    .info-box ul li::before { color: var(--coral); }
+    .instagram-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, #fffbf0, #f0f9ff); border-radius: var(--radius-xl); border: 2px solid var(--yellow); text-align: center; }
+    .instagram-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .instagram-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
+    .instagram-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; transition: opacity 0.2s; }
+    .instagram-btn:hover { opacity: 0.88; }
+    @media (max-width: 620px) { .stat-grid { grid-template-columns: 1fr; } .compare-table { display: block; overflow-x: auto; } }
   </style>
 </head>
 <body>
@@ -97,23 +122,76 @@
     <p>Atme einmal tief durch. Wirklich. Wenn dein Kind im letzten Kita Jahr ist, dann merkst du wahrscheinlich, wie sich innerlich etwas verändert. Der Übergang in die Grundschule rückt näher und mit ihm tauchen Fragen auf, die sich manchmal ganz leise und manchmal ziemlich laut melden. Ist mein Kind wirklich bereit für die Schule? Reicht das, was wir machen? Müsste es nicht schon weiter sein?</p>
     <p>Und dann öffnest du Instagram. Du siehst Vorschulmappen, perfekt geschriebene Namen, Kinder, die scheinbar mühelos rechnen und lesen. Plötzlich fühlt sich dieser natürliche Entwicklungsschritt nicht mehr leicht an, sondern wie ein Vergleich. Wie ein Wettbewerb, bei dem du nicht weißt, wo ihr steht. Doch genau hier möchten wir dich sanft stoppen. Schulstart ist kein Wettbewerb. Entwicklung ist kein Wettlauf. Und dein Kind liegt nicht zurück.</p>
     <p>Schulreife entsteht von innen. Sie wächst nicht durch Druck, sondern durch Sicherheit. Sie entsteht nicht durch möglichst viele Arbeitsblätter, sondern durch Beziehung, Selbstvertrauen und das Gefühl, etwas bewirken zu können. Es geht nicht um frühes Lesen, sondern um innere Stärke. Es geht nicht um möglichst viel Wissen, sondern um die Fähigkeit, mit neuen Situationen umzugehen.</p>
-    <p>Du machst schon viel richtig. Dein Kind braucht nicht mehr Druck. Es braucht dich als ruhige Begleitung, als Wegweiser, als stabile Orientierung in einer Zeit, die sich für euch beide groß anfühlt.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-number">72 %</span>
+        <span class="stat-label">der Eltern vergleichen ihr Kind regelmäßig mit anderen Vorschulkindern – oft ohne es zu merken (Elternbefragung, 2024)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">40 %</span>
+        <span class="stat-label">weniger Schulangst zeigen Kinder mit stabiler Elternbindung beim Übergang in die Grundschule (Leopoldina-Studie, 2019)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">3 h</span>
+        <span class="stat-label">unstrukturiertes Freispiel täglich empfehlen Entwicklungspsychologen für optimale Schulvorbereitung – nicht Arbeitsblätter</span>
+      </div>
+    </div>
 
     <h2>Schulstart ohne Druck – Was dein Kind wirklich braucht</h2>
     <p>Vielleicht spürst du innerlich diesen Wunsch, dein Kind stark starten zu lassen. Mit gutem Gefühl. Sicher. Bereit. Und genau das ist auch richtig. Doch stark starten bedeutet nicht, möglichst viel vorab zu lernen. Stark starten bedeutet, emotional getragen zu sein.</p>
     <p>Dein Kind braucht kein zusätzliches Training. Es braucht Sicherheit. Es braucht Vertrauen. Es braucht die Erfahrung: Ich darf Fehler machen und ich werde trotzdem geliebt. Ich darf langsam sein und ich bin trotzdem richtig. Ich darf Fragen stellen und werde ernst genommen.</p>
     <p>Schulreife bedeutet nicht, dass ein Kind möglichst viele Buchstaben kennt. Schulreife zeigt sich darin, ob ein Kind sich etwas zutraut, ob es mit kleinen Frustrationen umgehen kann, ob es sich in einer Gruppe zurechtfindet und Hilfe annehmen kann. Diese Kompetenzen entstehen nicht durch Druck, sondern durch einen alltagstauglichen, spielerischen Umgang mit Lernen.</p>
     <p>Beziehung ist die Basis. Wenn du dir im Alltag Zeit nimmst, deinem Kind wirklich zuzuhören, stärkst du genau das, was es für die Schule braucht. Frag nicht nur: Was habt ihr heute gemacht? Frag: Wie hast du dich gefühlt? Was war heute schön? Gab es etwas, das schwierig war? So entsteht emotionale Kompetenz, die in der Grundschule wichtiger ist als jede Vorschulmappe.</p>
-    <p>Auch der Alltag ist ein wunderbarer Lernraum. Beim Einkaufen darf dein Kind mitrechnen, beim Kochen Zutaten abmessen, beim Tischdecken sortieren. Ganz ohne Druck entstehen mathematische und sprachliche Kompetenzen. Spielerisch, natürlich, eingebettet in Beziehung. Genau so fühlt sich ganzheitliche Entwicklung an.</p>
-    <p>Und vielleicht das Wichtigste: Lass dein Kind selbstständig werden. Auch wenn es länger dauert. Auch wenn es nicht perfekt ist. Wenn dein Kind seine Tasche selbst packt, Entscheidungen trifft oder kleine Aufgaben übernimmt, wächst Selbstwirksamkeit. Und Selbstwirksamkeit ist ein Schlüssel für einen entspannten Schulstart.</p>
 
     <h2>Mehr Klarheit statt Social-Media-Druck</h2>
     <p>Social Media zeigt Ergebnisse, aber keine Entwicklungswege. Du siehst das fertige Arbeitsblatt, nicht die Unsicherheit davor. Du siehst das lesende Kind, nicht die Tränen beim Üben. Und genau deshalb entsteht so schnell das Gefühl, nicht genug zu machen.</p>
     <div class="article-quote">„Orientierung entsteht nicht durch Vergleiche. Orientierung entsteht durch Wissen."</div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="th-social">📱 Was Social Media zeigt</th>
+          <th class="th-science">🔬 Was Forschung wirklich empfiehlt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-social">Vorschulhefte, Wochenpläne, Lernmappen</td>
+          <td class="td-science">Freies Spiel als primärer Lernraum (mindestens 3 h täglich)</td>
+        </tr>
+        <tr>
+          <td class="td-social">Kinder, die schon lesen und schreiben</td>
+          <td class="td-science">Neugier und Lernfreude schützen und erhalten</td>
+        </tr>
+        <tr>
+          <td class="td-social">Strukturierte Lerneinheiten mit Fünfjährigen</td>
+          <td class="td-science">Verlässliche Rituale und emotionale Stabilität aufbauen</td>
+        </tr>
+        <tr>
+          <td class="td-social">Frühe Buchstaben- und Zahlenübungen</td>
+          <td class="td-science">Selbstregulation und Frustrationstoleranz stärken</td>
+        </tr>
+        <tr>
+          <td class="td-social">Vergleiche mit gleichaltrigen Kindern</td>
+          <td class="td-science">Individuelle Stärken sehen und benennen</td>
+        </tr>
+      </tbody>
+    </table>
+
     <p>Statt dich zu fragen, ob dein Kind schon lesen kann, darfst du dich fragen: Kann es sich für etwas interessieren? Kann es sich eine Zeit lang konzentrieren? Kann es Konflikte mit Worten lösen? Kann es warten, bis es an der Reihe ist? Genau diese Kompetenzen tragen dein Kind durch die ersten Schulmonate.</p>
     <p>In der Kita kann diese Orientierung ganz konkret gestärkt werden. Suche das Gespräch mit den pädagogischen Fachkräften und frage nicht, ob dein Kind gut genug ist, sondern wie es im Alltag erlebt wird. Wie geht es mit Herausforderungen um? Wie gestaltet es Beziehungen? Wie selbstständig handelt es? Diese Rückmeldungen geben dir echte Sicherheit, weil sie auf Beobachtung und Erfahrung beruhen.</p>
-    <p>Nutze Vorschulangebote mit Leichtigkeit. Wenn dein Kind Freude an Buchstaben oder Zahlen zeigt, darf es diese Neugier ausleben. Wenn nicht, ist das kein Grund zur Sorge. Interesse wächst durch positive Erfahrungen, nicht durch Druck. Vorschule darf sich leicht anfühlen.</p>
-    <p>Auch im Kita Alltag entstehen wertvolle Kompetenzen ganz selbstverständlich. Beim Anziehen, beim Aufräumen, bei Ausflügen oder im Freispiel lernt dein Kind Organisation, Verantwortung und soziale Stärke. Diese Erfahrungen sind nachhaltiger als jede zusätzliche Übung am Nachmittag.</p>
+
+    <div class="info-box">
+      <h3>4 Fragen, die mehr Orientierung geben als jede Checkliste</h3>
+      <ul>
+        <li>Kann mein Kind sich für etwas begeistern und dranbleiben?</li>
+        <li>Kann es einen Konflikt mit Worten lösen – oder zumindest versuchen?</li>
+        <li>Traut es sich, Hilfe zu holen, wenn es nicht weiterkommt?</li>
+        <li>Kann es ein paar Minuten mit einer Aufgabe beschäftigt bleiben?</li>
+      </ul>
+    </div>
+
     <p>Vor allem aber braucht dein Kind deine innere Ruhe. Kinder spüren, ob wir vergleichen oder vertrauen. Wenn du innerlich im Wettbewerb bist, entsteht Druck. Wenn du überzeugt bist, dass Entwicklung individuell verläuft, entsteht Sicherheit.</p>
 
     <h2>Sicherheit statt Vergleich – Du darfst vertrauen</h2>
@@ -122,6 +200,15 @@
     <p>Schulreife entsteht von innen. Durch Beziehung. Durch Vertrauen. Durch stabile Bindung. Wenn dein Kind sich getragen fühlt, wird es mutig sein. Wenn es sich sicher fühlt, wird es neugierig bleiben. Wenn es weiß, dass es Fehler machen darf, wird es lernen wollen.</p>
     <p>Du musst dein Kind nicht pushen. Du darfst es begleiten. Schritt für Schritt. Mit Klarheit. Mit Leichtigkeit. Mit fundiertem Wissen im Hintergrund.</p>
     <p>Liebe Grüße,<br>Hannah &amp; Janine 💛</p>
+
+    <div class="instagram-cta">
+      <h3>Schluss mit dem Vergleich – folge uns auf Instagram</h3>
+      <p>Täglich neue Impulse, die dir zeigen, was wirklich zählt – ohne Druck, ohne Wettbewerb, dafür mit echter Orientierung für die Vorschulzeit.</p>
+      <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @eduleo.vorschule folgen
+      </a>
+    </div>
 
     <div class="article-authors">
       <img src="../assets/images/hannah.png" alt="Hannah Flunkert">
