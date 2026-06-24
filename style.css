@@ -167,7 +167,7 @@ p { font-size: 1.05rem; line-height: 1.7; }
    HERO
    ============================================= */
 .hero {
-  min-height: 100vh; display: flex; align-items: center;
+  display: flex; align-items: center;
   padding-top: var(--nav-h); position: relative; overflow: hidden;
 }
 .hero-blob {
