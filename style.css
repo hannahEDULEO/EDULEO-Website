@@ -186,14 +186,14 @@ p { font-size: 1.05rem; line-height: 1.7; }
 
 .hero-inner {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; align-items: center; padding: 80px 0;
+  gap: 60px; align-items: center; padding: 40px 0;
 }
 .hero-content { position: relative; z-index: 2; }
 .hero-badge { margin-bottom: 24px; }
-.hero-title { font-size: clamp(2.8rem, 5.5vw, 4rem); font-weight: 900; line-height: 1.08; margin-bottom: 14px; }
+.hero-title { font-size: clamp(3.4rem, 6.5vw, 5rem); font-weight: 900; line-height: 1.08; margin-bottom: 14px; }
 .hero-title span { color: var(--turquoise); }
-.hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; color: var(--coral); margin-bottom: 20px; }
-.hero-text { font-size: 1.05rem; color: var(--text); max-width: 480px; margin-bottom: 36px; }
+.hero-subtitle { font-size: clamp(1.3rem, 2.2vw, 1.6rem); font-weight: 700; color: var(--coral); margin-bottom: 20px; }
+.hero-text { font-size: 1.15rem; color: var(--text); max-width: 520px; margin-bottom: 36px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
 
 .hero-trust { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
@@ -202,12 +202,12 @@ p { font-size: 1.05rem; line-height: 1.7; }
 
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; z-index: 2; }
 .hero-deco-bg {
-  position: absolute; width: 460px; height: 460px; border-radius: 50%;
+  position: absolute; width: 540px; height: 540px; border-radius: 50%;
   background: var(--turquoise-light); top: 50%; left: 50%;
   transform: translate(-50%, -50%); z-index: 0;
 }
 .hero-leo {
-  width: 130%; max-width: 780px; position: relative; z-index: 1;
+  width: 140%; max-width: 880px; position: relative; z-index: 1;
   animation: leo-float 3.5s ease-in-out infinite;
   filter: drop-shadow(0 24px 48px rgba(46,196,198,.25));
   transform-origin: bottom center;
