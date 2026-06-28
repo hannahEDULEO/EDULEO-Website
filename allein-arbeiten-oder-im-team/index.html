@@ -32,6 +32,7 @@
     .article-meta-date { font-size: 0.85rem; color: var(--text-light); font-weight: 700; }
     .article-meta-author { font-size: 0.85rem; color: var(--text-light); }
     .article-body { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+    .article-layout .article-body { max-width: none; margin: 0; padding: 0; }
     .article-body h2 { font-size: 1.35rem; font-weight: 800; color: var(--dark); margin: 48px 0 16px; line-height: 1.3; }
     .article-body h2:first-child { margin-top: 0; }
     .article-body p { font-size: 1rem; color: var(--text); line-height: 1.85; margin-bottom: 18px; }
@@ -116,7 +117,8 @@
 </div>
 
 <div class="container">
-  <div class="article-body">
+  <div class="article-layout">
+    <div class="article-body">
     <img src="../assets/images/blog/blog-allein-im-team.png" alt="Allein oder im Team? So bereitest du dein Kind auf beides vor" class="article-featured-img">
 
     <p>Der Schulstart kommt näher und vielleicht spürst du es schon. Diese Mischung aus Vorfreude und Unsicherheit. Die leise Frage im Hintergrund, ob dein Kind wirklich bereit ist. Ob es alleine arbeiten kann. Ob es sich in einer Gruppe behaupten wird. Ob das, was ihr bisher gemacht habt, reicht.</p>
@@ -138,12 +140,12 @@
       </div>
     </div>
 
-    <h2>Schulstart ohne Druck – Was dein Kind wirklich braucht</h2>
+    <h2 id="was-kind-braucht">Schulstart ohne Druck – Was dein Kind wirklich braucht</h2>
     <p>Wenn wir ehrlich sind, geht es beim Übergang in die Grundschule nicht zuerst um Buchstaben oder Zahlen. Es geht um innere Stabilität. Es geht darum, ob dein Kind sich zutraut, neue Situationen zu meistern. Ob es sich sicher genug fühlt, alleine an einer Aufgabe zu arbeiten. Und ob es gleichzeitig die Fähigkeit entwickelt, mit anderen Kindern gemeinsam Lösungen zu finden.</p>
     <p>Alleine arbeiten bedeutet nicht, perfekt still zu sitzen oder fehlerfrei zu schreiben. Es bedeutet, sich selbst regulieren zu können, eine Aufgabe zu beginnen und dranzubleiben, auch wenn es kurz schwierig wird. Es bedeutet, die Erfahrung zu machen: Ich kann etwas aus eigener Kraft schaffen. Diese Selbstwirksamkeit ist ein zentraler Baustein von Schulreife.</p>
     <p>Im Team zu arbeiten bedeutet nicht, sich immer durchzusetzen oder besonders laut zu sein. Es bedeutet zuzuhören, eigene Ideen einzubringen und auch einmal nachzugeben. Es bedeutet, Konflikte auszuhalten und gemeinsam Lösungen zu entwickeln. Diese sozialen Kompetenzen wachsen nicht durch Belehrung, sondern durch echte Erfahrungen im Alltag.</p>
 
-    <h2>Allein und im Team – wie du beides spielerisch förderst</h2>
+    <h2 id="foerdern">Allein und im Team – wie du beides spielerisch förderst</h2>
     <p>Die gute Nachricht: Du musst nichts Besonderes tun. Beide Kompetenzen entstehen im normalen Alltag – wenn du weißt, wo du hinschauen kannst. Diese Übersicht zeigt dir, welche alltäglichen Situationen welche Fähigkeit stärken:</p>
 
     <table class="compare-table">
@@ -177,12 +179,12 @@
       </tbody>
     </table>
 
-    <h2>Vertrauen statt digitalem Leistungsdruck</h2>
+    <h2 id="vertrauen">Vertrauen statt digitalem Leistungsdruck</h2>
     <div class="article-quote">„Schulreife entsteht nicht durch Inszenierung, sondern durch gelebten Alltag."</div>
     <p>Hier ist die beruhigende Wahrheit: Dein Kind braucht keine perfekte Instagram Vorschule. Es braucht dich als ruhigen Wegweiser. Mehr Input ist nicht automatisch mehr Entwicklung. Was dein Kind wirklich braucht, ist Orientierung. Und Orientierung entsteht durch Klarheit, nicht durch Vergleich.</p>
     <p>Wenn du merkst, dass dich äußere Erwartungen verunsichern, erinnere dich daran, dass du nur Ausschnitte siehst. Du kennst nicht den Alltag hinter den Bildern. Schulreife entsteht nicht durch Inszenierung, sondern durch gelebten Alltag. Du musst dein Kind nicht pushen. Du darfst es begleiten. Und Begleitung bedeutet, hinzuschauen, zuzuhören und Impulse zu geben, die wirklich passen.</p>
 
-    <h2>So kann dein Kind in der Kita alleine und im Team wachsen</h2>
+    <h2 id="kita-wachsen">So kann dein Kind in der Kita alleine und im Team wachsen</h2>
     <p>Gerade im letzten Kita Jahr liegen so viele wertvolle Chancen, die oft unterschätzt werden. Das freie Spiel zum Beispiel ist ein kraftvoller Entwicklungsraum. Wenn Kinder gemeinsam bauen, Rollenspiele entwickeln oder Regeln aushandeln, trainieren sie Teamfähigkeit auf ganz natürliche Weise. Sie lernen, Kompromisse einzugehen, ihre Ideen zu vertreten und sich in andere hineinzuversetzen.</p>
     <p>Gleichzeitig sind ruhige Momente, in denen dein Kind alleine malt, puzzelt oder ein Buch betrachtet, unglaublich wertvoll. Hier entsteht Konzentration. Hier wächst Ausdauer. Wenn du solche Momente wertschätzt und benennst, was du beobachtest, stärkst du die innere Kompetenz deines Kindes.</p>
 
@@ -198,7 +200,7 @@
     <p>Auch kleine Verantwortungsbereiche in der Kita unterstützen die Entwicklung. Wenn dein Kind den Tisch decken darf, Materialien verteilt oder jüngeren Kindern etwas erklärt, erlebt es sich als wirksam und wichtig. Verantwortung bedeutet nicht Druck, sondern Vertrauen. Und Vertrauen stärkt.</p>
     <p>Konflikte gehören ebenfalls dazu. Vielleicht wünschst du dir manchmal, dass alles harmonisch läuft. Doch gerade Reibung ist ein Lernfeld. Wenn dein Kind erlebt, dass Gefühle benannt werden dürfen und Lösungen gemeinsam entstehen, wächst Teamkompetenz ganz selbstverständlich.</p>
 
-    <h2>Du darfst deinem Kind vertrauen</h2>
+    <h2 id="kind-vertrauen">Du darfst deinem Kind vertrauen</h2>
     <p>Vielleicht fragst du dich trotzdem, ob das alles genügt. Ob dein Kind wirklich bereit sein wird, wenn der erste Schultag kommt. Die Antwort ist beruhigend: Schulstart ist kein Test, den man bestehen muss. Es ist ein Entwicklungsschritt, den dein Kind mit deiner Unterstützung gehen darf.</p>
     <p>Dein Kind braucht nicht mehr Druck. Es braucht das Gefühl, richtig zu sein. Es braucht die Erfahrung, alleine etwas schaffen zu können. Und es braucht die Sicherheit, Teil einer Gemeinschaft zu sein. Genau daraus entsteht echte Schulreife.</p>
     <p>Du darfst dich zurücklehnen und gleichzeitig bewusst begleiten. Sicherheit, Kompetenz und Leichtigkeit dürfen Hand in Hand gehen. Wenn du Klarheit hast, entsteht Ruhe. Und aus dieser Ruhe heraus kann dein Kind stark starten.</p>
@@ -227,6 +229,32 @@
       <a href="../blog/" class="btn btn-secondary">Alle Artikel →</a>
     </div>
 
+    </div>
+
+    <aside class="article-sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Inhalt</div>
+        <a href="#was-kind-braucht" class="sidebar-toc-link">Was dein Kind wirklich braucht <span class="toc-arrow">→</span></a>
+        <a href="#foerdern" class="sidebar-toc-link">Spielerisch fördern: Allein + Team <span class="toc-arrow">→</span></a>
+        <a href="#vertrauen" class="sidebar-toc-link">Vertrauen statt Leistungsdruck <span class="toc-arrow">→</span></a>
+        <a href="#kita-wachsen" class="sidebar-toc-link">In der Kita wachsen <span class="toc-arrow">→</span></a>
+        <a href="#kind-vertrauen" class="sidebar-toc-link">Du darfst vertrauen <span class="toc-arrow">→</span></a>
+      </div>
+
+      <div class="sidebar-product-box">
+        <div class="product-icon">📖</div>
+        <h4>Vorschul-Guide</h4>
+        <p>Spielerische Alltagsideen für soziale Kompetenz, Konzentration und Selbstständigkeit – ohne Vorbereitung, einfach integrierbar.</p>
+        <a href="../vorschul-guide.html" class="btn btn-primary">Jetzt entdecken →</a>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Mehr lesen</div>
+        <a href="../bereit-fuer-die-schule/" class="sidebar-more-link">Was „bereit für die Schule" wirklich bedeutet <span class="toc-arrow">→</span></a>
+        <a href="../vorschulzeit-geniessen/" class="sidebar-more-link">Vorschulzeit genießen statt durcharbeiten <span class="toc-arrow">→</span></a>
+        <a href="../schulstart-ist-kein-wettbewerb/" class="sidebar-more-link">Schulstart ist kein Wettbewerb <span class="toc-arrow">→</span></a>
+      </div>
+    </aside>
   </div>
 </div>
 

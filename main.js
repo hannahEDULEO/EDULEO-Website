@@ -61,6 +61,17 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in, .slide-left, .slide-right, .slide-up')
   .forEach(el => observer.observe(el));
 
+// TOC active highlight on scroll
+const tocLinks = document.querySelectorAll('.sidebar-toc-link');
+if (tocLinks.length) {
+  const headings = [...tocLinks].map(l => document.querySelector(l.getAttribute('href')));
+  window.addEventListener('scroll', () => {
+    let active = 0;
+    headings.forEach((h, i) => { if (h && h.getBoundingClientRect().top < 120) active = i; });
+    tocLinks.forEach((l, i) => l.classList.toggle('toc-active', i === active));
+  }, { passive: true });
+}
+
 // Count-up animation for 200+
 const counterEl = document.getElementById('count-familien');
 if (counterEl) {

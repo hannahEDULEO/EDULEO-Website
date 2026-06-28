@@ -32,6 +32,7 @@
     .article-meta-date { font-size: 0.85rem; color: var(--text-light); font-weight: 700; }
     .article-meta-author { font-size: 0.85rem; color: var(--text-light); }
     .article-body { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+    .article-layout .article-body { max-width: none; margin: 0; padding: 0; }
     .article-body h2 { font-size: 1.35rem; font-weight: 800; color: var(--dark); margin: 48px 0 16px; line-height: 1.3; }
     .article-body h2:first-child { margin-top: 0; }
     .article-body p { font-size: 1rem; color: var(--text); line-height: 1.85; margin-bottom: 18px; }
@@ -116,7 +117,8 @@
 </div>
 
 <div class="container">
-  <div class="article-body">
+  <div class="article-layout">
+    <div class="article-body">
     <img src="../assets/images/blog/blog-schulstart-wettbewerb.png" alt="Schulstart ist kein Wettbewerb" class="article-featured-img">
 
     <p>Atme einmal tief durch. Wirklich. Wenn dein Kind im letzten Kita Jahr ist, dann merkst du wahrscheinlich, wie sich innerlich etwas verändert. Der Übergang in die Grundschule rückt näher und mit ihm tauchen Fragen auf, die sich manchmal ganz leise und manchmal ziemlich laut melden. Ist mein Kind wirklich bereit für die Schule? Reicht das, was wir machen? Müsste es nicht schon weiter sein?</p>
@@ -138,13 +140,13 @@
       </div>
     </div>
 
-    <h2>Schulstart ohne Druck – Was dein Kind wirklich braucht</h2>
+    <h2 id="was-kind-braucht">Schulstart ohne Druck – Was dein Kind wirklich braucht</h2>
     <p>Vielleicht spürst du innerlich diesen Wunsch, dein Kind stark starten zu lassen. Mit gutem Gefühl. Sicher. Bereit. Und genau das ist auch richtig. Doch stark starten bedeutet nicht, möglichst viel vorab zu lernen. Stark starten bedeutet, emotional getragen zu sein.</p>
     <p>Dein Kind braucht kein zusätzliches Training. Es braucht Sicherheit. Es braucht Vertrauen. Es braucht die Erfahrung: Ich darf Fehler machen und ich werde trotzdem geliebt. Ich darf langsam sein und ich bin trotzdem richtig. Ich darf Fragen stellen und werde ernst genommen.</p>
     <p>Schulreife bedeutet nicht, dass ein Kind möglichst viele Buchstaben kennt. Schulreife zeigt sich darin, ob ein Kind sich etwas zutraut, ob es mit kleinen Frustrationen umgehen kann, ob es sich in einer Gruppe zurechtfindet und Hilfe annehmen kann. Diese Kompetenzen entstehen nicht durch Druck, sondern durch einen alltagstauglichen, spielerischen Umgang mit Lernen.</p>
     <p>Beziehung ist die Basis. Wenn du dir im Alltag Zeit nimmst, deinem Kind wirklich zuzuhören, stärkst du genau das, was es für die Schule braucht. Frag nicht nur: Was habt ihr heute gemacht? Frag: Wie hast du dich gefühlt? Was war heute schön? Gab es etwas, das schwierig war? So entsteht emotionale Kompetenz, die in der Grundschule wichtiger ist als jede Vorschulmappe.</p>
 
-    <h2>Mehr Klarheit statt Social-Media-Druck</h2>
+    <h2 id="klarheit">Mehr Klarheit statt Social-Media-Druck</h2>
     <p>Social Media zeigt Ergebnisse, aber keine Entwicklungswege. Du siehst das fertige Arbeitsblatt, nicht die Unsicherheit davor. Du siehst das lesende Kind, nicht die Tränen beim Üben. Und genau deshalb entsteht so schnell das Gefühl, nicht genug zu machen.</p>
     <div class="article-quote">„Orientierung entsteht nicht durch Vergleiche. Orientierung entsteht durch Wissen."</div>
 
@@ -194,7 +196,7 @@
 
     <p>Vor allem aber braucht dein Kind deine innere Ruhe. Kinder spüren, ob wir vergleichen oder vertrauen. Wenn du innerlich im Wettbewerb bist, entsteht Druck. Wenn du überzeugt bist, dass Entwicklung individuell verläuft, entsteht Sicherheit.</p>
 
-    <h2>Sicherheit statt Vergleich – Du darfst vertrauen</h2>
+    <h2 id="sicherheit">Sicherheit statt Vergleich – Du darfst vertrauen</h2>
     <p>Vielleicht liest du diese Zeilen, weil du alles richtig machen willst. Weil du dein Kind liebevoll begleiten möchtest. Und genau das ist bereits ein Zeichen von Stärke. Du bist aufmerksam. Du informierst dich. Du reflektierst. Du gehst diesen Weg bewusst.</p>
     <p>Erlaube dir, den Vergleich loszulassen. Dein Kind muss nicht schneller sein. Es darf in seinem Tempo wachsen. Schulstart ist kein Test, sondern ein neuer Abschnitt. Ein Übergang, der begleitet werden darf.</p>
     <p>Schulreife entsteht von innen. Durch Beziehung. Durch Vertrauen. Durch stabile Bindung. Wenn dein Kind sich getragen fühlt, wird es mutig sein. Wenn es sich sicher fühlt, wird es neugierig bleiben. Wenn es weiß, dass es Fehler machen darf, wird es lernen wollen.</p>
@@ -224,6 +226,30 @@
       <a href="../vorschulzeit-geniessen/" class="btn btn-secondary">Nächster Artikel →</a>
     </div>
 
+    </div>
+
+    <aside class="article-sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Inhalt</div>
+        <a href="#was-kind-braucht" class="sidebar-toc-link">Was dein Kind wirklich braucht <span class="toc-arrow">→</span></a>
+        <a href="#klarheit" class="sidebar-toc-link">Klarheit statt Social-Media-Druck <span class="toc-arrow">→</span></a>
+        <a href="#sicherheit" class="sidebar-toc-link">Sicherheit statt Vergleich <span class="toc-arrow">→</span></a>
+      </div>
+
+      <div class="sidebar-product-box">
+        <div class="product-icon">📖</div>
+        <h4>Vorschul-Guide</h4>
+        <p>Konkrete Alltagsideen für alle 5 Bausteine der echten Schulreife – spielerisch, ohne Druck und entwicklungspsychologisch fundiert.</p>
+        <a href="../vorschul-guide.html" class="btn btn-primary">Jetzt entdecken →</a>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Mehr lesen</div>
+        <a href="../bereit-fuer-die-schule/" class="sidebar-more-link">Was „bereit für die Schule" wirklich bedeutet <span class="toc-arrow">→</span></a>
+        <a href="../was-habe-ich-schon-gelernt/" class="sidebar-more-link">Was habe ich eigentlich schon gelernt? <span class="toc-arrow">→</span></a>
+        <a href="../vorschulzeit-geniessen/" class="sidebar-more-link">Vorschulzeit genießen statt durcharbeiten <span class="toc-arrow">→</span></a>
+      </div>
+    </aside>
   </div>
 </div>
 
