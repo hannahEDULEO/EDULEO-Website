@@ -34,7 +34,16 @@
     .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .article-meta-date { font-size: 0.85rem; color: var(--text-light); font-weight: 700; }
     .article-meta-author { font-size: 0.85rem; color: var(--text-light); }
-    .article-body { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+
+    /* === Zweispaltiges Layout === */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 56px;
+      padding: 64px 0 96px;
+      align-items: start;
+    }
+    .article-body { min-width: 0; }
     .article-body h2 { font-size: 1.35rem; font-weight: 800; color: var(--dark); margin: 48px 0 16px; line-height: 1.3; }
     .article-body h2:first-child { margin-top: 0; }
     .article-body h3 { font-size: 1.05rem; font-weight: 800; color: var(--dark); margin: 28px 0 10px; }
@@ -42,14 +51,35 @@
     .article-body ul { list-style: none; padding: 0; margin-bottom: 18px; }
     .article-body ul li { font-size: 1rem; color: var(--text); line-height: 1.75; padding: 6px 0 6px 28px; position: relative; }
     .article-body ul li::before { content: '✦'; position: absolute; left: 0; color: var(--turquoise); font-size: 0.7rem; top: 10px; }
+    .article-featured-img { width: 100%; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
     .article-quote { background: var(--turquoise-light); border-left: 4px solid var(--turquoise); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 28px; margin: 32px 0; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.5; font-style: italic; }
     .article-authors { margin-top: 64px; padding-top: 40px; border-top: 2px solid var(--border); display: flex; gap: 16px; align-items: center; }
     .article-authors img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
     .article-authors-text { font-size: 0.9rem; color: var(--text); }
     .article-authors-text strong { display: block; color: var(--dark); margin-bottom: 2px; }
     .article-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; flex-wrap: wrap; gap: 16px; }
-    .article-featured-img { width: 100%; max-width: 560px; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
 
+    /* === Sidebar === */
+    .article-sidebar { position: sticky; top: calc(var(--nav-h) + 24px); }
+    .sidebar-toc-header,
+    .sidebar-more-header { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; padding-bottom: 10px; border-bottom: 2px solid var(--border); display: block; margin-bottom: 0; }
+    .sidebar-toc ul,
+    .sidebar-more ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar-toc ul li,
+    .sidebar-more ul li { border-bottom: 1px solid var(--border); }
+    .sidebar-toc ul li a,
+    .sidebar-more ul li a { display: flex; align-items: center; justify-content: space-between; padding: 11px 0; font-size: 0.88rem; color: var(--dark); font-weight: 600; text-decoration: none; gap: 8px; line-height: 1.4; }
+    .sidebar-toc ul li a::after,
+    .sidebar-more ul li a::after { content: '→'; color: var(--turquoise); flex-shrink: 0; font-size: 0.9rem; }
+    .sidebar-toc ul li a:hover,
+    .sidebar-more ul li a:hover { color: var(--turquoise); }
+    .sidebar-product { background: var(--dark); border-radius: var(--radius-lg); padding: 22px 20px; margin: 24px 0; }
+    .sidebar-product h3 { font-size: 0.95rem; font-weight: 800; color: white; margin-bottom: 8px; line-height: 1.35; }
+    .sidebar-product p { font-size: 0.82rem; color: rgba(255,255,255,0.75); margin-bottom: 16px; line-height: 1.65; }
+    .sidebar-product .btn { display: block; text-align: center; width: 100%; box-sizing: border-box; }
+    .sidebar-more { margin-top: 24px; }
+
+    /* === Content-Elemente === */
     .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
     .stat-card { background: white; border: 2px solid var(--turquoise); border-radius: var(--radius-lg); padding: 22px 16px; text-align: center; box-shadow: var(--shadow-sm); }
     .stat-number { display: block; font-size: 2rem; font-weight: 900; color: var(--turquoise); line-height: 1.1; }
@@ -67,21 +97,18 @@
     .info-box ul { margin: 0; padding: 0; }
     .info-box ul li { padding: 5px 0 5px 24px; font-size: 0.95rem; }
     .info-box ul li::before { color: var(--turquoise); }
-    .related-articles { margin: 48px 0; padding: 32px 28px; background: white; border-radius: var(--radius-xl); border: 2px solid var(--border); }
-    .related-articles h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 16px; }
-    .related-articles ul { margin: 0; }
-    .related-articles ul li::before { color: var(--turquoise); }
-    .related-articles a { color: var(--turquoise); font-weight: 700; text-decoration: none; }
-    .related-articles a:hover { text-decoration: underline; }
-    .product-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, var(--turquoise-light), #fff); border-radius: var(--radius-xl); border: 2px solid var(--turquoise); }
-    .product-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
-    .product-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
     .instagram-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, #fffbf0, #f0f9ff); border-radius: var(--radius-xl); border: 2px solid var(--yellow); text-align: center; }
     .instagram-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
     .instagram-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
     .instagram-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; transition: opacity 0.2s; }
     .instagram-btn:hover { opacity: 0.88; }
-    @media (max-width: 620px) { .stat-grid { grid-template-columns: 1fr; } .compare-table { display: block; overflow-x: auto; } }
+
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 0; }
+      .article-sidebar { position: static; margin-bottom: 48px; order: -1; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .compare-table { display: block; overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
@@ -130,130 +157,148 @@
 </div>
 
 <div class="container">
-  <div class="article-body">
-    <img src="../assets/images/blog/blog-schulreife-test.png" alt="Schulreife Test – was wirklich zählt" class="article-featured-img">
+  <div class="article-layout">
 
-    <p>„Wann ist mein Kind schulreif?" – Das ist eine der meistgesuchten Fragen von Eltern im letzten Kita-Jahr. Kein Wunder: Der Schulstart fühlt sich nach einem Meilenstein an, der zählt. Nach etwas, das klappen muss. Und überall begegnen dir Tests, Checklisten und Beobachtungsbögen, die versprechen, die Antwort zu liefern.</p>
-    <p>Doch was messen diese Tests wirklich? Und was sagen sie über deinen Kind und seinen Schulstart – und was eben nicht? Lass uns das gemeinsam durchleuchten. Klar, ehrlich und ohne Druck.</p>
+    <!-- Hauptinhalt -->
+    <div class="article-body">
+      <img src="../assets/images/blog/blog-schulreife-test.png" alt="Schulreife Test – was wirklich zählt" class="article-featured-img">
 
-    <div class="stat-grid">
-      <div class="stat-card">
-        <span class="stat-number">1 von 5</span>
-        <span class="stat-label">Kindern wird in Deutschland eine Schulreifeüberprüfung empfohlen – obwohl die meisten problemlos eingeschult werden (Destatis, 2024)</span>
+      <p>„Wann ist mein Kind schulreif?" – Das ist eine der meistgesuchten Fragen von Eltern im letzten Kita-Jahr. Kein Wunder: Der Schulstart fühlt sich nach einem Meilenstein an, der zählt. Nach etwas, das klappen muss. Und überall begegnen dir Tests, Checklisten und Beobachtungsbögen, die versprechen, die Antwort zu liefern.</p>
+      <p>Doch was messen diese Tests wirklich? Und was sagen sie über dein Kind und seinen Schulstart – und was eben nicht? Lass uns das gemeinsam durchleuchten. Klar, ehrlich und ohne Druck.</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="stat-number">1 von 5</span>
+          <span class="stat-label">Kindern wird in Deutschland eine Schulreifeüberprüfung empfohlen – obwohl die meisten problemlos eingeschult werden (Destatis, 2024)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">72 %</span>
+          <span class="stat-label">der Grundschullehrerinnen sagen: Sozial-emotionale Reife ist wichtiger als kognitive Vorleistungen beim Schulstart (BMBF-Studie, 2023)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">3–6</span>
+          <span class="stat-label">Entwicklungsbereiche prüfen seriöse Schulreifeuntersuchungen gleichzeitig – kein einzelner Test liefert ein vollständiges Bild</span>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-number">72 %</span>
-        <span class="stat-label">der Grundschullehrerinnen sagen: Sozial-emotionale Reife ist wichtiger als kognitive Vorleistungen beim Schulstart (BMBF-Studie, 2023)</span>
+
+      <h2 id="was-misst-ein-test">Was ein Schulreife Test überhaupt misst</h2>
+      <p>Schulreifeuntersuchungen – ob beim Kinderarzt, in der Kita oder durch spezialisierte Fachstellen – schauen sich immer mehrere Entwicklungsbereiche an. Es geht nie um eine einzige Fähigkeit, sondern um ein Zusammenspiel verschiedener Kompetenzen.</p>
+      <p>Typischerweise werden dabei geprüft: die Feinmotorik (Stift halten, Formen nachzeichnen), die Grobmotorik (Gleichgewicht, Koordination), Sprache und Ausdrucksvermögen, die Konzentrations- und Merkfähigkeit, das soziale Verhalten in der Gruppe sowie die emotionale Stabilität. Manche Tests fügen kognitive Aufgaben hinzu – zum Beispiel Mengen vergleichen, Muster erkennen oder sich kurze Geschichten merken.</p>
+      <p>Was dabei wichtig zu verstehen ist: Ein solcher Test ist immer eine Momentaufnahme. Er zeigt, wie dein Kind an einem bestimmten Tag, in einer bestimmten Situation, mit einer ihm fremden Person abschneidet. Er ist kein Urteil, kein Endurteil und erst recht kein Maß für das Potenzial deines Kindes.</p>
+      <div class="article-quote">„Ein Schulreife Test ist eine Momentaufnahme – kein Urteil über das Potenzial deines Kindes."</div>
+
+      <h2 id="die-5-bereiche">Die 5 Bereiche, auf die es wirklich ankommt</h2>
+      <p>Wenn wir mit Eltern über Schulreife sprechen, ersetzen wir den Begriff „Test" gerne durch „Beobachtung im Alltag". Denn du siehst dein Kind täglich in echten Situationen – und das ist wertvoller als jede Testsituation. Diese fünf Bereiche sind es, die tatsächlich entscheiden:</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="th-no">Was viele Eltern prüfen</th>
+            <th class="th-yes">Was wirklich zählt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-no">Kann es schon Buchstaben schreiben?</td>
+            <td class="td-yes">Kann es seinen Gedanken in Worte fassen?</td>
+          </tr>
+          <tr>
+            <td class="td-no">Kennt es alle Zahlen bis 20?</td>
+            <td class="td-yes">Kann es eine Aufgabe zu Ende führen, auch wenn es schwierig wird?</td>
+          </tr>
+          <tr>
+            <td class="td-no">Kann es lange ruhig sitzen?</td>
+            <td class="td-yes">Kann es bei Frust oder Enttäuschung wieder ins Gleichgewicht kommen?</td>
+          </tr>
+          <tr>
+            <td class="td-no">Hat es schon Vorschulhefte gemacht?</td>
+            <td class="td-yes">Kann es um Hilfe bitten und mit anderen Kindern kooperieren?</td>
+          </tr>
+          <tr>
+            <td class="td-no">Ist es besser als andere Kinder in der Gruppe?</td>
+            <td class="td-yes">Hat es Vertrauen in sich selbst und in neue Erwachsene?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Diese fünf Bereiche – Sprache, Ausdauer, Emotionsregulation, Kooperation und Selbstvertrauen – sind keine abstrakten Konzepte. Du kannst sie jeden Tag beobachten. Beim gemeinsamen Spielen, beim Essen, beim Verabschieden am Morgen, beim Streit mit dem Geschwisterkind. Das Leben selbst ist der beste Schulreife-Test, den es gibt.</p>
+
+      <h2 id="was-kein-test-misst">Was kein Test messen kann</h2>
+      <p>So hilfreich strukturierte Beobachtungen auch sein können – es gibt Dinge, die kein Bogen, kein Fragebogen und kein Fachgespräch abbilden kann. Und genau diese Dinge sind es, die über langfristigen Schulerfolg entscheiden.</p>
+      <p>Kein Test misst, wie sicher dein Kind sich in Beziehungen fühlt. Kein Test zeigt, ob es innerlich die Überzeugung trägt: Ich kann das lernen. Kein Test prüft, ob es sich nach Fehlern wieder aufraffen kann oder ob es sich traut, eine Lehrerin anzusprechen, wenn es etwas nicht versteht. Und kein Test erfasst, wie neugierig dein Kind auf die Welt ist – ob es Fragen stellt, Dinge ausprobiert, Umwege als spannend erlebt und nicht als Versagen.</p>
+      <p>Diese inneren Haltungen – Neugier, Resilienz, Selbstwirksamkeit, Bindungssicherheit – entstehen nicht durch Training für einen Test. Sie entstehen durch jahrelange sichere Beziehung, durch Spielfreiheit, durch echte Herausforderungen und durch Erwachsene, die ihr Kind kennen und begleiten.</p>
+
+      <div class="info-box">
+        <h3>5 Alltagssituationen, die mehr sagen als jeder Test</h3>
+        <ul>
+          <li><strong>Neue Situation:</strong> Wie reagiert dein Kind, wenn es zum ersten Mal in eine unbekannte Umgebung kommt? Neugier oder Rückzug – beides ist okay, beides sagt etwas.</li>
+          <li><strong>Streit mit anderen Kindern:</strong> Kann es Konflikte aushalten und zu einer Lösung beitragen – auch wenn das unbequem ist?</li>
+          <li><strong>Frustrationsmoment:</strong> Turm fällt um, Puzzle geht nicht, Spiel verloren. Wie lange braucht dein Kind, um sich wieder zu fangen?</li>
+          <li><strong>Trennung:</strong> Kann es sich beim Kita-Abschied lösen und weiß es, dass du wiederkommst?</li>
+          <li><strong>Selbstständigkeit:</strong> Was macht es allein? Anziehen, Brotdose öffnen, Jacke aufhängen – kleine Dinge mit großer Bedeutung.</li>
+        </ul>
       </div>
-      <div class="stat-card">
-        <span class="stat-number">3–6</span>
-        <span class="stat-label">Entwicklungsbereiche prüfen seriöse Schulreifeuntersuchungen gleichzeitig – kein einzelner Test kann ein vollständiges Bild liefern</span>
+
+      <img src="../assets/images/blog/blog-schulreife-test-2.png" alt="Schulstart – Schultüte und Malfarben" style="width:100%;border-radius:var(--radius-xl);margin:8px 0 40px;">
+
+      <h2 id="noch-nicht-ausgereift">Was tun, wenn ein Bereich noch nicht ausgereift wirkt?</h2>
+      <p>Viele Eltern lesen solche Artikel und denken sofort: Und wenn mein Kind da noch nicht steht? Die ehrliche Antwort: Das ist häufiger als du denkst. Entwicklung ist kein gleichmäßiger Prozess. Kinder entwickeln sich in Schüben, mal schneller in einem Bereich, mal langsamer in einem anderen.</p>
+      <p>Wenn du bei einem oder zwei der genannten Bereiche unsicher bist, ist das kein Alarm – es ist ein Hinweis. Ein Hinweis darauf, wo dein Kind gerade noch Raum braucht. Nicht mehr Druck, nicht mehr Übungen. Raum. Raum für Beziehung, für Spielzeit, für echte Erfahrungen.</p>
+      <p>Und wenn du das Gefühl hast, dass mehrere Bereiche gleichzeitig betroffen sind oder die Verzögerungen sehr deutlich sind, ist ein Gespräch mit dem Kinderarzt, der Kita-Leitung oder einer Frühförderungsberatungsstelle der richtige nächste Schritt – ohne Panik, aber mit Aufmerksamkeit.</p>
+      <div class="article-quote">„Entwicklung braucht keine Beschleunigung. Sie braucht sichere Begleitung."</div>
+      <p>Was du als Elternteil am meisten tun kannst: präsent sein. Zuhören. Vertrauen. Dein Kind kennen – nicht verglichen mit anderen Kindern, sondern in seiner eigenen Entwicklung. Das ist keine Kleinigkeit. Das ist die wichtigste Grundlage für einen guten Schulstart.</p>
+
+      <div class="instagram-cta">
+        <h3>Täglich neue Impulse auf Instagram</h3>
+        <p>Folge uns für entwicklungspsychologisch fundierte Tipps rund um Schulreife, Vorschulzeit und entspannten Schulstart – ohne Druck, dafür mit echtem Wissen und viel Herz.</p>
+        <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @eduleo.vorschule folgen
+        </a>
       </div>
-    </div>
 
-    <h2>Was ein Schulreife Test überhaupt misst</h2>
-    <p>Schulreifeuntersuchungen – ob beim Kinderarzt, in der Kita oder durch spezialisierte Fachstellen – schauen sich immer mehrere Entwicklungsbereiche an. Es geht nie um eine einzige Fähigkeit, sondern um ein Zusammenspiel verschiedener Kompetenzen.</p>
-    <p>Typischerweise werden dabei geprüft: die Feinmotorik (Stift halten, Formen nachzeichnen), die Grobmotorik (Gleichgewicht, Koordination), Sprache und Ausdrucksvermögen, die Konzentrations- und Merkfähigkeit, das soziale Verhalten in der Gruppe sowie die emotionale Stabilität. Manche Tests fügen kognitive Aufgaben hinzu – zum Beispiel Mengen vergleichen, Muster erkennen oder sich kurze Geschichten merken.</p>
-    <p>Was dabei wichtig zu verstehen ist: Ein solcher Test ist immer eine Momentaufnahme. Er zeigt, wie dein Kind an einem bestimmten Tag, in einer bestimmten Situation, mit einer ihm fremden Person abschneidet. Er ist kein Urteil, kein Endurteil und erst recht kein Maß für das Potenzial deines Kindes.</p>
-    <div class="article-quote">„Ein Schulreife Test ist eine Momentaufnahme – kein Urteil über das Potenzial deines Kindes."</div>
+      <div class="article-authors">
+        <img src="../assets/images/hannah.png" alt="Hannah Flunkert">
+        <img src="../assets/images/janine.png" alt="Janine Klumper">
+        <div class="article-authors-text">
+          <strong>Hannah &amp; Janine</strong>
+          Psychologische Beraterin &amp; Bildungswissenschaftlerin · Gründerinnen von EDULEO
+        </div>
+      </div>
 
-    <h2>Die 5 Bereiche, auf die es wirklich ankommt</h2>
-    <p>Wenn wir mit Eltern über Schulreife sprechen, ersetzen wir den Begriff „Test" gerne durch „Beobachtung im Alltag". Denn du siehst dein Kind täglich in echten Situationen – und das ist wertvoller als jede Testsituation. Diese fünf Bereiche sind es, die tatsächlich entscheiden:</p>
-
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th class="th-no">Was viele Eltern prüfen</th>
-          <th class="th-yes">Was wirklich zählt</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="td-no">Kann es schon Buchstaben schreiben?</td>
-          <td class="td-yes">Kann es seinen Gedanken in Worte fassen?</td>
-        </tr>
-        <tr>
-          <td class="td-no">Kennt es alle Zahlen bis 20?</td>
-          <td class="td-yes">Kann es eine Aufgabe zu Ende führen, auch wenn es schwierig wird?</td>
-        </tr>
-        <tr>
-          <td class="td-no">Kann es lange ruhig sitzen?</td>
-          <td class="td-yes">Kann es bei Frust oder Enttäuschung wieder ins Gleichgewicht kommen?</td>
-        </tr>
-        <tr>
-          <td class="td-no">Hat es schon Vorschulhefte gemacht?</td>
-          <td class="td-yes">Kann es um Hilfe bitten und mit anderen Kindern kooperieren?</td>
-        </tr>
-        <tr>
-          <td class="td-no">Ist es besser als andere Kinder in der Gruppe?</td>
-          <td class="td-yes">Hat es Vertrauen in sich selbst und in neue Erwachsene?</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>Diese fünf Bereiche – Sprache, Ausdauer, Emotionsregulation, Kooperation und Selbstvertrauen – sind keine abstrakten Konzepte. Du kannst sie jeden Tag beobachten. Beim gemeinsamen Spielen, beim Essen, beim Verabschieden am Morgen, beim Streit mit dem Geschwisterkind. Das Leben selbst ist der beste Schulreife-Test, den es gibt.</p>
-
-    <h2>Was kein Test messen kann</h2>
-    <p>So hilfreich strukturierte Beobachtungen auch sein können – es gibt Dinge, die kein Bogen, kein Fragebogen und kein Fachgespräch abbilden kann. Und genau diese Dinge sind es, die über langfristigen Schulerfolg entscheiden.</p>
-    <p>Kein Test misst, wie sicher dein Kind sich in Beziehungen fühlt. Kein Test zeigt, ob es innerlich die Überzeugung trägt: Ich kann das lernen. Kein Test prüft, ob es sich nach Fehlern wieder aufraffen kann oder ob es sich traut, eine Lehrerin anzusprechen, wenn es etwas nicht versteht. Und kein Test erfasst, wie neugierig dein Kind auf die Welt ist – ob es Fragen stellt, Dinge ausprobiert, Umwege als spannend erlebt und nicht als Versagen.</p>
-    <p>Diese inneren Haltungen – Neugier, Resilienz, Selbstwirksamkeit, Bindungssicherheit – entstehen nicht durch Training für einen Test. Sie entstehen durch jahrelange sichere Beziehung, durch Spielfreiheit, durch echte Herausforderungen und durch Erwachsene, die ihr Kind kennen und begleiten.</p>
-
-    <div class="info-box">
-      <h3>5 Alltagssituationen, die mehr sagen als jeder Test</h3>
-      <ul>
-        <li><strong>Neue Situation:</strong> Wie reagiert dein Kind, wenn es zum ersten Mal in eine unbekannte Umgebung kommt? Neugier oder Rückzug – beides ist okay, beides sagt etwas.</li>
-        <li><strong>Streit mit anderen Kindern:</strong> Kann es Konflikte aushalten und zu einer Lösung beitragen – auch wenn das unbequem ist?</li>
-        <li><strong>Frustrationsmoment:</strong> Turm fällt um, Puzzle geht nicht, Spiel verloren. Wie lange braucht dein Kind, um sich wieder zu fangen?</li>
-        <li><strong>Trennung:</strong> Kann es sich beim Kita-Abschied lösen und weiß es, dass du wiederkommst?</li>
-        <li><strong>Selbstständigkeit:</strong> Was macht es allein? Anziehen, Brotdose öffnen, Jacke aufhängen – kleine Dinge mit großer Bedeutung.</li>
-      </ul>
-    </div>
-
-    <img src="../assets/images/blog/blog-schulreife-test-2.png" alt="Schulstart – Schultüte und Malfarben" style="width:100%;border-radius:var(--radius-xl);margin:8px 0 40px;">
-
-    <h2>Was tun, wenn ein Bereich noch nicht ausgereift wirkt?</h2>
-    <p>Viele Eltern lesen solche Artikel und denken sofort: Und wenn mein Kind da noch nicht steht? Die ehrliche Antwort: Das ist häufiger als du denkst. Entwicklung ist kein gleichmäßiger Prozess. Kinder entwickeln sich in Schüben, mal schneller in einem Bereich, mal langsamer in einem anderen.</p>
-    <p>Wenn du bei einem oder zwei der genannten Bereiche unsicher bist, ist das kein Alarm – es ist ein Hinweis. Ein Hinweis darauf, wo dein Kind gerade noch Raum braucht. Nicht mehr Druck, nicht mehr Übungen. Raum. Raum für Beziehung, für Spielzeit, für echte Erfahrungen.</p>
-    <p>Und wenn du das Gefühl hast, dass mehrere Bereiche gleichzeitig betroffen sind oder die Verzögerungen sehr deutlich sind, ist ein Gespräch mit dem Kinderarzt, der Kita-Leitung oder einer Frühförderungsberatungsstelle der richtige nächste Schritt – ohne Panik, aber mit Aufmerksamkeit.</p>
-    <div class="article-quote">„Entwicklung braucht keine Beschleunigung. Sie braucht sichere Begleitung."</div>
-    <p>Was du als Elternteil am meisten tun kannst: präsent sein. Zuhören. Vertrauen. Dein Kind kennen – nicht verglichen mit anderen Kindern, sondern in seiner eigenen Entwicklung. Das ist keine Kleinigkeit. Das ist die wichtigste Grundlage für einen guten Schulstart.</p>
-
-    <div class="related-articles">
-      <h3>Passend dazu:</h3>
-      <ul>
-        <li><a href="../bereit-fuer-die-schule/">Was „bereit für die Schule" wirklich bedeutet</a> – warum echte Schulreife von innen kommt</li>
-        <li><a href="../schulstart-ist-kein-wettbewerb/">Schulstart ist kein Wettbewerb</a> – wie du den Vergleichsdruck loswirst</li>
-      </ul>
-    </div>
-
-    <div class="product-cta">
-      <h3>Deine persönliche Schulreife-Checkliste</h3>
-      <p>Du möchtest wissen, wo dein Kind gerade wirklich steht? Unsere Vorschul-Checkliste führt dich strukturiert durch alle relevanten Entwicklungsbereiche – mit konkreten Alltagsbeobachtungen statt abstrakter Testergebnisse.</p>
-      <a href="../vorschul-check.html" class="btn btn-primary">Zur Checkliste – 19 €</a>
-    </div>
-
-    <div class="instagram-cta">
-      <h3>Täglich neue Impulse auf Instagram</h3>
-      <p>Folge uns für entwicklungspsychologisch fundierte Tipps rund um Schulreife, Vorschulzeit und entspannten Schulstart – ohne Druck, dafür mit echtem Wissen und viel Herz.</p>
-      <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @eduleo.vorschule folgen
-      </a>
-    </div>
-
-    <div class="article-authors">
-      <img src="../assets/images/hannah.png" alt="Hannah Flunkert">
-      <img src="../assets/images/janine.png" alt="Janine Klumper">
-      <div class="article-authors-text">
-        <strong>Hannah &amp; Janine</strong>
-        Psychologische Beraterin &amp; Bildungswissenschaftlerin · Gründerinnen von EDULEO
+      <div class="article-nav">
+        <a href="../blog/" class="btn btn-secondary">← Alle Artikel</a>
+        <a href="../10-dinge-vor-der-schule/" class="btn btn-secondary">Nächster Artikel →</a>
       </div>
     </div>
 
-    <div class="article-nav">
-      <a href="../blog/" class="btn btn-secondary">← Alle Artikel</a>
-      <a href="../10-dinge-vor-der-schule/" class="btn btn-secondary">Nächster Artikel →</a>
-    </div>
+    <!-- Sidebar -->
+    <aside class="article-sidebar">
+      <nav aria-label="Inhaltsverzeichnis">
+        <span class="sidebar-toc-header">Inhalt</span>
+        <ul class="sidebar-toc" style="list-style:none;padding:0;margin:0;">
+          <li><a href="#was-misst-ein-test">Was ein Schulreife Test misst</a></li>
+          <li><a href="#die-5-bereiche">Die 5 Bereiche, die zählen</a></li>
+          <li><a href="#was-kein-test-misst">Was kein Test messen kann</a></li>
+          <li><a href="#noch-nicht-ausgereift">Was tun, wenn etwas fehlt?</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-product">
+        <h3>Deine persönliche Schulreife-Checkliste</h3>
+        <p>Strukturiert durch alle Entwicklungsbereiche – mit konkreten Alltagsbeobachtungen statt abstrakter Testergebnisse.</p>
+        <a href="../vorschul-check.html" class="btn btn-primary">Zur Checkliste – 19 €</a>
+      </div>
+
+      <div class="sidebar-more">
+        <span class="sidebar-more-header">Mehr lesen</span>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li><a href="../bereit-fuer-die-schule/">Was „bereit für die Schule" wirklich bedeutet</a></li>
+          <li><a href="../schulstart-ist-kein-wettbewerb/">Schulstart ist kein Wettbewerb</a></li>
+          <li><a href="../10-dinge-vor-der-schule/">10 Dinge vor der Schule</a></li>
+        </ul>
+      </div>
+    </aside>
 
   </div>
 </div>
