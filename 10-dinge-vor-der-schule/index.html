@@ -34,7 +34,16 @@
     .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .article-meta-date { font-size: 0.85rem; color: var(--text-light); font-weight: 700; }
     .article-meta-author { font-size: 0.85rem; color: var(--text-light); }
-    .article-body { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+
+    /* === Zweispaltiges Layout === */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 56px;
+      padding: 64px 0 96px;
+      align-items: start;
+    }
+    .article-body { min-width: 0; }
     .article-body h2 { font-size: 1.35rem; font-weight: 800; color: var(--dark); margin: 48px 0 16px; line-height: 1.3; }
     .article-body h2:first-child { margin-top: 0; }
     .article-body h3 { font-size: 1.05rem; font-weight: 800; color: var(--dark); margin: 28px 0 10px; }
@@ -42,14 +51,35 @@
     .article-body ul { list-style: none; padding: 0; margin-bottom: 18px; }
     .article-body ul li { font-size: 1rem; color: var(--text); line-height: 1.75; padding: 6px 0 6px 28px; position: relative; }
     .article-body ul li::before { content: '✦'; position: absolute; left: 0; color: var(--turquoise); font-size: 0.7rem; top: 10px; }
+    .article-featured-img { width: 100%; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
     .article-quote { background: var(--turquoise-light); border-left: 4px solid var(--turquoise); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 28px; margin: 32px 0; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.5; font-style: italic; }
     .article-authors { margin-top: 64px; padding-top: 40px; border-top: 2px solid var(--border); display: flex; gap: 16px; align-items: center; }
     .article-authors img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
     .article-authors-text { font-size: 0.9rem; color: var(--text); }
     .article-authors-text strong { display: block; color: var(--dark); margin-bottom: 2px; }
     .article-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; flex-wrap: wrap; gap: 16px; }
-    .article-featured-img { width: 100%; max-width: 560px; border-radius: var(--radius-xl); margin: 0 auto 40px; display: block; }
 
+    /* === Sidebar === */
+    .article-sidebar { position: sticky; top: calc(var(--nav-h) + 24px); }
+    .sidebar-toc-header,
+    .sidebar-more-header { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; padding-bottom: 10px; border-bottom: 2px solid var(--border); display: block; margin-bottom: 0; }
+    .sidebar-toc ul,
+    .sidebar-more ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar-toc ul li,
+    .sidebar-more ul li { border-bottom: 1px solid var(--border); }
+    .sidebar-toc ul li a,
+    .sidebar-more ul li a { display: flex; align-items: center; justify-content: space-between; padding: 11px 0; font-size: 0.88rem; color: var(--dark); font-weight: 600; text-decoration: none; gap: 8px; line-height: 1.4; }
+    .sidebar-toc ul li a::after,
+    .sidebar-more ul li a::after { content: '→'; color: var(--turquoise); flex-shrink: 0; font-size: 0.9rem; }
+    .sidebar-toc ul li a:hover,
+    .sidebar-more ul li a:hover { color: var(--turquoise); }
+    .sidebar-product { background: var(--dark); border-radius: var(--radius-lg); padding: 22px 20px; margin: 24px 0; }
+    .sidebar-product h3 { font-size: 0.95rem; font-weight: 800; color: white; margin-bottom: 8px; line-height: 1.35; }
+    .sidebar-product p { font-size: 0.82rem; color: rgba(255,255,255,0.75); margin-bottom: 16px; line-height: 1.65; }
+    .sidebar-product .btn { display: block; text-align: center; width: 100%; box-sizing: border-box; }
+    .sidebar-more { margin-top: 24px; }
+
+    /* === Content-Elemente === */
     .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
     .stat-card { background: white; border: 2px solid var(--turquoise); border-radius: var(--radius-lg); padding: 22px 16px; text-align: center; box-shadow: var(--shadow-sm); }
     .stat-number { display: block; font-size: 2rem; font-weight: 900; color: var(--turquoise); line-height: 1.1; }
@@ -74,21 +104,19 @@
     .info-box ul { margin: 0; padding: 0; }
     .info-box ul li { padding: 5px 0 5px 24px; font-size: 0.95rem; }
     .info-box ul li::before { color: var(--turquoise); }
-    .related-articles { margin: 48px 0; padding: 32px 28px; background: white; border-radius: var(--radius-xl); border: 2px solid var(--border); }
-    .related-articles h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 16px; }
-    .related-articles ul { margin: 0; }
-    .related-articles ul li::before { color: var(--turquoise); }
-    .related-articles a { color: var(--turquoise); font-weight: 700; text-decoration: none; }
-    .related-articles a:hover { text-decoration: underline; }
-    .product-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, var(--turquoise-light), #fff); border-radius: var(--radius-xl); border: 2px solid var(--turquoise); }
-    .product-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
-    .product-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
     .instagram-cta { margin: 48px 0; padding: 32px 28px; background: linear-gradient(135deg, #fffbf0, #f0f9ff); border-radius: var(--radius-xl); border: 2px solid var(--yellow); text-align: center; }
     .instagram-cta h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
     .instagram-cta p { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; }
     .instagram-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; transition: opacity 0.2s; }
     .instagram-btn:hover { opacity: 0.88; }
-    @media (max-width: 620px) { .stat-grid { grid-template-columns: 1fr; } .compare-table { display: block; overflow-x: auto; } .numbered-list li { gap: 14px; } }
+
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 0; }
+      .article-sidebar { position: static; margin-bottom: 48px; order: -1; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .compare-table { display: block; overflow-x: auto; }
+      .numbered-list li { gap: 14px; }
+    }
   </style>
 </head>
 <body>
@@ -137,176 +165,193 @@
 </div>
 
 <div class="container">
-  <div class="article-body">
-    <img src="../assets/images/blog/blog-10-dinge-vor-schule.png" alt="10 Dinge die dein Kind vor der Schule können sollte" class="article-featured-img">
+  <div class="article-layout">
 
-    <p>Listen gibt es im Internet viele. „Was dein Kind vor der Schule können muss" – drei Klicks und du hast zwanzig davon. Das Problem: Die meisten verwechseln Schulvorbereitung mit Vorziehen von Schulinhalten. Lesen lernen, Zahlen schreiben, Buchstaben kennen – all das klingt sinnvoll, ist aber nicht das, was einen guten Schulstart ausmacht.</p>
-    <p>Diese Liste ist anders. Sie orientiert sich daran, was Entwicklungspsychologie und Grundschulpädagogik wirklich über einen gelingenden Schulstart sagen. Und sie macht ehrlich klar, was du getrost von deiner gedanklichen Checkliste streichen kannst.</p>
+    <!-- Hauptinhalt -->
+    <div class="article-body">
+      <img src="../assets/images/blog/blog-10-dinge-vor-schule.png" alt="10 Dinge die dein Kind vor der Schule können sollte" class="article-featured-img">
 
-    <div class="stat-grid">
-      <div class="stat-card">
-        <span class="stat-number">~80 %</span>
-        <span class="stat-label">der Erstklässler lernen Lesen und Schreiben erst in der Schule – das ist so gewollt (KMK, 2023)</span>
+      <p>Listen gibt es im Internet viele. „Was dein Kind vor der Schule können muss" – drei Klicks und du hast zwanzig davon. Das Problem: Die meisten verwechseln Schulvorbereitung mit Vorziehen von Schulinhalten. Lesen lernen, Zahlen schreiben, Buchstaben kennen – all das klingt sinnvoll, ist aber nicht das, was einen guten Schulstart ausmacht.</p>
+      <p>Diese Liste ist anders. Sie orientiert sich daran, was Entwicklungspsychologie und Grundschulpädagogik wirklich über einen gelingenden Schulstart sagen. Und sie macht ehrlich klar, was du getrost von deiner gedanklichen Checkliste streichen kannst.</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="stat-number">~80 %</span>
+          <span class="stat-label">der Erstklässler lernen Lesen und Schreiben erst in der Schule – das ist so gewollt (KMK, 2023)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">Nr. 1</span>
+          <span class="stat-label">Selbstständigkeit im Alltag ist laut Grundschullehrerinnen die wichtigste Kompetenz für einen guten Schulstart</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">6–7</span>
+          <span class="stat-label">Jahre braucht ein Kind, um die für die Schule nötige sozial-emotionale Reife zu entwickeln – das ist biologisch festgelegt</span>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-number">Nr. 1</span>
-        <span class="stat-label">Selbstständigkeit im Alltag ist laut Grundschullehrerinnen die wichtigste Kompetenz für einen guten Schulstart</span>
+
+      <h2 id="warum-anders">Warum diese Liste anders ist</h2>
+      <p>Schulvorbereitung bedeutet nicht, Schulinhalte vorwegzunehmen. Es bedeutet, ein Kind so zu begleiten, dass es die inneren Voraussetzungen mitbringt, um in der Schule lernen zu können. Das ist ein großer Unterschied.</p>
+      <p>Ein Kind, das seinen Namen schreiben kann, aber bei jeder Herausforderung in Tränen ausbricht, hat es schwerer als ein Kind, das zwar keine einzige Zahl kennt, aber weiß: Ich kann mir Hilfe holen, und ich gebe nicht auf. Lernen braucht eine Basis – und diese Basis ist nicht kognitiv. Sie ist emotional, sozial und körperlich.</p>
+      <div class="article-quote">„Kinder lernen Lesen und Schreiben in der Schule. Was sie mitbringen müssen, ist die Bereitschaft – und die entsteht lange bevor der Schulranzen gepackt wird."</div>
+
+      <h2 id="die-10-dinge">Die 10 Dinge, die wirklich zählen</h2>
+
+      <ol class="numbered-list">
+        <li>
+          <div class="item-content">
+            <strong>Sich selbst an- und ausziehen</strong>
+            <span>Jacke aufhängen, Schuhe zubinden, Reißverschluss öffnen – das klingt banal, macht aber im Schulalltag einen riesigen Unterschied. Selbstständigkeit im Körperbereich stärkt das Selbstwirksamkeitsgefühl und entlastet das Kind in neuen Situationen.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Die eigenen Bedürfnisse äußern</strong>
+            <span>„Ich muss auf die Toilette." „Ich verstehe das nicht." „Ich brauche Hilfe." Diese Sätze zu sagen, wenn nötig, ist eine Schlüsselfähigkeit. Kinder, die das können, kommen durch den Schultag viel leichter durch – und Lehrerinnen können ihnen viel besser helfen.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Kurze Wartezeiten aushalten</strong>
+            <span>Im Unterricht geht nicht alles sofort. Wer an der Reihe ist, muss auf den richtigen Moment warten. Das ist keine Selbstverständlichkeit – und keine Frage von Disziplin, sondern von reifender Impulskontrolle, die Eltern durch klare Alltagsstrukturen unterstützen können.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Mit Gleichaltrigen spielen und streiten</strong>
+            <span>Konflikte erleben, aushalten, lösen – und danach wieder ins Spiel zurückfinden. Kinder, die das in der Kita üben konnten, haben in der Schule einen enormen Startvorteil. Soziale Kompetenz wächst im echten Spiel, nicht im Übungsheft.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Sich auf eine Aufgabe konzentrieren</strong>
+            <span>Nicht stundenlang – aber 10 bis 15 Minuten bei einer Sache bleiben: ein Puzzle fertig legen, ein Bild ausmalen, ein Spiel zu Ende spielen. Konzentration ist ein Muskel, der durch freies, selbstgewähltes Spiel am effektivsten wächst.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Misserfolge aushalten</strong>
+            <span>Der Turm fällt um. Das Spiel ist verloren. Das Bild ist nicht so geworden wie gedacht. Wie dein Kind damit umgeht – ob es sich wieder aufrafft oder komplett einbricht – ist einer der stärksten Vorhersagewerte für Schulerfolg (Dweck, 2006). Resilienz entsteht durch echte Erfahrungen, nicht durch Schutz vor Frust.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Sich von einer Bezugsperson trennen</strong>
+            <span>Die Fähigkeit, sich morgens zu verabschieden und zu wissen: Mama oder Papa kommt wieder – das ist Bindungssicherheit in Aktion. Kinder, die das können, sind im Unterricht präsenter, neugieriger und offener für neue Beziehungen zu Lehrpersonen.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Geschichten verstehen und nacherzählen</strong>
+            <span>Nicht perfekt, nicht vollständig – aber: Was ist passiert? Wer war dabei? Was kam zuerst? Sprachverständnis und die Fähigkeit, Erlebnisse sprachlich zu strukturieren, sind entscheidend für das spätere Lesen- und Schreiben-Lernen.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Mengen und Unterschiede wahrnehmen</strong>
+            <span>Mehr oder weniger, größer oder kleiner, gleich oder verschieden – das ist die Basis für mathematisches Denken. Das Zählen bis 20 ist dabei weit weniger wichtig als das intuitive Mengenverständnis, das durch Spielen, Kochen, Sortieren und Bauen entsteht.</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <strong>Neugier und Freude am Entdecken zeigen</strong>
+            <span>Das ist vielleicht die wichtigste Fähigkeit von allen – und gleichzeitig die zerbrechlichste. Kinder, die mit echter Neugier in die Schule kommen, lernen schneller und tiefer. Diese Neugier entsteht in einer Kindheit, die Fragen ernst nimmt, Ausprobieren erlaubt und Fehler als selbstverständlichen Teil des Lernens behandelt.</span>
+          </div>
+        </li>
+      </ol>
+
+      <img src="../assets/images/blog/blog-10-dinge-vor-schule-2.png" alt="Spielerisches Lernen mit Buchstaben vor der Schule" style="width:100%;border-radius:var(--radius-xl);margin:8px 0 40px;">
+
+      <h2 id="3-dinge-nicht">3 Dinge, die dein Kind NICHT braucht</h2>
+      <p>Genauso wichtig wie das Was ist das Weglassen. Denn viele Eltern investieren Zeit und Energie in Dinge, die für den Schulstart tatsächlich nicht notwendig sind – und manchmal sogar hinderlich, weil sie Druck erzeugen, wo Entspannung gefragt wäre.</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="th-no">❌ Das braucht dein Kind NICHT</th>
+            <th class="th-yes">✓ Was stattdessen hilft</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-no">Lesen oder Schreiben lernen vor der Schule</td>
+            <td class="td-yes">Geschichten hören, selbst erzählen, mit Sprache spielen</td>
+          </tr>
+          <tr>
+            <td class="td-no">Zahlen und Buchstaben auswendig kennen</td>
+            <td class="td-yes">Mengen erleben, sortieren, vergleichen – im echten Leben</td>
+          </tr>
+          <tr>
+            <td class="td-no">Stundenlang still sitzen können</td>
+            <td class="td-yes">Bewegung, Spiel und Selbststeuerung im Alltag üben</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Wenn dein Kind all diese Dinge noch nicht kann: Das ist vollkommen normal. Die Schule ist dafür da, sie zu lehren. Deine Aufgabe als Elternteil ist es nicht, der Schule zuvorzukommen – sondern das Fundament zu legen, auf dem Lernen möglich wird.</p>
+
+      <div class="info-box">
+        <h3>So kannst du diese 10 Fähigkeiten im Alltag stärken</h3>
+        <ul>
+          <li><strong>Selbstständigkeit fördern:</strong> Lass dein Kind sich selbst anziehen, seinen Teller abräumen, seine Sachen packen – auch wenn es länger dauert.</li>
+          <li><strong>Gespräche führen:</strong> Frag nach dem Tag, hör zu, lass dein Kind Geschichten zu Ende erzählen – auch die langen.</li>
+          <li><strong>Freies Spiel ermöglichen:</strong> Unstrukturierte Zeit ohne Bildschirm ist Entwicklungszeit. Langeweile darf sein.</li>
+          <li><strong>Frust zulassen:</strong> Nicht sofort helfen oder lösen. Erst Gefühle begleiten, dann gemeinsam überlegen.</li>
+          <li><strong>Rituale schaffen:</strong> Verlässliche Abläufe geben Sicherheit und trainieren Selbstregulation ganz nebenbei.</li>
+        </ul>
       </div>
-      <div class="stat-card">
-        <span class="stat-number">6–7</span>
-        <span class="stat-label">Jahre braucht ein Kind, um die für die Schule nötige sozial-emotionale Reife zu entwickeln – das ist biologisch festgelegt</span>
+
+      <div class="article-quote">„Kinder müssen nicht perfekt vorbereitet in die Schule kommen. Sie müssen bereit sein, dort zu lernen – das ist ein entscheidender Unterschied."</div>
+
+      <div class="instagram-cta">
+        <h3>Täglich neue Impulse auf Instagram</h3>
+        <p>Folge uns für entwicklungspsychologisch fundierte Tipps rund um Schulreife, Vorschulzeit und entspannten Schulstart – ohne Druck, dafür mit echtem Wissen und viel Herz.</p>
+        <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @eduleo.vorschule folgen
+        </a>
       </div>
-    </div>
 
-    <h2>Warum diese Liste anders ist</h2>
-    <p>Schulvorbereitung bedeutet nicht, Schulinhalte vorwegzunehmen. Es bedeutet, ein Kind so zu begleiten, dass es die inneren Voraussetzungen mitbringt, um in der Schule lernen zu können. Das ist ein großer Unterschied.</p>
-    <p>Ein Kind, das seinen Namen schreiben kann, aber bei jeder Herausforderung in Tränen ausbricht, hat es schwerer als ein Kind, das zwar keine einzige Zahl kennt, aber weiß: Ich kann mir Hilfe holen, und ich gebe nicht auf. Lernen braucht eine Basis – und diese Basis ist nicht kognitiv. Sie ist emotional, sozial und körperlich.</p>
-    <div class="article-quote">„Kinder lernen Lesen und Schreiben in der Schule. Was sie mitbringen müssen, ist die Bereitschaft – und die entsteht lange bevor der Schulranzen gepackt wird."</div>
-
-    <h2>Die 10 Dinge, die wirklich zählen</h2>
-
-    <ol class="numbered-list">
-      <li>
-        <div class="item-content">
-          <strong>Sich selbst an- und ausziehen</strong>
-          <span>Jacke aufhängen, Schuhe zubinden, Reißverschluss öffnen – das klingt banal, macht aber im Schulalltag einen riesigen Unterschied. Selbstständigkeit im Körperbereich stärkt das Selbstwirksamkeitsgefühl und entlastet das Kind in neuen Situationen.</span>
+      <div class="article-authors">
+        <img src="../assets/images/hannah.png" alt="Hannah Flunkert">
+        <img src="../assets/images/janine.png" alt="Janine Klumper">
+        <div class="article-authors-text">
+          <strong>Hannah &amp; Janine</strong>
+          Psychologische Beraterin &amp; Bildungswissenschaftlerin · Gründerinnen von EDULEO
         </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Die eigenen Bedürfnisse äußern</strong>
-          <span>„Ich muss auf die Toilette." „Ich verstehe das nicht." „Ich brauche Hilfe." Diese Sätze zu sagen, wenn nötig, ist eine Schlüsselfähigkeit. Kinder, die das können, kommen durch den Schultag viel leichter durch – und Lehrerinnen können ihnen viel besser helfen.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Kurze Wartezeiten aushalten</strong>
-          <span>Im Unterricht geht nicht alles sofort. Wer an der Reihe ist, muss auf den richtigen Moment warten. Das ist keine Selbstverständlichkeit – und keine Frage von Disziplin, sondern von reifender Impulskontrolle, die Eltern durch klare Alltagsstrukturen unterstützen können.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Mit Gleichaltrigen spielen und streiten</strong>
-          <span>Konflikte erleben, aushalten, lösen – und danach wieder ins Spiel zurückfinden. Kinder, die das in der Kita üben konnten, haben in der Schule einen enormen Startvorteil. Soziale Kompetenz wächst im echten Spiel, nicht im Übungsheft.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Sich auf eine Aufgabe konzentrieren</strong>
-          <span>Nicht stundenlang – aber 10 bis 15 Minuten bei einer Sache bleiben: ein Puzzle fertig legen, ein Bild ausmalen, ein Spiel zu Ende spielen. Konzentration ist ein Muskel, der durch freies, selbstgewähltes Spiel am effektivsten wächst.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Misserfolge aushalten</strong>
-          <span>Der Turm fällt um. Das Spiel ist verloren. Das Bild ist nicht so geworden wie gedacht. Wie dein Kind damit umgeht – ob es sich wieder aufrafft oder komplett einbricht – ist einer der stärksten Vorhersagewerte für Schulerfolg (Dweck, 2006). Resilience entsteht durch echte Erfahrungen, nicht durch Schutz vor Frust.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Sich von einer Bezugsperson trennen</strong>
-          <span>Die Fähigkeit, sich morgens zu verabschieden und zu wissen: Mama oder Papa kommt wieder – das ist Bindungssicherheit in Aktion. Kinder, die das können, sind im Unterricht präsenter, neugieriger und offener für neue Beziehungen zu Lehrpersonen.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Geschichten verstehen und nacherzählen</strong>
-          <span>Nicht perfekt, nicht vollständig – aber: Was ist passiert? Wer war dabei? Was kam zuerst? Sprachverständnis und die Fähigkeit, Erlebnisse sprachlich zu strukturieren, sind entscheidend für das spätere Lesen- und Schreiben-Lernen.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Mengen und Unterschiede wahrnehmen</strong>
-          <span>Mehr oder weniger, größer oder kleiner, gleich oder verschieden – das ist die Basis für mathematisches Denken. Das Zählen bis 20 ist dabei weit weniger wichtig als das intuitive Mengenverständnis, das durch Spielen, Kochen, Sortieren und Bauen entsteht.</span>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <strong>Neugier und Freude am Entdecken zeigen</strong>
-          <span>Das ist vielleicht die wichtigste Fähigkeit von allen – und gleichzeitig die zerbrechlichste. Kinder, die mit echter Neugier in die Schule kommen, lernen schneller und tiefer. Diese Neugier entsteht in einer Kindheit, die Fragen ernst nimmt, Ausprobieren erlaubt und Fehler als selbstverständlichen Teil des Lernens behandelt.</span>
-        </div>
-      </li>
-    </ol>
+      </div>
 
-    <img src="../assets/images/blog/blog-10-dinge-vor-schule-2.png" alt="Spielerisches Lernen mit Buchstaben vor der Schule" style="width:100%;border-radius:var(--radius-xl);margin:8px 0 40px;">
-
-    <h2>3 Dinge, die dein Kind NICHT braucht</h2>
-    <p>Genauso wichtig wie das Was ist das Weglassen. Denn viele Eltern investieren Zeit und Energie in Dinge, die für den Schulstart tatsächlich nicht notwendig sind – und manchmal sogar hinderlich, weil sie Druck erzeugen, wo Entspannung gefragt wäre.</p>
-
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th class="th-no">❌ Das braucht dein Kind NICHT</th>
-          <th class="th-yes">✓ Was stattdessen hilft</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="td-no">Lesen oder Schreiben lernen vor der Schule</td>
-          <td class="td-yes">Geschichten hören, selbst erzählen, mit Sprache spielen</td>
-        </tr>
-        <tr>
-          <td class="td-no">Zahlen und Buchstaben auswendig kennen</td>
-          <td class="td-yes">Mengen erleben, sortieren, vergleichen – im echten Leben</td>
-        </tr>
-        <tr>
-          <td class="td-no">Stundenlang still sitzen können</td>
-          <td class="td-yes">Bewegung, Spiel und Selbststeuerung im Alltag üben</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>Wenn dein Kind all diese Dinge noch nicht kann: Das ist vollkommen normal. Die Schule ist dafür da, sie zu lehren. Deine Aufgabe als Elternteil ist es nicht, der Schule zuvorzukommen – sondern das Fundament zu legen, auf dem Lernen möglich wird.</p>
-
-    <div class="info-box">
-      <h3>So kannst du diese 10 Fähigkeiten im Alltag stärken</h3>
-      <ul>
-        <li><strong>Selbstständigkeit fördern:</strong> Lass dein Kind sich selbst anziehen, seinen Teller abräumen, seine Sachen packen – auch wenn es länger dauert.</li>
-        <li><strong>Gespräche führen:</strong> Frag nach dem Tag, hör zu, lass dein Kind Geschichten zu Ende erzählen – auch die langen.</li>
-        <li><strong>Freies Spiel ermöglichen:</strong> Unstrukturierte Zeit ohne Bildschirm ist Entwicklungszeit. Langeweile darf sein.</li>
-        <li><strong>Frust zulassen:</strong> Nicht sofort helfen oder lösen. Erst Gefühle begleiten, dann gemeinsam überlegen.</li>
-        <li><strong>Rituale schaffen:</strong> Verlässliche Abläufe geben Sicherheit und trainieren Selbstregulation ganz nebenbei.</li>
-      </ul>
-    </div>
-
-    <div class="article-quote">„Kinder müssen nicht perfekt vorbereitet in die Schule kommen. Sie müssen bereit sein, dort zu lernen – das ist ein entscheidender Unterschied."</div>
-
-    <div class="related-articles">
-      <h3>Passend dazu:</h3>
-      <ul>
-        <li><a href="../schulreife-test/">Schulreife Test: Was wirklich zählt</a> – welche Bereiche du im Alltag beobachten kannst</li>
-        <li><a href="../bereit-fuer-die-schule/">Was „bereit für die Schule" wirklich bedeutet</a> – warum echte Schulreife von innen kommt</li>
-      </ul>
-    </div>
-
-    <div class="product-cta">
-      <h3>Der EDULEO Vorschul-Guide: Schritt für Schritt durch das letzte Kita-Jahr</h3>
-      <p>Du möchtest das letzte Kita-Jahr bewusst und entspannt gestalten? Unser Vorschul-Guide gibt dir einen klaren Fahrplan: Was wann wichtig ist, wie du die 10 Kompetenzen spielerisch stärkst – und wie du als Familie entspannt in den Schulstart gehst.</p>
-      <a href="../vorschul-guide.html" class="btn btn-primary">Zum Guide – 39 €</a>
-    </div>
-
-    <div class="instagram-cta">
-      <h3>Täglich neue Impulse auf Instagram</h3>
-      <p>Folge uns für entwicklungspsychologisch fundierte Tipps rund um Schulreife, Vorschulzeit und entspannten Schulstart – ohne Druck, dafür mit echtem Wissen und viel Herz.</p>
-      <a href="https://www.instagram.com/eduleo.vorschule/" class="instagram-btn" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @eduleo.vorschule folgen
-      </a>
-    </div>
-
-    <div class="article-authors">
-      <img src="../assets/images/hannah.png" alt="Hannah Flunkert">
-      <img src="../assets/images/janine.png" alt="Janine Klumper">
-      <div class="article-authors-text">
-        <strong>Hannah &amp; Janine</strong>
-        Psychologische Beraterin &amp; Bildungswissenschaftlerin · Gründerinnen von EDULEO
+      <div class="article-nav">
+        <a href="../blog/" class="btn btn-secondary">← Alle Artikel</a>
+        <a href="../bereit-fuer-die-schule/" class="btn btn-secondary">Nächster Artikel →</a>
       </div>
     </div>
 
-    <div class="article-nav">
-      <a href="../blog/" class="btn btn-secondary">← Alle Artikel</a>
-      <a href="../bereit-fuer-die-schule/" class="btn btn-secondary">Nächster Artikel →</a>
-    </div>
+    <!-- Sidebar -->
+    <aside class="article-sidebar">
+      <nav aria-label="Inhaltsverzeichnis">
+        <span class="sidebar-toc-header">Inhalt</span>
+        <ul class="sidebar-toc" style="list-style:none;padding:0;margin:0;">
+          <li><a href="#warum-anders">Warum diese Liste anders ist</a></li>
+          <li><a href="#die-10-dinge">Die 10 Dinge, die zählen</a></li>
+          <li><a href="#3-dinge-nicht">3 Dinge, die nicht nötig sind</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-product">
+        <h3>Der EDULEO Vorschul-Guide</h3>
+        <p>Klarer Fahrplan durch das letzte Kita-Jahr – wie du alle 10 Kompetenzen spielerisch stärkst und entspannt in den Schulstart gehst.</p>
+        <a href="../vorschul-guide.html" class="btn btn-primary">Zum Guide – 39 €</a>
+      </div>
+
+      <div class="sidebar-more">
+        <span class="sidebar-more-header">Mehr lesen</span>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li><a href="../schulreife-test/">Schulreife Test: Was zählt</a></li>
+          <li><a href="../bereit-fuer-die-schule/">Was „bereit für die Schule" bedeutet</a></li>
+          <li><a href="../schulstart-ist-kein-wettbewerb/">Schulstart ist kein Wettbewerb</a></li>
+        </ul>
+      </div>
+    </aside>
 
   </div>
 </div>
