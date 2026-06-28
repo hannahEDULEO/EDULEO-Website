@@ -61,6 +61,23 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in, .slide-left, .slide-right, .slide-up')
   .forEach(el => observer.observe(el));
 
+// Make cards fully clickable
+document.querySelectorAll('.angebot-card').forEach(card => {
+  const link = card.querySelector('a.btn');
+  if (!link) return;
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', e => {
+    if (!e.target.closest('a')) window.location.href = link.href;
+  });
+});
+
+document.querySelectorAll('.pain-card, .baustein-card').forEach(card => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => {
+    document.getElementById('angebote')?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
 // Count-up animation for 200+
 const counterEl = document.getElementById('count-familien');
 if (counterEl) {
