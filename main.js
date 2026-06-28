@@ -62,7 +62,7 @@ document.querySelectorAll('.fade-in, .slide-left, .slide-right, .slide-up')
   .forEach(el => observer.observe(el));
 
 // Make cards fully clickable
-document.querySelectorAll('.angebot-card').forEach(card => {
+document.querySelectorAll('.angebot-card, .blog-card').forEach(card => {
   const link = card.querySelector('a.btn');
   if (!link) return;
   card.style.cursor = 'pointer';
