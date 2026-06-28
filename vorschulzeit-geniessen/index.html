@@ -32,6 +32,7 @@
     .article-meta-date { font-size: 0.85rem; color: var(--text-light); font-weight: 700; }
     .article-meta-author { font-size: 0.85rem; color: var(--text-light); }
     .article-body { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+    .article-layout .article-body { max-width: none; margin: 0; padding: 0; }
     .article-body h2 { font-size: 1.35rem; font-weight: 800; color: var(--dark); margin: 48px 0 16px; line-height: 1.3; }
     .article-body h2:first-child { margin-top: 0; }
     .article-body p { font-size: 1rem; color: var(--text); line-height: 1.85; margin-bottom: 18px; }
@@ -111,7 +112,8 @@
 </div>
 
 <div class="container">
-  <div class="article-body">
+  <div class="article-layout">
+    <div class="article-body">
     <img src="../assets/images/blog/blog-vorschulzeit-geniessen.png" alt="Ich will die Vorschulzeit genießen" class="article-featured-img">
 
     <p>Vielleicht kennst du diesen Gedanken: Es ist das letzte Kita Jahr. Jetzt wird es ernst. Jetzt beginnt die Vorbereitung. Jetzt sollte ich wirklich nichts verpassen. Und während du das denkst, spürst du gleichzeitig etwas anderes. Eine leise Sehnsucht. Ich will diese Zeit genießen. Ich will nicht jeden Nachmittag am Tisch sitzen und „Vorschule machen". Ich will lachen, spielen, Ausflüge machen, kuscheln. Ich will mein Kind wachsen sehen, ohne ständig zu prüfen, ob es schon „bereit" ist.</p>
@@ -134,7 +136,7 @@
       </div>
     </div>
 
-    <h2>Kinder brauchen Orientierung</h2>
+    <h2 id="orientierung">Kinder brauchen Orientierung</h2>
     <p>Wir leben in einer Zeit, in der du jederzeit sehen kannst, was andere Familien scheinbar alles tun. Perfekt vorbereitete Vorschulhefte. Wochenpläne. Lernspiele. Kinder, die mit fünf Jahren flüssig lesen. Es sieht strukturiert aus. Durchdacht. Erfolgreich. Und ganz schnell schleicht sich das Gefühl ein, nicht genug zu machen.</p>
     <p>Doch Social Media zeigt Ergebnisse. Es zeigt selten Prozesse. Es zeigt selten Zweifel. Es zeigt selten die Kinder, die einfach spielen, träumen und wachsen.</p>
     <p>Es geht nicht darum, alles zu ignorieren. Es geht darum, einordnen zu können. Orientierung bedeutet, dass du weißt, was entwicklungspsychologisch wirklich zählt. Dass du unterscheiden kannst zwischen hilfreichen Impulsen und unnötigem Leistungsdruck. Dass du Entscheidungen aus Ruhe triffst, nicht aus Angst. Dein Kind braucht nicht mehr Input. Es braucht dich als sicheren Wegweiser. Ruhig. Klar. Wertschätzend.</p>
@@ -152,7 +154,7 @@
 
     <p>Wenn du verstehst, dass Schulreife ein ganzheitlicher Prozess ist, verändert sich dein Blick. Dann siehst du im freien Spiel nicht mehr „verlorene Zeit", sondern intensive Lernmomente. Dann erkennst du im selbstständigen Anziehen nicht nur Chaos, sondern wachsende Kompetenz. Dann merkst du, dass ein Kind, das Konflikte im Gruppenalltag austrägt, gerade genau das trainiert, was es in der Schule braucht: soziale Sicherheit und Frustrationstoleranz. Entwicklung braucht Vertrauen. Und dieses Vertrauen beginnt bei dir.</p>
 
-    <h2>Wie Orientierung in der Kita gelingen kann</h2>
+    <h2 id="kita">Wie Orientierung in der Kita gelingen kann</h2>
     <p><strong>Beziehung als Fundament stärken:</strong> Der wichtigste Faktor im letzten Kita Jahr ist nicht ein zusätzliches Programm. Es ist Beziehung. Sprich mit den pädagogischen Fachkräften nicht aus Sorge, sondern aus Interesse. Frag nach, wie sie dein Kind erleben. Wo sie Stärken sehen. In welchen Situationen es besonders selbstbewusst wirkt. Wenn dein Kind sich in der Kita sicher fühlt, entsteht eine stabile Basis für den Übergang.</p>
     <p><strong>Selbstständigkeit im Alltag wachsen lassen:</strong> Schulreife zeigt sich im Alltag. Wenn dein Kind lernt, seine Tasche selbst zu packen, Verantwortung für kleine Aufgaben zu übernehmen oder eigene Entscheidungen zu treffen, dann wächst genau die innere Stärke, die es später im Schulalltag braucht. Du musst nicht mehr üben. Du darfst mehr zutrauen.</p>
 
@@ -169,7 +171,7 @@
 
     <p><strong>Gefühle rund um den Übergang ernst nehmen:</strong> Der Übergang in die Grundschule ist groß. Auch wenn dein Kind nach außen stark wirkt, bewegen sich im Inneren viele Fragen. Werde ich Freunde finden? Ist die Lehrerin nett? Schaffe ich das? Du musst diese Fragen nicht sofort beantworten. Es reicht, sie auszuhalten. Zuhören. Spiegeln. Sicherheit geben. Du kannst sagen: Ich sehe, dass du groß wirst. Und ich bleibe an deiner Seite.</p>
 
-    <h2>Vorschule darf sich leicht anfühlen</h2>
+    <h2 id="leicht">Vorschule darf sich leicht anfühlen</h2>
     <p>Du willst deinem Kind einen starken, entspannten Start in die Schule ermöglichen – ohne Druck, ohne ständiges „Mehr"? Bei EDULEO bekommst du fundiertes Wissen aus der Entwicklungspsychologie und frühkindlichen Bildung, alltagstaugliche Impulse für mehr Sicherheit im Familienalltag und klare Orientierung für die Vorschulzeit – ohne Überforderung.</p>
     <p>Keine Panik. Kein Perfektionismus. Sondern ein Weg, der dich stärkt und dein Kind gleich mit. 💛</p>
 
@@ -196,6 +198,30 @@
       <a href="../allein-arbeiten-oder-im-team/" class="btn btn-secondary">Nächster Artikel →</a>
     </div>
 
+    </div>
+
+    <aside class="article-sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Inhalt</div>
+        <a href="#orientierung" class="sidebar-toc-link">Kinder brauchen Orientierung <span class="toc-arrow">→</span></a>
+        <a href="#kita" class="sidebar-toc-link">Orientierung in der Kita <span class="toc-arrow">→</span></a>
+        <a href="#leicht" class="sidebar-toc-link">Vorschule darf leicht sein <span class="toc-arrow">→</span></a>
+      </div>
+
+      <div class="sidebar-product-box">
+        <div class="product-icon">🎁</div>
+        <h4>Bundle: Check + Guide</h4>
+        <p>Alles auf einmal: Orientierung wo dein Kind steht + konkrete Alltagsideen. Günstiger als Einzelkauf.</p>
+        <a href="../bundle.html" class="btn btn-primary">Jetzt entdecken →</a>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Mehr lesen</div>
+        <a href="../schulstart-ist-kein-wettbewerb/" class="sidebar-more-link">Schulstart ist kein Wettbewerb <span class="toc-arrow">→</span></a>
+        <a href="../allein-arbeiten-oder-im-team/" class="sidebar-more-link">Allein oder im Team? Beides fördern <span class="toc-arrow">→</span></a>
+        <a href="../bereit-fuer-die-schule/" class="sidebar-more-link">Was „bereit für die Schule" bedeutet <span class="toc-arrow">→</span></a>
+      </div>
+    </aside>
   </div>
 </div>
 
