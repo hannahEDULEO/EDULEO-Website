@@ -761,3 +761,33 @@ p { font-size: 1.05rem; line-height: 1.7; }
     order: -1;
   }
 }
+
+/* === Scroll-to-top Button === */
+.scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: var(--turquoise);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  z-index: 900;
+}
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.scroll-top:hover { background: var(--turquoise-dark, #0ea89e); }
+@media (max-width: 560px) { .scroll-top { bottom: 20px; right: 20px; } }
