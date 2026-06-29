@@ -25,15 +25,24 @@
   <link rel="stylesheet" href="../style.css">
   <style>
     .article-hero {
-      background: var(--turquoise-light);
-      padding: calc(var(--nav-h) + 56px) 0 56px;
+      background: url('../assets/images/blog/blog-schulreife-test.png') center/cover no-repeat;
+      padding: calc(var(--nav-h) + 80px) 0 80px;
+      position: relative;
     }
-    .article-hero .breadcrumb { font-size: 0.85rem; color: var(--text-light); margin-bottom: 16px; }
-    .article-hero .breadcrumb a { color: var(--turquoise); font-weight: 700; }
-    .article-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 16px; max-width: 700px; }
+    .article-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.48);
+    }
+    .article-hero .container { position: relative; z-index: 1; }
+    .article-hero .breadcrumb { font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 16px; }
+    .article-hero .breadcrumb a { color: white; font-weight: 700; }
+    .article-hero .section-label { background: var(--turquoise); color: white; }
+    .article-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 16px; max-width: 700px; color: white; }
     .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .article-meta-date { font-size: 0.85rem; color: var(--text-light); font-weight: 700; }
-    .article-meta-author { font-size: 0.85rem; color: var(--text-light); }
+    .article-meta-date { font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 700; }
+    .article-meta-author { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
 
     /* === Zweispaltiges Layout === */
     .article-layout {
@@ -147,11 +156,10 @@
 <div class="article-hero">
   <div class="container">
     <p class="breadcrumb"><a href="../blog/">← Blog</a></p>
-    <span class="section-label">Schulreife</span>
     <h1>Schulreife Test: Was wirklich zählt – und was nicht</h1>
     <div class="article-meta">
       <span class="article-meta-date">1. Juli 2026</span>
-      <span class="article-meta-author">von Hannah &amp; Janine</span>
+      <span class="article-meta-author">von Hannah &amp; Janine von EDULEO</span>
     </div>
   </div>
 </div>
@@ -161,8 +169,6 @@
 
     <!-- Hauptinhalt -->
     <div class="article-body">
-      <img src="../assets/images/blog/blog-schulreife-test.png" alt="Schulreife Test – was wirklich zählt" class="article-featured-img">
-
       <p>„Wann ist mein Kind schulreif?" – Das ist eine der meistgesuchten Fragen von Eltern im letzten Kita-Jahr. Kein Wunder: Der Schulstart fühlt sich nach einem Meilenstein an, der zählt. Nach etwas, das klappen muss. Und überall begegnen dir Tests, Checklisten und Beobachtungsbögen, die versprechen, die Antwort zu liefern.</p>
       <p>Doch was messen diese Tests wirklich? Und was sagen sie über dein Kind und seinen Schulstart – und was eben nicht? Lass uns das gemeinsam durchleuchten. Klar, ehrlich und ohne Druck.</p>
 

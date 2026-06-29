@@ -25,15 +25,24 @@
   <link rel="stylesheet" href="../style.css">
   <style>
     .article-hero {
-      background: var(--turquoise-light);
-      padding: calc(var(--nav-h) + 56px) 0 56px;
+      background: url('../assets/images/blog/blog-10-dinge-vor-schule.png') center/cover no-repeat;
+      padding: calc(var(--nav-h) + 80px) 0 80px;
+      position: relative;
     }
-    .article-hero .breadcrumb { font-size: 0.85rem; color: var(--text-light); margin-bottom: 16px; }
-    .article-hero .breadcrumb a { color: var(--turquoise); font-weight: 700; }
-    .article-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 16px; max-width: 700px; }
+    .article-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.48);
+    }
+    .article-hero .container { position: relative; z-index: 1; }
+    .article-hero .breadcrumb { font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 16px; }
+    .article-hero .breadcrumb a { color: white; font-weight: 700; }
+    .article-hero .section-label { background: var(--turquoise); color: white; }
+    .article-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 16px; max-width: 700px; color: white; }
     .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .article-meta-date { font-size: 0.85rem; color: var(--text-light); font-weight: 700; }
-    .article-meta-author { font-size: 0.85rem; color: var(--text-light); }
+    .article-meta-date { font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 700; }
+    .article-meta-author { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
 
     /* === Zweispaltiges Layout === */
     .article-layout {
@@ -155,11 +164,10 @@
 <div class="article-hero">
   <div class="container">
     <p class="breadcrumb"><a href="../blog/">← Blog</a></p>
-    <span class="section-label">Schulvorbereitung</span>
     <h1>10 Dinge, die dein Kind vor der Schule können sollte (und 3, die nicht)</h1>
     <div class="article-meta">
       <span class="article-meta-date">15. Juli 2026</span>
-      <span class="article-meta-author">von Hannah &amp; Janine</span>
+      <span class="article-meta-author">von Hannah &amp; Janine von EDULEO</span>
     </div>
   </div>
 </div>
@@ -169,8 +177,6 @@
 
     <!-- Hauptinhalt -->
     <div class="article-body">
-      <img src="../assets/images/blog/blog-10-dinge-vor-schule.png" alt="10 Dinge die dein Kind vor der Schule können sollte" class="article-featured-img">
-
       <p>Listen gibt es im Internet viele. „Was dein Kind vor der Schule können muss" – drei Klicks und du hast zwanzig davon. Das Problem: Die meisten verwechseln Schulvorbereitung mit Vorziehen von Schulinhalten. Lesen lernen, Zahlen schreiben, Buchstaben kennen – all das klingt sinnvoll, ist aber nicht das, was einen guten Schulstart ausmacht.</p>
       <p>Diese Liste ist anders. Sie orientiert sich daran, was Entwicklungspsychologie und Grundschulpädagogik wirklich über einen gelingenden Schulstart sagen. Und sie macht ehrlich klar, was du getrost von deiner gedanklichen Checkliste streichen kannst.</p>
 
